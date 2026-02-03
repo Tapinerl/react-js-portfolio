@@ -29,23 +29,89 @@
         {
             "id": "1",
             "src": "./img/placeholder-image.png",
-            "title": "Ahuse",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. suspendimisee vairui eim in eros elementum tristique",
-            "link": "view in github"
+            "title": "budgIT – Student Budgeting App",
+            
+            "link": "view case study",
+            "tags": ["UX/UI", "Case Study"],
+            "role": "UX/UI Designer (Co-designed research, visual identity, and interactive prototyping)",
+            "team": "Course team of 3 members",
+            "timeline": "Jan – March 2024",
+            "tools": "Figma, User Interviews, Wireframing",
+            "visuals": "All visuals were made by me, including prototypes and final design.",
+            "overview": "budgIT is a budgeting and financial management concept designed specifically for university students. The project focused on understanding students’ real financial challenges and designing a user-friendly tool that helps with budgeting, expense tracking, savings goals, and financial awareness across both mobile and desktop platforms. The project was completed as part of a Human–Technology Interaction course and covered the full UX process: user research, conceptual design, information architecture, interaction design, and high-fidelity prototyping.",
+            "problem": "University students often struggle with managing finances due to irregular income (student aid, part-time jobs, loans), high fixed costs (rent, food), and lack of motivation or knowledge to plan finances in advance. User interviews revealed that most students rely on bank apps for passive tracking, but lack tools for proactive budgeting, clear overviews, and student-specific guidance. Existing financial apps were seen as too complex, not tailored to student life, or overwhelming to use.",
+            "solution": "We designed budgIT as a lightweight, student-centric financial hub with a strong focus on clarity, flexibility, and ease of use. Key design decisions included individual user interviews to identify pain points, personas and usage scenarios, a clear information architecture centered around a dashboard overview, and a focus on simple language over financial jargon. We designed both mobile and desktop experiences for different usage contexts, iterated from wireframes to high-fidelity interactive Figma prototypes, and prioritized accessibility, content hierarchy, and visual readability. I personally took main responsibility for building and visually polishing the interactive prototype, while working closely with the team throughout all design phases.",
+            "highlights": [
+                "Conducted individual user interviews with university students",
+                "Created personas and usage scenarios to guide decisions",
+                "Built a clear dashboard-first information architecture",
+                "Prioritized visual clarity and plain language over jargon",
+                "Designed mobile and desktop flows for different usage contexts",
+                "Iterated from wireframes to high-fidelity, interactive prototypes"
+            ],
+            "outcome": "The final result was a fully interactive prototype for mobile and desktop that clearly visualizes monthly budgets, expenses, and remaining funds, supports savings goals and basic financial learning, and adapts to different screen sizes and usage situations. Peer feedback highlighted the clarity, usability, and visual structure of the solution. The project demonstrated how user research can directly shape interaction design and lead to a more approachable financial tool for a specific user group.",
+            "persona": {
+                "name": "Persona 2",
+                "age": "22",
+                "role": "Information management student",
+                "note": "Represents a real student budget scenario and anchors design decisions."
+            },
+            "beforeAfter": {
+                "title": "Before & After Navigation",
+                "note": "Side-by-side wireframe vs final UI highlighting icon-based navigation for accessibility and scannability."
+            },
+            "collaboration": "We coordinated via Telegram for rapid feedback and divided responsibilities while keeping a shared vision.",
+            "impactLearnings": [
+                "How to translate qualitative research into concrete UI decisions",
+                "How to design financial information without overwhelming users",
+                "The importance of iteration and content hierarchy in dashboards",
+                "Working in a multidisciplinary team with shared design ownership"
+            ],
+            "uxDecision": "Based on user feedback, we moved charts above detailed lists to reduce cognitive load and help users quickly understand their financial situation.",
+            "reflection": "If continued, I would validate the design with usability testing and explore real-time data syncing across devices.",
+            "placeholders": [
+                { "label": "Persona Card", "src": "./img/placeholder-persona.png" },
+                { "label": "Wireframe vs Final", "src": "./img/placeholder-before-after.png" },
+                { "label": "Dashboard Highlights", "src": "./img/placeholder-dashboard.png" }
+            ],
+            "processGallery": [
+                { "label": "User Research Themes", "src": "./img/placeholder-research-themes.png" },
+                { "label": "Persona (H2)", "src": "./img/placeholder-persona-h2.png" },
+                { "label": "Information Architecture / Site Map", "src": "./img/placeholder-site-map.png" },
+                { "label": "Wireframes → Final UI", "src": "./img/placeholder-wireframes-final.png" }
+            ]
         },
         {
             "id": "2",
             "src": "./img/placeholder-image-1.png",
-            "title": "App Dashboard",
+            "title": "AllTogether",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. suspendimisee vairui eim in eros elementum tristique",
-            "link": "view in github"
+            "link": "view case study",
+            "tags": ["UX/UI", "Case Study"]
         },
         {
             "id": "3",
             "src": "./img/placeholder-image-2.png",
-            "title": "Easy Rent",
+            "title": "Airbnb - Usability study",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. suspendimisee vairui eim in eros elementum tristique",
-            "link": "view in github"
+            "link": "view case study",
+            "tags": ["Usability", "Case Study"]
+        },
+        {
+            "id": "4",
+            "src": "./img/placeholder-image-3.png",
+            "title": "Dashboard - Metrics Monitoring Tool",
+            "description": "Designed a metrics dashboard and supported implementation to bring real-time monitoring to life.",
+            "link": "view case study",
+            "tags": ["UX/UI","Programming"]
+        },
+        {
+            "id": "5",
+            "src": "./img/placeholder-image-4.png",
+            "title": "FreePark - Helsinki",
+            "description": "Personal UX/UI project exploring parking discovery and wayfinding. Work in progress.",
+            "link": "view concept",
+            "tags": ["UX/UI", "WIP", "Programming"]
         }
     ]
 }

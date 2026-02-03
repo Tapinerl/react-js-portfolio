@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Pages/Home/Navbar";
 import Home from "./Pages/Home/Homescreen";
 import AboutPage from "./Pages/Home/AboutPage";
+import CaseStudy from "./Pages/Home/CaseStudy";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/case-studies/:id" element={<CaseStudy />} />
             <Route path="*" element={<div>404 Not Found</div>} />
           </Routes>
         </div>
