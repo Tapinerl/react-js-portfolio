@@ -232,9 +232,17 @@ h3 {
 .navbar--name--logo {
     color: #ffffff;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 20px;
     font-style: none;
+}
+
+.navbar--name--bold {
+    font-weight: 700;
+}
+
+.navbar--name--regular {
+    font-weight: 400;
 }
 
 /* Mobile menu styles */
