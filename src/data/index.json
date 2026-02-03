@@ -42,12 +42,28 @@
             "problem": "University students often struggle with managing finances due to irregular income (student aid, part-time jobs, loans), high fixed costs (rent, food), and lack of motivation or knowledge to plan finances in advance. User interviews revealed that most students rely on bank apps for passive tracking, but lack tools for proactive budgeting, clear overviews, and student-specific guidance. Existing financial apps were seen as too complex, not tailored to student life, or overwhelming to use.",
             "solution": "We designed budgIT as a lightweight, student-centric financial hub with a strong focus on clarity, flexibility, and ease of use. Key design decisions included individual user interviews to identify pain points, personas and usage scenarios, a clear information architecture centered around a dashboard overview, and a focus on simple language over financial jargon. We designed both mobile and desktop experiences for different usage contexts, iterated from wireframes to high-fidelity interactive Figma prototypes, and prioritized accessibility, content hierarchy, and visual readability. I personally took main responsibility for building and visually polishing the interactive prototype, while working closely with the team throughout all design phases.",
             "highlights": [
-                "Conducted individual user interviews with university students",
-                "Created personas and usage scenarios to guide decisions",
-                "Built a clear dashboard-first information architecture",
-                "Prioritized visual clarity and plain language over jargon",
-                "Designed mobile and desktop flows for different usage contexts",
-                "Iterated from wireframes to high-fidelity, interactive prototypes"
+                {
+                    "title": "Research & Insight",
+                    "items": [
+                        "Conducted user interviews with university students",
+                        "Identified key needs, behaviors, and pain points",
+                        "Defined personas and usage scenarios to guide design"
+                    ]
+                },
+                {
+                    "title": "Structure & Interaction",
+                    "items": [
+                        "Built a dashboard-first information architecture",
+                        "Designed mobile and desktop flows for different usage contexts"
+                    ]
+                },
+                {
+                    "title": "Design & Prototyping",
+                    "items": [
+                        "Prioritized visual clarity and plain language over jargon",
+                        "Iterated from wireframes to high-fidelity, interactive prototypes"
+                    ]
+                }
             ],
             "outcome": "The final result was a fully interactive prototype for mobile and desktop that clearly visualizes monthly budgets, expenses, and remaining funds, supports savings goals and basic financial learning, and adapts to different screen sizes and usage situations. Peer feedback highlighted the clarity, usability, and visual structure of the solution. The project demonstrated how user research can directly shape interaction design and lead to a more approachable financial tool for a specific user group.",
             "persona": {

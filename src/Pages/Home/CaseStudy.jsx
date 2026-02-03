@@ -82,11 +82,18 @@ export default function CaseStudy() {
                     </div>
                     <p>{project.solution || "The approach, design decisions, and build strategy."}</p>
                     {project.highlights?.length ? (
-                        <ul className="case-study__list case-study__list--highlights">
-                            {project.highlights.map((item, index) => (
-                                <li key={index}>{item}</li>
+                        <div className="case-study__list case-study__list--highlights">
+                            {project.highlights.map((highlight, index) => (
+                                <div key={index} className="case-study__highlight">
+                                    <p className="case-study__highlight-title">{highlight.title}</p>
+                                    <ul className="case-study__highlight-list">
+                                        {highlight.items?.map((item, itemIndex) => (
+                                            <li key={itemIndex}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     ) : null}
                 </section>
 
