@@ -103,6 +103,12 @@ export default function MyPortfolio() {
                 </Link>
             ))}
         </div>
+        <div className="portfolio--other-work">
+            <p className="portfolio--other-work__title">Other work</p>
+            <p className="portfolio--other-work__text">
+                Final software engineering course project, where i worked as a junior developer and designed the dashboard. Then that the dashboard got MVP from the customer and final voting it got shared number two spot of best projects.
+            </p>
+        </div>
         <div>
                 <button className="btn btn-github" type="button"
     onClick={(e) => {e.preventDefault();

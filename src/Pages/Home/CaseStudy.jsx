@@ -8,6 +8,10 @@ export default function CaseStudy() {
         () => data?.portfolio?.find((item) => String(item.id) === String(id)),
         [id]
     );
+    const personaRole = project?.persona?.role || "";
+    const roleParts = personaRole.split("(");
+    const roleMain = roleParts[0]?.trim() || personaRole;
+    const roleDetail = roleParts[1]?.replace(")", "").trim() || "";
     const tools = project?.tools
         ? project.tools.split(",").map((tool) => tool.trim()).filter(Boolean)
         : [];
@@ -55,7 +59,10 @@ export default function CaseStudy() {
 
                 <div className="case-study__hero">
                     <div className="case-study__hero-frame">
-                        <img src={project.src} alt={`${project.title} preview`} />
+                        <img
+                            src={project.caseStudySrc || project.src}
+                            alt={`${project.title} preview`}
+                        />
                     </div>
                     {project.visuals ? (
                         <p className="case-study__note case-study__note--hero">{project.visuals}</p>
@@ -81,18 +88,91 @@ export default function CaseStudy() {
                         <h3>Solution</h3>
                     </div>
                     <p>{project.solution || "The approach, design decisions, and build strategy."}</p>
-                    {project.highlights?.length ? (
-                        <div className="case-study__list case-study__list--highlights">
-                            {project.highlights.map((highlight, index) => (
-                                <div key={index} className="case-study__highlight">
-                                    <p className="case-study__highlight-title">{highlight.title}</p>
-                                    <ul className="case-study__highlight-list">
-                                        {highlight.items?.map((item, itemIndex) => (
-                                            <li key={itemIndex}>{item}</li>
-                                        ))}
-                                    </ul>
+                    {(project.researchInsight || project.keyTakeaways?.length || project.persona) ? (
+                        <div className="case-study__insight">
+                            <div className="case-study__insight-text">
+                                <p className="case-study__insight-title">Research & Insight</p>
+                                {project.researchInsight ? (
+                                    <p className="case-study__insight-body">{project.researchInsight}</p>
+                                ) : null}
+                                {project.keyTakeaways?.length ? (
+                                    <div className="case-study__insight-block">
+                                        <p className="case-study__insight-subtitle">Key Takeaways</p>
+                                        <ul className="case-study__list case-study__list--compact case-study__list--tight">
+                                            {project.keyTakeaways.map((item, index) => (
+                                                <li key={index}>
+                                                    <strong>{item.strong}</strong> {item.text}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) : null}
+                                {project.insightCallout ? (
+                                    <p className="case-study__insight-callout">{project.insightCallout}</p>
+                                ) : null}
+                            </div>
+                            {project.persona ? (
+                                <div className="case-study__insight-card">
+                                    <div className="case-study__persona-card">
+                                        <div className="case-study__persona-header">
+                                            <div className="case-study__persona-avatar" aria-hidden="true"></div>
+                                            <div className="case-study__persona-meta">
+                                                <p className="case-study__persona-title">Persona</p>
+                                                <p className="case-study__persona-line">
+                                                    {project.persona.age} · {roleMain}
+                                                </p>
+                                                {roleDetail ? (
+                                                    <p className="case-study__persona-subline">{roleDetail}</p>
+                                                ) : null}
+                                            </div>
+                                        </div>
+                                        {project.persona.goal ? (
+                                            <div className="case-study__persona-section">
+                                                <p className="case-study__persona-section-title">Goal</p>
+                                                <p className="case-study__persona-text">{project.persona.goal}</p>
+                                            </div>
+                                        ) : null}
+                                        {project.persona.needs?.length ? (
+                                            <div className="case-study__persona-section">
+                                                <p className="case-study__persona-section-title">Needs</p>
+                                                <ul className="case-study__list case-study__list--compact case-study__list--tight">
+                                                    {project.persona.needs.slice(0, 3).map((item, index) => (
+                                                        <li key={index}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ) : null}
+                                        {project.persona.frustrations?.length ? (
+                                            <div className="case-study__persona-section">
+                                                <p className="case-study__persona-section-title">Frustrations</p>
+                                                <ul className="case-study__list case-study__list--compact case-study__list--tight">
+                                                    {project.persona.frustrations.slice(0, 2).map((item, index) => (
+                                                        <li key={index}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ) : null}
+                                        {project.persona.quote ? (
+                                            <p className="case-study__persona-quote">“{project.persona.quote}”</p>
+                                        ) : null}
+                                    </div>
                                 </div>
-                            ))}
+                            ) : null}
+                        </div>
+                    ) : null}
+                    {project.structureInteraction ? (
+                        <div className="case-study__structure">
+                            <p className="case-study__structure-title">Structure &amp; Interaction</p>
+                            {project.structureInteractionImage?.src ? (
+                                <div className="case-study__structure-image">
+                                    <img
+                                        src={project.structureInteractionImage.src}
+                                        alt={project.structureInteractionImage.alt || "Information architecture"}
+                                    />
+                                </div>
+                            ) : null}
+                            <p className="case-study__structure-label">Information Architecture</p>
+                            <p className="case-study__structure-text">{project.structureInteraction}</p>
                         </div>
                     ) : null}
                 </section>
@@ -110,88 +190,6 @@ export default function CaseStudy() {
                         </ul>
                     ) : null}
                 </section>
-
-                {(project.uxDecision || project.reflection) ? (
-                    <div className="case-study__callout-row">
-                        {project.uxDecision ? (
-                            <section className="case-study__callout">
-                                <p>{project.uxDecision}</p>
-                            </section>
-                        ) : null}
-                        {project.reflection ? (
-                            <section className="case-study__callout case-study__callout--subtle">
-                                <p>{project.reflection}</p>
-                            </section>
-                        ) : null}
-                    </div>
-                ) : null}
-
-                <section className="case-study__section">
-                    <div className="case-study__section-title">
-                        <h3>Portfolio Additions</h3>
-                    </div>
-                    <div className="case-study__tiles">
-                        {project.persona ? (
-                            <div className="case-study__tile">
-                                <h4>Persona</h4>
-                                <div className="case-study__card">
-                                    <p className="case-study__card-title">{project.persona.name}</p>
-                                    <p className="case-study__card-text">
-                                        {project.persona.age} - {project.persona.role}
-                                    </p>
-                                    <p className="case-study__card-text">{project.persona.note}</p>
-                                </div>
-                            </div>
-                        ) : null}
-
-                        {project.beforeAfter ? (
-                            <div className="case-study__tile">
-                                <h4>{project.beforeAfter.title}</h4>
-                                <p>{project.beforeAfter.note}</p>
-                            </div>
-                        ) : null}
-
-                        {project.collaboration ? (
-                            <div className="case-study__tile">
-                                <h4>Collaboration</h4>
-                                <p>{project.collaboration}</p>
-                            </div>
-                        ) : null}
-                    </div>
-                </section>
-
-                {project.processGallery?.length ? (
-                    <section className="case-study__section">
-                        <div className="case-study__section-title">
-                            <h3>Process Gallery</h3>
-                        </div>
-                        <div className="case-study__gallery">
-                            {project.processGallery.map((item, index) => (
-                                <figure key={index} className="case-study__placeholder">
-                                    <img src={item.src} alt={item.label} />
-                                    <figcaption>{item.label}</figcaption>
-                                </figure>
-                            ))}
-                        </div>
-                    </section>
-                ) : null}
-
-                {project.nextSteps?.length ? (
-                    <section className="case-study__section">
-                        <div className="case-study__section-title">
-                            <h3>Next Steps</h3>
-                        </div>
-                        <ul className="case-study__list">
-                            {project.nextSteps.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>
-                    </section>
-                ) : null}
-
-                <div className="case-study__footer">
-                    <Link className="case-study__back" to="/">Back to Home</Link>
-                </div>
             </div>
         </section>
     );
