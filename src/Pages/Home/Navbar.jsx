@@ -40,10 +40,28 @@ function Navbar() {
     return (
         <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
             <div>
-                <p className="navbar--name--logo">
-                    <span className="navbar--name--bold">Elias Nikkinen</span>
+                <a
+                    href="/"
+                    onClick={(event) => {
+                        event.preventDefault();
+                        closeMenu();
+                        window.location.assign("/");
+                    }}
+                    className="navbar--name--logo"
+                >
+                    <span className="navbar--name--bold navbar--name--jumper">
+                        {"Elias Nikkinen".split("").map((char, index) => (
+                            <span
+                                key={`${char}-${index}`}
+                                className="navbar--name--letter"
+                                style={{ "--letter-delay": `${index * 40}ms` }}
+                            >
+                                {char === " " ? "\u00A0" : char}
+                            </span>
+                        ))}
+                    </span>
                     <span className="navbar--name--regular"> / Portfolio</span>
-                </p>
+                </a>
             </div>
             <div 
                 className={`nav__hamburger ${navActive ? "active" : ""}`}
@@ -57,7 +75,7 @@ function Navbar() {
                 <ul>
                     <li>
                         <Link
-                            to="/"
+                            to="/#MyPortfolio"
                             onClick={closeMenu}
                             className="navbar--content"
                         >
@@ -70,16 +88,16 @@ function Navbar() {
                             onClick={closeMenu}
                             className="navbar--content"
                         >
-                            About Me
+                            About
                         </Link>
                     </li>
                     <li>
                         <Link 
-                            to="/contact"
+                            to="/#Contact"
                             onClick={closeMenu}
                             className="navbar--content"
                         >
-                            Contact Me
+                            Contact
                         </Link>
                     </li>
                 </ul>

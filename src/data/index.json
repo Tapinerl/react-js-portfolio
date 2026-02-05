@@ -116,7 +116,7 @@
         },
         {
             "id": "3",
-            "src": "./img/placeholder-image-2.png",
+            "src": "/img/abnb-usa.png",
             "title": "Airbnb - Usability study",
             "description": "Usability evaluation of Airbnb's desktop experience focused on search, filters, navigation, and task success.",
             "link": "view case study",
@@ -140,8 +140,16 @@
             "reflection": "Working as an observer and analyst strengthened my understanding of how small interaction design decisions can significantly affect user confidence and task efficiency. The combination of expert review and usability testing highlighted the importance of validating assumptions against real user behavior."
         },
         {
+            "id": "6",
+            "src": "/img/mmt-preview.png",
+            "title": "Dashboard - Metrics Monitoring Tool",
+            "description": "Final software engineering course project where I worked as a junior developer and designed the dashboard.",
+            "link": "view case study",
+            "tags": ["Software Engineering", "UI"]
+        },
+        {
             "id": "5",
-            "src": "./img/placeholder-image-4.png",
+            "src": "/img/Freepark-preview.png",
             "title": "FreePark - Helsinki",
             "description": "Personal UX/UI project exploring parking discovery and wayfinding. Work in progress.",
             "link": "view concept",

@@ -225,6 +225,7 @@ h3 {
     font-weight: 500;
     line-height: 24px;
     cursor: pointer;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -242,6 +243,10 @@ h3 {
     font-weight: 400;
     line-height: 20px;
     font-style: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .navbar--name--bold {
@@ -250,6 +255,33 @@ h3 {
 
 .navbar--name--regular {
     font-weight: 400;
+}
+
+.navbar--name--jumper {
+    display: inline-flex;
+}
+
+.navbar--name--letter {
+    display: inline-block;
+    transform: translateY(0);
+}
+
+.navbar--name--logo:hover .navbar--name--letter {
+    animation: logo-letter-jump 520ms ease-in-out;
+    animation-delay: var(--letter-delay, 0ms);
+}
+
+@keyframes logo-letter-jump {
+    0% { transform: translateY(0); }
+    35% { transform: translateY(-6px); }
+    65% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar--name--logo:hover .navbar--name--letter {
+        animation: none;
+    }
 }
 
 /* Mobile menu styles */
@@ -723,6 +755,7 @@ h3 {
     height: auto;
     display: block;
     border-radius: 24px;
+    transition: border-radius 0.35s ease, filter 0.35s ease;
 }
 .portfolio--section--card {
     display: flex;
@@ -766,6 +799,9 @@ h3 {
     gap: 12px;
     align-self: stretch;
 }
+.portfolio--desc {
+    min-height: 72px;
+}
 .portfolio--section--title {
     color: var(--white);
 }
@@ -782,14 +818,12 @@ h3 {
     stroke: #a1a1a1;
 }
 .portfolio--card-link:hover .portfolio--section--card {
-    transform: translateY(-6px);
+    transform: translateY(-6px) scale(1.02);
     box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
-}
-.portfolio--section--img > img {
-    transition: filter 0.35s ease;
 }
 .portfolio--card-link:hover .portfolio--section--img img {
     filter: saturate(1.05);
+    border-radius: 18px;
 }
 
 .portfolio--tags {
@@ -816,6 +850,11 @@ h3 {
     font-size: 16px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.78);
+}
+.portfolio--cta {
+    max-width: 980px;
+    width: 100%;
+    margin: 40px auto 0;
 }
 .portfolio--tag {
     font-size: 12px;
@@ -1388,8 +1427,15 @@ h3 {
 
 .contact--section--container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 980px;
     margin: 0 auto;
+}
+.contact--section--intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 32px;
 }
 
 .contact--section--content {

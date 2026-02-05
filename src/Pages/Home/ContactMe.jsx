@@ -1,8 +1,7 @@
 export default function ContactMe() {
     return (
         <section id="Contact" className="contact--section">
-            <div className="portfolio--container">
-                <p className="section--title">Get In Touch</p>
+            <div className="contact--section--container contact--section--intro">
                 <h2 className="skills--section--heading">Contact Me</h2>
                 <p className="text-lg">
                     Feel free to reach out to me through any of these channels. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
