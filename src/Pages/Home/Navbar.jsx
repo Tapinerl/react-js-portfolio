@@ -63,15 +63,19 @@ function Navbar() {
                     <span className="navbar--name--regular"> / Portfolio</span>
                 </a>
             </div>
-            <div 
+            <button 
+                type="button"
                 className={`nav__hamburger ${navActive ? "active" : ""}`}
                 onClick={toggleNav}
+                aria-expanded={navActive}
+                aria-controls="navbar-menu"
+                aria-label="Toggle navigation menu"
             >
                 <span className="nav__hamburger__line"></span>
                 <span className="nav__hamburger__line"></span>
                 <span className="nav__hamburger__line"></span>
-            </div>
-            <div className={`navbar--items ${navActive ? "active" : ""}`}>
+            </button>
+            <div id="navbar-menu" className={`navbar--items ${navActive ? "active" : ""}`}>
                 <ul>
                     <li>
                         <Link

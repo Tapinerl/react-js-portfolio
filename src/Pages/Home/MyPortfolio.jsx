@@ -2,6 +2,28 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import data from "../../data/index.json";
 
+const getTagToneClass = (tag = "") => {
+    const normalizedTag = tag.trim().toLowerCase();
+
+    if (normalizedTag === "ux/ui" || normalizedTag === "ui") {
+        return "tag-tone--green";
+    }
+    if (normalizedTag === "case study") {
+        return "tag-tone--blue";
+    }
+    if (normalizedTag === "programming") {
+        return "tag-tone--gray";
+    }
+    if (normalizedTag === "usability") {
+        return "tag-tone--yellow";
+    }
+    if (normalizedTag === "wip") {
+        return "tag-tone--red";
+    }
+
+    return "tag-tone--default";
+};
+
 export default function MyPortfolio() {
     const sectionRef = useRef(null);
 
@@ -74,7 +96,7 @@ export default function MyPortfolio() {
                             {item.tags?.length ? (
                                 <div className="portfolio--tags">
                                     {item.tags.map((tag, tagIndex) => (
-                                        <span key={tagIndex} className="portfolio--tag">
+                                        <span key={tagIndex} className={`portfolio--tag ${getTagToneClass(tag)}`}>
                                             {tag}
                                         </span>
                                     ))}

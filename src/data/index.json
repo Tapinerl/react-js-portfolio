@@ -109,10 +109,56 @@
         {
             "id": "2",
             "src": "/img/alltogether-hero.png",
+            "caseStudySrc": "/img/alltogether-hero.png",
             "title": "AllTogether",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. suspendimisee vairui eim in eros elementum tristique",
+            "description": "A single mobile experience that combines workouts, sleep, recovery, and nutrition into a clear daily overview.",
             "link": "view case study",
-            "tags": ["UX/UI", "Case Study"]
+            "tags": ["UX/UI", "Case Study"],
+            "caseStudyType": "alltogether",
+            "role": "UX/UI Designer",
+            "team": "Small team",
+            "timeline": "Concept project",
+            "challenge": "People who care about their health often use multiple apps and devices to track workouts, sleep, recovery, and nutrition. The result is fragmented data and poor overview - users know they are tracking, but not necessarily how they are doing. Our goal was to design a single mobile experience that brings this information together in a way that feels motivating, clear, and easy to understand at a glance.",
+            "myRoleSummary": "I worked as a UX/UI designer in a small team, contributing especially to:",
+            "myRolePoints": [
+                "Defining the product vision and target users",
+                "Designing the mobile home screen focused on data clarity",
+                "Creating and iterating early wireframes",
+                "Refining visual hierarchy, spacing, and UX writing",
+                "Evolving the design into a high-fidelity mobile UI"
+            ],
+            "userUnderstanding": "We designed for 20-40-year-old health-conscious users who want to track their wellbeing without feeling overwhelmed by numbers or complex tools.",
+            "userDecisionAnchors": [
+                "Showing insights instead of raw data",
+                "Keeping interactions lightweight",
+                "Supporting motivation without pressure"
+            ],
+            "visionSummary": "Early on, we aligned on a clear vision: a mobile-first, all-in-one health app where users understand their daily status within seconds of opening the app.",
+            "visionPriorities": [
+                "A dashboard-first experience",
+                "Clear visual hierarchy",
+                "Modular content that can grow over time",
+                "Social features that feel supportive, not competitive"
+            ],
+            "wireframesSummary": "We designed a simple navigation flow that always brings the user back to a clear overview. In the wireframing phase, we explored different dashboard layouts and tested how much information could be shown without overwhelming the user.",
+            "wireframesInsight": "Through iteration, it became clear that fewer, well-prioritized metrics worked better than dense data views.",
+            
+            "finalExperiencePoints": [
+                "Glanceable activity, sleep, and recovery data",
+                "Card-based layout for clarity and flexibility",
+                "Calm colors and increased white space",
+                "Familiar interaction patterns to reduce friction",
+                "Optional dark mode for real-world usage"
+            ],
+            "finalExperienceResult": "The result is a mobile UI that feels informative but calm - something users can quickly check during everyday routines.",
+            "outcome": "The final concept delivers a cohesive mobile experience that combines fitness, nutrition, recovery, and social motivation into one interface. The project reinforced how much impact visual hierarchy, spacing, and prioritization have when designing data-heavy products.",
+            "reflection": "If continued, the next steps would include usability testing with real users and deeper validation of how users interpret the shown metrics.",
+            "placeholders": [
+                { "slot": "persona", "label": "Insert persona card here" },
+                { "slot": "visionBoard", "label": "Insert product vision board image here" },
+                { "slot": "wireframes", "label": "Insert early wireframes here" },
+                { "slot": "finalMockups", "label": "Insert final mobile mockups here" }
+            ]
         },
         {
             "id": "3",
@@ -145,7 +191,7 @@
             "title": "Dashboard - Metrics Monitoring Tool",
             "description": "Final software engineering course project where I worked as a junior developer and designed the dashboard.",
             "link": "view case study",
-            "tags": ["Software Engineering", "UI"]
+            "tags": ["UI", "Programming"]
         },
         {
             "id": "5",
@@ -153,7 +199,7 @@
             "title": "FreePark - Helsinki",
             "description": "Personal UX/UI project exploring parking discovery and wayfinding. Work in progress.",
             "link": "view concept",
-            "tags": ["UX/UI", "WIP", "Programming"]
+            "tags": ["UX/UI", "Programming", "WIP"]
         }
     ]
 }

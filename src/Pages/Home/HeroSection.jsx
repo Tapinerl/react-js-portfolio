@@ -100,12 +100,14 @@ export default function HeroSection() {
                 </div>
                 <div className="hero--actions">
                     <button
-                        className="hero--btn hero--btn--primary"
+                        className="hero--btn hero--btn--shine btn-shine"
                         onClick={scrollToContact}
                     >
-                        Contact Me
+                        <span>Contact Me</span>
                     </button>
-                    <button className="hero--btn hero--btn--ghost">Download CV (PDF)</button>
+                    <button className="hero--btn hero--btn--download">
+                        <span className="hero--btn--download__content">Download CV (PDF)</span>
+                    </button>
                     <div className="hero--social">
                         <a
                             className="hero--social__link"
