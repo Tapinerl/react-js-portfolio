@@ -1,0 +1,305 @@
+.case-study.case-study--airbnb {
+    padding: 140px 48px 120px;
+    background-color: #000000;
+    color: var(--white);
+}
+
+.case-study.case-study--airbnb.case-study--centered {
+    text-align: left;
+}
+
+.case-study--airbnb .case-study__wrap {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.case-study--airbnb .case-study__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.case-study--airbnb .case-study__title {
+    font-size: 64px;
+    line-height: 1.05;
+    max-width: 900px;
+    text-align: center;
+}
+
+.case-study--airbnb .case-study__tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.case-study--airbnb .case-study__tag-row--top {
+    margin-bottom: 6px;
+}
+
+.case-study--airbnb .case-study__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    min-height: 26px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(101, 188, 150, 0.6);
+    color: #cfe8ff;
+    background: transparent;
+}
+
+.case-study--airbnb .tag-tone--default {
+    --tag-tone-color: rgba(154, 230, 192, 0.9);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--airbnb .tag-tone--green {
+    --tag-tone-color: rgba(154, 230, 192, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--airbnb .tag-tone--blue {
+    --tag-tone-color: rgba(182, 224, 255, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--airbnb .tag-tone--gray {
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--airbnb .tag-tone--yellow {
+    --tag-tone-color: rgba(255, 231, 153, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--airbnb .tag-tone--red {
+    --tag-tone-color: rgba(255, 179, 179, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--airbnb .case-study__meta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(13, 13, 13, 0.85);
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.case-study--airbnb .case-study__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+    text-align: center;
+    flex: 1;
+}
+
+.case-study--airbnb .case-study__meta-divider {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.case-study--airbnb .case-study__meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 11px;
+    color: #9e9e9e;
+}
+
+.case-study--airbnb .case-study__meta-value {
+    font-size: 15px;
+    margin-top: 6px;
+    color: #f2f2f2;
+}
+
+.case-study--airbnb .case-study__note {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.case-study--airbnb .case-study__section p.case-study__note {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: normal;
+}
+
+.case-study--airbnb .case-study__note--hero {
+    margin-top: 14px;
+}
+
+.case-study--airbnb .case-study__hero {
+    position: relative;
+    border-radius: 24px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.case-study--airbnb .case-study__hero-frame {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+}
+
+.case-study--airbnb .case-study__hero-frame img {
+    width: 100%;
+    display: block;
+}
+
+.case-study--airbnb .case-study__section {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.case-study--airbnb .case-study__section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.case-study--airbnb .case-study__section h3 {
+    font-size: 26px;
+    margin: 0;
+}
+
+.case-study--airbnb .case-study__section p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #d7d7d7;
+}
+
+.case-study--airbnb .case-study__outcome-media {
+    margin: 14px 0 0;
+    width: 100%;
+    border-radius: 0;
+    overflow: visible;
+    border: none;
+    background: transparent;
+}
+
+.case-study--airbnb .case-study__outcome-media img {
+    width: 100%;
+    display: block;
+}
+
+.case-study--airbnb .case-study__caption {
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.68);
+    border-top: none;
+    text-align: center;
+}
+
+.case-study--airbnb .case-study__list {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    color: #d7d7d7;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.case-study--airbnb .case-study__list li {
+    position: relative;
+    padding-left: 24px;
+}
+
+.case-study--airbnb .case-study__list li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.case-study--airbnb .case-study__list--compact {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.case-study--airbnb .case-study__list--tight {
+    gap: 6px;
+}
+
+.case-study--airbnb .case-study__list--compact li::before {
+    top: 6px;
+}
+
+@media screen and (max-width: 900px) {
+    .case-study.case-study--airbnb {
+        padding: 120px 16px 80px;
+    }
+
+    .case-study--airbnb .case-study__title {
+        font-size: 42px;
+    }
+
+    .case-study--airbnb .case-study__wrap {
+        gap: 32px;
+    }
+
+    .case-study--airbnb .case-study__meta-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .case-study--airbnb .case-study__meta-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .case-study--airbnb .case-study__hero {
+        padding: 18px;
+    }
+}
