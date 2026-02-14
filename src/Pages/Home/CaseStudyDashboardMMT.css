@@ -6,6 +6,11 @@
         #000000;
 }
 
+.case-study--dashboard-mmt [data-case-reveal].scroll-reveal {
+    --reveal-duration: 880ms;
+    --reveal-transform-hidden: translate3d(0, 22px, 0);
+}
+
 .case-study--dashboard-mmt .case-study__wrap {
     max-width: 960px;
     margin: 0 auto;

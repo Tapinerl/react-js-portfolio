@@ -6,6 +6,11 @@
         #000000;
 }
 
+.case-study--alltogether [data-case-reveal].scroll-reveal {
+    --reveal-duration: 920ms;
+    --reveal-transform-hidden: translate3d(0, 24px, 0);
+}
+
 .case-study--alltogether .case-study__tag-row {
     display: flex;
     flex-wrap: wrap;

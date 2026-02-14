@@ -1,39 +1,9 @@
-import { useEffect, useRef } from "react";
-
 export default function HeroSection() {
-    const hasAutoScrolled = useRef(false);
-    const heroRef = useRef(null);
-    const wheelProgress = useRef(0);
-    const WHEEL_TRIGGER = 240;
-    const hasAnimatedRef = useRef(false);
     const scrollToPortfolio = (behavior = "smooth") => {
         const target = document.getElementById("MyPortfolio");
         if (target) {
             target.scrollIntoView({ behavior, block: "start" });
         }
-    };
-
-    const triggerPortfolioReveal = () => {
-        if (hasAutoScrolled.current) return;
-        const target = document.getElementById("MyPortfolio");
-        if (!target) return;
-
-        hasAutoScrolled.current = true;
-        hasAnimatedRef.current = true;
-        window.sessionStorage.setItem("portfolioAnimated", "true");
-        document.body.classList.add("page--lock");
-        target.classList.add("portfolio--reveal");
-
-        const handleRevealEnd = () => {
-            target.classList.remove("portfolio--reveal");
-            document.body.classList.remove("page--lock");
-            document.body.classList.remove("portfolio--locked");
-            wheelProgress.current = 0;
-            scrollToPortfolio("auto");
-            window.dispatchEvent(new Event("portfolio:unlock"));
-        };
-
-        target.addEventListener("animationend", handleRevealEnd, { once: true });
     };
 
     const scrollToContact = () => {
@@ -43,62 +13,35 @@ export default function HeroSection() {
         }
     };
 
-    useEffect(() => {
-        const hasAnimated = window.sessionStorage.getItem("portfolioAnimated") === "true";
-        hasAnimatedRef.current = hasAnimated;
-        if (!hasAnimated && window.scrollY <= 5) {
-            document.body.classList.add("portfolio--locked");
-        } else {
-            hasAutoScrolled.current = true;
-            document.body.classList.remove("portfolio--locked");
-        }
-        const handleWheel = (event) => {
-            const heroEl = heroRef.current;
-            if (!heroEl) return;
-            const rect = heroEl.getBoundingClientRect();
-            const heroInView = rect.top <= window.innerHeight * 0.6 && rect.bottom >= window.innerHeight * 0.4;
-
-            if (hasAnimatedRef.current) return;
-            if (event.deltaY < 0) {
-                wheelProgress.current = Math.max(0, wheelProgress.current + event.deltaY);
-                return;
-            }
-
-            if (event.deltaY > 0 && heroInView && !hasAutoScrolled.current) {
-                event.preventDefault();
-                wheelProgress.current += event.deltaY;
-            }
-
-            if (heroInView && !hasAutoScrolled.current && wheelProgress.current >= WHEEL_TRIGGER) {
-                triggerPortfolioReveal();
-            }
-        };
-
-        window.addEventListener("wheel", handleWheel, { passive: false });
-        return () => {
-            document.body.classList.remove("portfolio--locked");
-            window.removeEventListener("wheel", handleWheel);
-        };
-    }, []);
-
     return (
-        <section id="heroSection" className="hero--section" ref={heroRef}>
+        <section id="heroSection" className="hero--section" data-home-section>
             <div className="hero--orbs" aria-hidden="true">
                 <span className="hero--orb hero--orb--green"></span>
                 <span className="hero--orb hero--orb--blue"></span>
             </div>
             <div className="hero--section--content--box">
                 <div className="hero--section--content">
-                    <h1 className="hero--section--title">
+                    <h1
+                        className="hero--section--title scroll-reveal scroll-reveal--up"
+                        data-animate-on-scroll
+                    >
                         Elias Nikkinen 
                     </h1>
-                    <p className="hero--section--description"> 
+                    <p
+                        className="hero--section--description scroll-reveal"
+                        data-animate-on-scroll
+                        style={{ "--reveal-delay": "0.12s" }}
+                    > 
                         Aspiring UX Design Student With
                         <br/>Understanding Of Programming
                         <br/>And Technologies
                     </p>
                 </div>
-                <div className="hero--actions">
+                <div
+                    className="hero--actions scroll-reveal"
+                    data-animate-on-scroll
+                    style={{ "--reveal-delay": "0.22s" }}
+                >
                     <button
                         className="hero--btn hero--btn--shine btn-shine"
                         onClick={scrollToContact}
@@ -141,10 +84,12 @@ export default function HeroSection() {
                 </div>
             </div>
             <button
-                className="hero--scroll"
+                className="hero--scroll scroll-reveal"
                 type="button"
-                onClick={triggerPortfolioReveal}
+                onClick={() => scrollToPortfolio("smooth")}
                 aria-label="Scroll down for projects"
+                data-animate-on-scroll
+                style={{ "--reveal-delay": "0.34s" }}
             >
                 <span className="hero--scroll__text">Scroll Down</span>
                 <span className="hero--scroll__arrow" aria-hidden="true"></span>

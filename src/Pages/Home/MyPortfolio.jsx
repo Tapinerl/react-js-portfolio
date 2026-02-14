@@ -1,57 +1,10 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import data from "../../data/index.json";
 import { getTagToneClass } from "./caseStudyUtils";
 
 export default function MyPortfolio() {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const sectionEl = sectionRef.current;
-        if (!sectionEl) return;
-
-        const cards = Array.from(sectionEl.querySelectorAll(".portfolio--section--card"));
-        const hasAnimated = window.sessionStorage.getItem("portfolioAnimated") === "true";
-        if (hasAnimated) {
-            cards.forEach((card) => card.classList.add("is-visible"));
-            return;
-        }
-        const revealVisibleCards = () => {
-            if (document.body.classList.contains("portfolio--locked")) return;
-            cards.forEach((card) => {
-                const rect = card.getBoundingClientRect();
-                const inView = rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1;
-                if (inView) {
-                    card.classList.add("is-visible");
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (document.body.classList.contains("portfolio--locked")) return;
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                    }
-                });
-            },
-            { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.15 }
-        );
-
-        cards.forEach((card) => observer.observe(card));
-        const handleUnlock = () => revealVisibleCards();
-        window.addEventListener("portfolio:unlock", handleUnlock);
-
-        revealVisibleCards();
-        return () => {
-            window.removeEventListener("portfolio:unlock", handleUnlock);
-            observer.disconnect();
-        };
-    }, []);
-
     return (
-    <section className="portfolio--section" id="MyPortfolio" ref={sectionRef}>
+    <section className="portfolio--section" id="MyPortfolio" data-home-section>
 
         <div className="portfolio--section--container">
             {data?.portfolio?.map((item, index)=>(
@@ -59,9 +12,13 @@ export default function MyPortfolio() {
                     key={index}
                     to={`/case-studies/${item.id}`}
                     className="portfolio--card-link"
-                    style={{ "--reveal-delay": `${index * 0.3}s` }}
                 >
-                    <div className="portfolio--section--card">
+                    <div
+                        className="portfolio--section--card scroll-reveal"
+                        data-animate-on-scroll
+                        data-portfolio-card
+                        data-portfolio-order={index}
+                    >
                         <div className="portfolio--section--img">
                             <img src={item.src} alt={item.title}></img>
                         </div>

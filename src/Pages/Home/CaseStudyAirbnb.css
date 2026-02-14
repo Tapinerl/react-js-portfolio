@@ -8,6 +8,11 @@
     text-align: left;
 }
 
+.case-study--airbnb [data-case-reveal].scroll-reveal {
+    --reveal-duration: 920ms;
+    --reveal-transform-hidden: translate3d(0, 24px, 0);
+}
+
 .case-study--airbnb .case-study__wrap {
     width: 100%;
     max-width: 1020px;

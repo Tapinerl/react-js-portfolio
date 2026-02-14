@@ -1,14 +1,19 @@
+import { useRef } from "react";
 import "./CaseStudyAllTogether.css";
 import { getTagToneClass } from "./caseStudyUtils";
+import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
 export default function CaseStudyAllTogether({ project }) {
+    const caseStudyRef = useRef(null);
+    useCaseStudyScrollReveal(caseStudyRef);
+
     const getPlaceholderLabel = (slot, fallback) =>
         project?.placeholders?.find((item) => item.slot === slot)?.label || fallback;
 
     return (
-        <section className="case-study case-study--alltogether">
+        <section className="case-study case-study--alltogether" ref={caseStudyRef}>
             <div className="case-study-alt__wrap">
-                <header className="case-study-alt__header">
+                <header className="case-study-alt__header scroll-reveal" data-case-reveal>
                     {project.tags?.length ? (
                         <div className="case-study__tag-row">
                             {project.tags.map((tag, index) => (
@@ -44,15 +49,15 @@ export default function CaseStudyAllTogether({ project }) {
                 </div>
 
                 <section className="case-study-alt__section">
-                    <h2>The challenge</h2>
-                    <p>{project.challenge}</p>
+                    <h2 className="scroll-reveal" data-case-reveal>The challenge</h2>
+                    <p className="scroll-reveal" data-case-reveal>{project.challenge}</p>
                 </section>
 
                 <section className="case-study-alt__section">
-                    <h2>My role</h2>
-                    <p>{project.myRoleSummary}</p>
+                    <h2 className="scroll-reveal" data-case-reveal>My role</h2>
+                    <p className="scroll-reveal" data-case-reveal>{project.myRoleSummary}</p>
                     {project.myRolePoints?.length ? (
-                        <ul className="case-study__list case-study-alt__list">
+                        <ul className="case-study__list case-study-alt__list scroll-reveal" data-case-reveal>
                             {project.myRolePoints.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}
@@ -61,15 +66,15 @@ export default function CaseStudyAllTogether({ project }) {
                 </section>
 
                 <section className="case-study-alt__section">
-                    <h2>Understanding the user</h2>
-                    <p>{project.userUnderstanding}</p>
-                    <div className="case-study-alt__placeholder">
+                    <h2 className="scroll-reveal" data-case-reveal>Understanding the user</h2>
+                    <p className="scroll-reveal" data-case-reveal>{project.userUnderstanding}</p>
+                    <div className="case-study-alt__placeholder scroll-reveal" data-case-reveal>
                         {getPlaceholderLabel("persona", "Insert persona card here")}
                     </div>
                     {project.userDecisionAnchors?.length ? (
                         <>
-                            <p>The persona helped anchor our decisions around:</p>
-                            <ul className="case-study__list case-study-alt__list">
+                            <p className="scroll-reveal" data-case-reveal>The persona helped anchor our decisions around:</p>
+                            <ul className="case-study__list case-study-alt__list scroll-reveal" data-case-reveal>
                                 {project.userDecisionAnchors.map((item, index) => (
                                     <li key={index}>{item}</li>
                                 ))}
@@ -79,19 +84,19 @@ export default function CaseStudyAllTogether({ project }) {
                 </section>
 
                 <section className="case-study-alt__section">
-                    <h2>Defining the vision</h2>
+                    <h2 className="scroll-reveal" data-case-reveal>Defining the vision</h2>
                     <div className="case-study-alt__hero">
                         <img
                             src="/img/alto-visiooni1.png"
                             alt="AllTogether product vision board"
                         />
                     </div>
-                    <p className="case-study-alt__note case-study-alt__note--center">Figure: AllTogether product vision board.</p>
-                    <p>{project.visionSummary}</p>
+                    <p className="case-study-alt__note case-study-alt__note--center scroll-reveal" data-case-reveal>Figure: AllTogether product vision board.</p>
+                    <p className="scroll-reveal" data-case-reveal>{project.visionSummary}</p>
                     {project.visionPriorities?.length ? (
                         <>
-                            <p>This led us to prioritize:</p>
-                            <ul className="case-study__list case-study-alt__list">
+                            <p className="scroll-reveal" data-case-reveal>This led us to prioritize:</p>
+                            <ul className="case-study__list case-study-alt__list scroll-reveal" data-case-reveal>
                                 {project.visionPriorities.map((item, index) => (
                                     <li key={index}>{item}</li>
                                 ))}
@@ -101,28 +106,28 @@ export default function CaseStudyAllTogether({ project }) {
                 </section>
 
                 <section className="case-study-alt__section">
-                    <h2>From structure to wireframes</h2>
-                    <div className="case-study-alt__placeholder">
+                    <h2 className="scroll-reveal" data-case-reveal>From structure to wireframes</h2>
+                    <div className="case-study-alt__placeholder scroll-reveal" data-case-reveal>
                         {getPlaceholderLabel("wireframes", "Insert early wireframes here")}
                     </div>
-                    <p>{project.wireframesSummary}</p>
+                    <p className="scroll-reveal" data-case-reveal>{project.wireframesSummary}</p>
                     {project.wireframesInsight ? (
-                        <p>{project.wireframesInsight}</p>
+                        <p className="scroll-reveal" data-case-reveal>{project.wireframesInsight}</p>
                     ) : null}
                     {project.wireframesTag ? (
-                        <p className="case-study-alt__note">{project.wireframesTag}</p>
+                        <p className="case-study-alt__note scroll-reveal" data-case-reveal>{project.wireframesTag}</p>
                     ) : null}
                 </section>
 
                 <section className="case-study-alt__section">
-                    <h2>Designing the final experience</h2>
-                    <div className="case-study-alt__placeholder">
+                    <h2 className="scroll-reveal" data-case-reveal>Designing the final experience</h2>
+                    <div className="case-study-alt__placeholder scroll-reveal" data-case-reveal>
                         {getPlaceholderLabel("finalMockups", "Insert final mobile mockups here")}
                     </div>
                     {project.finalExperiencePoints?.length ? (
                         <>
-                            <p>In the final design, we focused on:</p>
-                            <ul className="case-study__list case-study-alt__list">
+                            <p className="scroll-reveal" data-case-reveal>In the final design, we focused on:</p>
+                            <ul className="case-study__list case-study-alt__list scroll-reveal" data-case-reveal>
                                 {project.finalExperiencePoints.map((item, index) => (
                                     <li key={index}>{item}</li>
                                 ))}
@@ -130,15 +135,15 @@ export default function CaseStudyAllTogether({ project }) {
                         </>
                     ) : null}
                     {project.finalExperienceResult ? (
-                        <p>{project.finalExperienceResult}</p>
+                        <p className="scroll-reveal" data-case-reveal>{project.finalExperienceResult}</p>
                     ) : null}
                 </section>
 
                 <section className="case-study-alt__section">
-                    <h2>Outcome and reflection</h2>
-                    <p>{project.outcome}</p>
+                    <h2 className="scroll-reveal" data-case-reveal>Outcome and reflection</h2>
+                    <p className="scroll-reveal" data-case-reveal>{project.outcome}</p>
                     {project.reflection ? (
-                        <p>{project.reflection}</p>
+                        <p className="scroll-reveal" data-case-reveal>{project.reflection}</p>
                     ) : null}
                 </section>
             </div>

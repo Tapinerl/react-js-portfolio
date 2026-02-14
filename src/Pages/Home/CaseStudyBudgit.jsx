@@ -1,5 +1,7 @@
+import { useRef } from "react";
 import "./CaseStudyBudgit.css";
 import { getTagToneClass } from "./caseStudyUtils";
+import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
 const getPersonaLine = (persona = {}) => {
     const personaRole = persona?.role || "";
@@ -11,12 +13,14 @@ const getPersonaLine = (persona = {}) => {
 };
 
 export default function CaseStudyBudgit({ project }) {
+    const caseStudyRef = useRef(null);
     const personaLine = getPersonaLine(project?.persona);
+    useCaseStudyScrollReveal(caseStudyRef);
 
     return (
-        <section className="case-study case-study--centered case-study--budgit">
+        <section className="case-study case-study--centered case-study--budgit" ref={caseStudyRef}>
             <div className="case-study__wrap">
-                <header className="case-study__header">
+                <header className="case-study__header scroll-reveal" data-case-reveal>
                     {project.tags?.length ? (
                         <div className="case-study__tag-row case-study__tag-row--top">
                             {project.tags.map((tag, index) => (
@@ -51,32 +55,40 @@ export default function CaseStudyBudgit({ project }) {
                         />
                     </div>
                     {project.visuals ? (
-                        <p className="case-study__note case-study__note--hero">{project.visuals}</p>
+                        <p className="case-study__note case-study__note--hero scroll-reveal" data-case-reveal>
+                            {project.visuals}
+                        </p>
                     ) : null}
                 </div>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h3>Overview</h3>
                     </div>
-                    <p>{project.overview || "Short overview of the challenge and the product context."}</p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        {project.overview || "Short overview of the challenge and the product context."}
+                    </p>
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h3>What was the problem?</h3>
                     </div>
-                    <p>{project.problem || "What was broken or missing, and who it affected."}</p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        {project.problem || "What was broken or missing, and who it affected."}
+                    </p>
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h3>Solution</h3>
                     </div>
-                    <p>{project.solution || "The approach, design decisions, and build strategy."}</p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        {project.solution || "The approach, design decisions, and build strategy."}
+                    </p>
                     {(project.researchInsight || project.keyTakeaways?.length || project.persona) ? (
                         <div className="case-study__insight">
-                            <div className="case-study__insight-text">
+                            <div className="case-study__insight-text scroll-reveal scroll-reveal--left" data-case-reveal>
                                 <p className="case-study__insight-title">Research & Insight</p>
                                 {project.researchInsight ? (
                                     <p className="case-study__insight-body">{project.researchInsight}</p>
@@ -98,7 +110,7 @@ export default function CaseStudyBudgit({ project }) {
                                 ) : null}
                             </div>
                             {project.persona ? (
-                                <div className="case-study__insight-card">
+                                <div className="case-study__insight-card scroll-reveal scroll-reveal--right" data-case-reveal>
                                     <div className="case-study__persona-card">
                                         <div className="case-study__persona-header">
                                             <div className="case-study__persona-avatar" aria-hidden="true"></div>
@@ -144,7 +156,7 @@ export default function CaseStudyBudgit({ project }) {
                         </div>
                     ) : null}
                     {project.structureInteraction ? (
-                        <div className="case-study__structure">
+                        <div className="case-study__structure scroll-reveal" data-case-reveal>
                             <p className="case-study__structure-title">Structure &amp; Interaction</p>
                             {project.structureInteractionImage?.src ? (
                                 <div className="case-study__structure-image">
@@ -190,7 +202,7 @@ export default function CaseStudyBudgit({ project }) {
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h3>Outcome</h3>
                     </div>
                     {project.outcomeImage?.src ? (
@@ -206,9 +218,11 @@ export default function CaseStudyBudgit({ project }) {
                             ) : null}
                         </figure>
                     ) : null}
-                    <p>{project.outcome || "Result, impact, and what you learned."}</p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        {project.outcome || "Result, impact, and what you learned."}
+                    </p>
                     {project.impactLearnings?.length ? (
-                        <ul className="case-study__list case-study__impact-grid">
+                        <ul className="case-study__list case-study__impact-grid scroll-reveal" data-case-reveal>
                             {project.impactLearnings.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}

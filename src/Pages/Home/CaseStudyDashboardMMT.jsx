@@ -1,10 +1,15 @@
+import { useRef } from "react";
 import "./CaseStudyDashboardMMT.css";
+import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
 export default function CaseStudyDashboardMMT({ project }) {
+    const caseStudyRef = useRef(null);
+    useCaseStudyScrollReveal(caseStudyRef);
+
     return (
-        <section className="case-study case-study--centered case-study--dashboard-mmt">
+        <section className="case-study case-study--centered case-study--dashboard-mmt" ref={caseStudyRef}>
             <div className="case-study__wrap">
-                <header className="case-study__header">
+                <header className="case-study__header scroll-reveal" data-case-reveal>
                     {project.tags?.length ? (
                         <div className="case-study__tag-row">
                             {project.tags.map((tag, index) => (
@@ -38,11 +43,11 @@ export default function CaseStudyDashboardMMT({ project }) {
                 </div>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h3>Planned Direction</h3>
                     </div>
-                    <p>{project.description}</p>
-                    <p>Will be added later.</p>
+                    <p className="scroll-reveal" data-case-reveal>{project.description}</p>
+                    <p className="scroll-reveal" data-case-reveal>Will be added later.</p>
                 </section>
             </div>
         </section>
