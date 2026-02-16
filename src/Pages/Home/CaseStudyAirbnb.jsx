@@ -21,20 +21,18 @@ export default function CaseStudyAirbnb({ project }) {
                         </div>
                     ) : null}
                     <h1 className="case-study__title">{project.title}</h1>
-                    <div className="case-study__meta-box">
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Role</span>
-                            <span className="case-study__meta-value">{project.role || "UX Researcher"}</span>
+                    <div className="case-study-alt__meta-grid">
+                        <div className="case-study-alt__meta-card">
+                            <span className="case-study-alt__meta-label">Role</span>
+                            <span className="case-study-alt__meta-value">{project.role || "UX Researcher"}</span>
                         </div>
-                        <div className="case-study__meta-divider"></div>
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Team</span>
-                            <span className="case-study__meta-value">{project.team || "Course team"}</span>
+                        <div className="case-study-alt__meta-card">
+                            <span className="case-study-alt__meta-label">Team</span>
+                            <span className="case-study-alt__meta-value">{project.team || "Course team"}</span>
                         </div>
-                        <div className="case-study__meta-divider"></div>
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Timeline</span>
-                            <span className="case-study__meta-value">{project.timeline || "Course project"}</span>
+                        <div className="case-study-alt__meta-card">
+                            <span className="case-study-alt__meta-label">Timeline</span>
+                            <span className="case-study-alt__meta-value">{project.timeline || "Course project"}</span>
                         </div>
                     </div>
                 </header>

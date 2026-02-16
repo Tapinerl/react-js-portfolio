@@ -28,10 +28,10 @@ export default function AboutPage() {
         <p className="about-page__eyebrow">About</p>
         <h1 className="about-page__title">Elias Nikkinen</h1>
         <p className="about-page__lead">
-          I am a Computer Engineering student at Tampere University, currently
-          finishing my Bachelor&apos;s degree and aiming to graduate this spring.
+          I am an Information Technology student at Tampere University, currently
+          finishing my Bachelor's degree (Tech) and aiming to graduate this spring.
           I have completed my minor studies in Human-Technology Interaction
-          (HTI), and in 2026 I will continue my studies with HTI as my major.
+          (HTI/HCI), and in 2026 I will continue my studies with HTI as my major.
         </p>
 
         <div className="about-page__intro-grid">
@@ -77,12 +77,12 @@ export default function AboutPage() {
           <h2>Studies</h2>
         </div>
         <article className="about-page__study-card">
-          <h3>Bachelor of Science (Tech) - Computer Engineering</h3>
+          <h3>Bachelor of Science (Tech) - Information Technology</h3>
           <p>Tampere University</p>
           <ul className="about-page__list">
             <li>Major: Software Engineering</li>
             <li>Minor: Human-Technology Interaction (HTI)</li>
-            <li>HTI as major starting in 2026</li>
+            <li>HTI as major in Master's studies starting in 2026</li>
           </ul>
         </article>
       </section>
@@ -122,21 +122,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-page__section about-page__section--closing">
-        <div className="about-page__closing-card">
-          <h2>What I bring</h2>
-          <p>
-            I combine software engineering foundations with a strong user-focused
-            mindset. My goal is to build digital products that are technically
-            solid and genuinely usable for real people.
-          </p>
-          <p>
-            I am motivated by collaboration across design and development, and I
-            keep learning new tools and approaches that improve both product
-            quality and user experience.
-          </p>
-        </div>
-      </section>
+      
     </main>
   );
 }

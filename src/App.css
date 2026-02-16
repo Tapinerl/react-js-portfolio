@@ -533,16 +533,20 @@ h3 {
 
 .hero--btn--download {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     height: 3rem;
     padding: 0 2rem;
     border-radius: 1.5rem;
-    background: #2f2f2f;
+    background: transparent;
     background-size: 400%;
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.22);
     cursor: pointer;
     font-family: "Work Sans", sans-serif;
+    text-decoration: none;
 }
 
 .hero--btn--download:hover::before {
@@ -1073,6 +1077,9 @@ h3 {
     display: block;
     width: 100%;
 }
+.portfolio--card-link:visited {
+    color: inherit;
+}
 .portfolio--section--img {
     border-radius: 24px;
     width: 100%;
@@ -1125,6 +1132,10 @@ h3 {
 }
 .portfolio--desc {
     min-height: 72px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
 }
 .portfolio--section--title {
     color: var(--white);
@@ -1183,6 +1194,18 @@ h3 {
 @media screen and (max-width: 900px) {
     .portfolio--section--container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio--section {
+        padding: 96px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio--section {
+        padding: 88px 16px;
     }
 }
 

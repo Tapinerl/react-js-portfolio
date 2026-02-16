@@ -35,18 +35,66 @@
 .case-study--freepark .case-study__tag-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
 .case-study--freepark .case-study__tag {
-    border: 1px solid rgba(101, 188, 150, 0.5);
-    border-radius: 999px;
-    padding: 4px 12px;
-    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #d8f5e8;
-    background: rgba(101, 188, 150, 0.08);
+    min-height: 26px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(101, 188, 150, 0.6);
+    color: #cfe8ff;
+    background: transparent;
+}
+
+.case-study--freepark .tag-tone--default {
+    --tag-tone-color: rgba(154, 230, 192, 0.9);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--freepark .tag-tone--green {
+    --tag-tone-color: rgba(154, 230, 192, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--freepark .tag-tone--blue {
+    --tag-tone-color: rgba(182, 224, 255, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--freepark .tag-tone--gray {
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--freepark .tag-tone--yellow {
+    --tag-tone-color: rgba(255, 231, 153, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
+}
+
+.case-study--freepark .tag-tone--red {
+    --tag-tone-color: rgba(255, 179, 179, 0.92);
+    border-color: var(--tag-tone-color);
+    color: var(--tag-tone-color);
+    background: transparent;
 }
 
 .case-study--freepark .case-study__meta-box {

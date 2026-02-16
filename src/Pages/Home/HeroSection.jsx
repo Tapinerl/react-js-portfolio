@@ -48,9 +48,13 @@ export default function HeroSection() {
                     >
                         <span>Contact Me</span>
                     </button>
-                    <button className="hero--btn hero--btn--download">
+                    <a
+                        className="hero--btn hero--btn--download"
+                        href="/Elias-CV-2026.pdf"
+                        download="Elias-CV-2026.pdf"
+                    >
                         <span className="hero--btn--download__content">Download CV (PDF)</span>
-                    </button>
+                    </a>
                     <div className="hero--social">
                         <a
                             className="hero--social__link"

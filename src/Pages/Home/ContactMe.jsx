@@ -26,7 +26,7 @@ export default function ContactMe() {
                             </div>
                             <div className="contact--text">
                                 <h3>Email</h3>
-                                <p>elliotnike@gmail.com</p>
+                                <p>eliasnikkinen.t@gmail.com</p>
                             </div>
                         </div>
                         <div className="contact--info scroll-reveal scroll-reveal--left" data-animate-on-scroll style={{ "--reveal-delay": "0.2s" }}>

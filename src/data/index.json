@@ -31,7 +31,7 @@
             "src": "/img/budgit-hero.png",
             "caseStudySrc": "/img/Bud-preview.png",
             "description": "Student-centered budgeting concept focused on clear overviews, simple language, and financial planning.",
-            "title": "budgIT – Student Budgeting App",
+            "title": "budgIT",
             
             "link": "view case study",
             "tags": ["UX/UI", "Case Study"],
@@ -182,9 +182,9 @@
             "description": "Usability evaluation of Airbnb's desktop experience focused on search, filters, navigation, and task success.",
             "link": "view case study",
             "tags": ["Usability", "Case Study"],
-            "role": "UX Researcher (Expert review, lab observation, analysis)",
-            "team": "Course team",
-            "timeline": "Evaluation Methods – Usability and User Experience",
+            "role": "UX Researcher",
+            "team": "Course team of 5 members",
+            "timeline": "Jan – March 2025",
             "tools": "Expert Review, Usability Testing, Think-aloud, Task Scenarios, Post-test Interview",
             "overview": "In this course project, we evaluated the usability of the Airbnb desktop website using established UX research methods. The goal was to identify usability issues affecting search, filtering, navigation, and overall user experience, and to assess how efficiently users can complete common accommodation-related tasks. The project combined individual expert review work with a moderated usability test conducted in a university usability lab.",
             "problem": "Airbnb supports complex, multi-step search and booking behaviors, but desktop users can encounter friction when filtering, navigating, or interpreting system feedback. We needed to uncover the most impactful usability issues and understand where task flow breaks down.",
@@ -211,7 +211,7 @@
         {
             "id": "5",
             "src": "/img/Freepark-preview.png",
-            "title": "FreePark - Helsinki",
+            "title": "FreePark Helsinki",
             "description": "Personal UX/UI project exploring parking discovery and wayfinding. Work in progress.",
             "link": "view concept",
             "tags": ["UX/UI", "Programming", "WIP"]

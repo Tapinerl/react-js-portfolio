@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import "./CaseStudyDashboardMMT.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
+import { getTagToneClass } from "./caseStudyUtils";
 
 export default function CaseStudyDashboardMMT({ project }) {
     const caseStudyRef = useRef(null);
@@ -13,7 +14,7 @@ export default function CaseStudyDashboardMMT({ project }) {
                     {project.tags?.length ? (
                         <div className="case-study__tag-row">
                             {project.tags.map((tag, index) => (
-                                <span key={index} className="case-study__tag">
+                                <span key={index} className={`case-study__tag ${getTagToneClass(tag)}`}>
                                     {tag}
                                 </span>
                             ))}
