@@ -12,7 +12,7 @@
 }
 
 .case-study--dashboard-mmt .case-study__wrap {
-    max-width: 960px;
+    max-width: var(--content-max-width);
     margin: 0 auto;
     display: grid;
     gap: 26px;

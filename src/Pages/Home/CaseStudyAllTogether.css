@@ -106,7 +106,7 @@
 
 .case-study--alltogether .case-study-alt__wrap {
     width: 100%;
-    max-width: 1020px;
+    max-width: var(--content-max-width);
     margin: 0 auto;
     display: flex;
     flex-direction: column;

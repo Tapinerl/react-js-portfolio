@@ -1,4 +1,11 @@
+import { useRef } from "react";
+import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
+import Footer from "./Footer";
+
 export default function AboutPage() {
+  const aboutPageRef = useRef(null);
+  useCaseStudyScrollReveal(aboutPageRef);
+
   const designResearch = [
     "Figma (wireframing, prototyping, interaction design)",
     "User interviews and usability testing",
@@ -23,62 +30,66 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="about-page">
+    <main className="about-page" ref={aboutPageRef}>
       <section className="about-page__hero">
-        <p className="about-page__eyebrow">About</p>
-        <h1 className="about-page__title">Elias Nikkinen</h1>
-        <p className="about-page__lead">
-          I am an Information Technology student at Tampere University, currently
-          finishing my Bachelor's degree (Tech) and aiming to graduate this spring.
-          I have completed my minor studies in Human-Technology Interaction
-          (HTI/HCI), and in 2026 I will continue my studies with HTI as my major.
-        </p>
-
-        <div className="about-page__intro-grid">
-          <article className="about-page__panel">
-            <h2>Background</h2>
-            <p>
-              My background sits at the intersection of engineering and
-              human-centered design. I started in Software Engineering, and
-              through HTI studies I discovered a strong interest in UX/UI design
-              and research.
-            </p>
-            <p>
-              Understanding how people interact with technology and designing
-              systems that feel clear, accessible, and intuitive is what
-              motivates my work.
-            </p>
-          </article>
-
-          <article className="about-page__panel">
-            <h2>How I work</h2>
-            <p>
-              My design process is iterative by nature. I start from research
-              and real user needs, explore ideas through rapid iterations, and
-              refine solutions based on feedback.
-            </p>
-            <p>
-              I enjoy working through complexity and ambiguity, improving
-              designs step by step instead of aiming for perfection on the first
-              attempt.
-            </p>
-          </article>
+        <h1
+          className="about-page__title scroll-reveal scroll-reveal--up"
+          data-case-reveal
+        >
+          About Me
+        </h1>
+        <div
+          className="about-page__lead scroll-reveal"
+          data-case-reveal
+          style={{ "--reveal-delay": "0.08s" }}
+        >
+          <p>
+            Hey there, I'm Elias - a UX/UI Designer and Software
+            Engineering student based in Finland. I'm passionate about
+            creating thoughtful, human-centered digital experiences that not
+            only look good, but genuinely make sense to the people using them.
+          </p>
+          <p>
+            I'm graduating with a Bachelor of Science (Tech) in Information Technology 
+            from Tampere University in Spring 2026, majoring in
+            Software Engineering with a minor in Human-Technology Interaction
+            (HTI). After that, I'll continue straight into the Master's
+            program in HTI to deepen my focus on user-centered design and
+            research.
+          </p>
+          <p>
+            I've worked across the full design process; from research and
+            personas to wireframes, prototypes, and front-end implementation.
+            My approach is iterative and practical: test early, refine often,
+            and design solutions that are both intuitive and technically
+            realistic.
+          </p>
+          <p>
+            In my free time, I enjoy building PCs, cycling, going to the gym, and exploring new technologies -
+            especially the possibilities of AI. Most evenings, you'll
+            also find our Corgi Into nearby, making sure I don't work alone.
+          </p>
+          <p>
+            My goal is to grow into a UX specialist who designs experiences
+            that feel effortless, accessible, and genuinely valuable.
+          </p>
         </div>
-
-        <p className="about-page__focus">
-          I am especially interested in usability, accessibility, and
-          interaction design. I also have experience with AI-powered concepts
-          from both technical and UX perspectives.
-        </p>
       </section>
 
       <section className="about-page__section">
-        <div className="about-page__section-head">
-          <h2>Studies</h2>
+        <div
+          className="about-page__section-head about-page__section-head--education scroll-reveal"
+          data-case-reveal
+        >
+          <h2>Education</h2>
         </div>
-        <article className="about-page__study-card">
-          <h3>Bachelor of Science (Tech) - Information Technology</h3>
-          <p>Tampere University</p>
+        <article
+          className="about-page__study-card scroll-reveal"
+          data-case-reveal
+          style={{ "--reveal-delay": "0.08s" }}
+        >
+          <h3>Tampere University</h3>
+          <h4>Bachelor's of science in computing and electrical engineering </h4>
           <ul className="about-page__list">
             <li>Major: Software Engineering</li>
             <li>Minor: Human-Technology Interaction (HTI)</li>
@@ -88,12 +99,19 @@ export default function AboutPage() {
       </section>
 
       <section className="about-page__section">
-        <div className="about-page__section-head">
+        <div
+          className="about-page__section-head about-page__section-head--technologies scroll-reveal"
+          data-case-reveal
+        >
           <h2>Technologies and methods</h2>
         </div>
 
         <div className="about-page__method-grid">
-          <article className="about-page__method-card">
+          <article
+            className="about-page__method-card scroll-reveal"
+            data-case-reveal
+            style={{ "--reveal-delay": "0.06s" }}
+          >
             <h3>Design and research</h3>
             <ul className="about-page__list">
               {designResearch.map((item) => (
@@ -102,7 +120,11 @@ export default function AboutPage() {
             </ul>
           </article>
 
-          <article className="about-page__method-card">
+          <article
+            className="about-page__method-card scroll-reveal"
+            data-case-reveal
+            style={{ "--reveal-delay": "0.14s" }}
+          >
             <h3>Development</h3>
             <ul className="about-page__list">
               {development.map((item) => (
@@ -111,7 +133,11 @@ export default function AboutPage() {
             </ul>
           </article>
 
-          <article className="about-page__method-card">
+          <article
+            className="about-page__method-card scroll-reveal"
+            data-case-reveal
+            style={{ "--reveal-delay": "0.22s" }}
+          >
             <h3>Other</h3>
             <ul className="about-page__list">
               {other.map((item) => (
@@ -122,8 +148,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
+      <Footer />
     </main>
   );
 }
-

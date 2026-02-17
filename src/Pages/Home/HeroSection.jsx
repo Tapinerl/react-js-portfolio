@@ -1,4 +1,31 @@
+import { useEffect, useRef, useState } from "react";
+
 export default function HeroSection() {
+    const [showScrollHint, setShowScrollHint] = useState(true);
+    const scrollHintTimerRef = useRef(null);
+
+    useEffect(() => {
+        const updateScrollHintVisibility = () => {
+            const shouldShow = window.scrollY <= 8;
+            if (scrollHintTimerRef.current) {
+                window.clearTimeout(scrollHintTimerRef.current);
+            }
+            scrollHintTimerRef.current = window.setTimeout(() => {
+                setShowScrollHint((previous) => (previous === shouldShow ? previous : shouldShow));
+            }, 150);
+        };
+
+        updateScrollHintVisibility();
+        window.addEventListener("scroll", updateScrollHintVisibility, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", updateScrollHintVisibility);
+            if (scrollHintTimerRef.current) {
+                window.clearTimeout(scrollHintTimerRef.current);
+            }
+        };
+    }, []);
+
     const scrollToPortfolio = (behavior = "smooth") => {
         const target = document.getElementById("MyPortfolio");
         if (target) {
@@ -88,12 +115,10 @@ export default function HeroSection() {
                 </div>
             </div>
             <button
-                className="hero--scroll scroll-reveal"
+                className={`hero--scroll ${showScrollHint ? "is-visible" : "is-hidden"}`}
                 type="button"
                 onClick={() => scrollToPortfolio("smooth")}
                 aria-label="Scroll down for projects"
-                data-animate-on-scroll
-                style={{ "--reveal-delay": "0.34s" }}
             >
                 <span className="hero--scroll__text">Scroll Down</span>
                 <span className="hero--scroll__arrow" aria-hidden="true"></span>
