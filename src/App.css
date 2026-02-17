@@ -30,6 +30,7 @@ p {
     --white: #ffffff;
     --hero-noise-opacity: 0.9;
     --navbar-height: 72px;
+    --safe-area-top: env(safe-area-inset-top, 0px);
     --content-max-width: 1120px;
     --page-gutter-desktop: 40px;
     --page-gutter-tablet: 18px;
@@ -112,7 +113,7 @@ h3 {
 /* NAvbar style start*/
 .navbar {
     --navbar-glass-bleed: 96px;
-    padding: 0;
+    padding: var(--safe-area-top) 0 0;
     background: transparent;
     box-shadow: none;
     position: fixed;
@@ -142,7 +143,7 @@ h3 {
 .navbar__inner::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: calc(var(--safe-area-top) * -1);
     bottom: 0;
     left: calc(var(--navbar-glass-bleed) * -1);
     right: calc(var(--navbar-glass-bleed) * -1);
