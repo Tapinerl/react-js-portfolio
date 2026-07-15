@@ -45,7 +45,7 @@ export default function CaseStudyDashboardMMT({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Planned Direction</h3>
+                        <h2>Planned Direction</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>{project.description}</p>
                     <p className="scroll-reveal" data-case-reveal>Will be added later.</p>

@@ -63,7 +63,7 @@ export default function CaseStudyBudgit({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Overview</h3>
+                        <h2>Overview</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>
                         {project.overview || "Short overview of the challenge and the product context."}
@@ -72,7 +72,7 @@ export default function CaseStudyBudgit({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>What was the problem?</h3>
+                        <h2>What was the problem?</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>
                         {project.problem || "What was broken or missing, and who it affected."}
@@ -81,7 +81,7 @@ export default function CaseStudyBudgit({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Solution</h3>
+                        <h2>Solution</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>
                         {project.solution || "The approach, design decisions, and build strategy."}
@@ -172,9 +172,9 @@ export default function CaseStudyBudgit({ project }) {
                             <p className="case-study__structure-text">{project.structureInteraction}</p>
                             {project.structureToVisualText ? (
                                 <div className="case-study__structure-followup">
-                                    <h4 className="case-study__structure-followup-title">
+                                    <h3 className="case-study__structure-followup-title">
                                         {project.structureToVisualTitle || "From Structure to Visual Design"}
-                                    </h4>
+                                    </h3>
                                     <p className="case-study__structure-text case-study__structure-text--followup">
                                         {project.structureToVisualText}
                                     </p>
@@ -203,7 +203,7 @@ export default function CaseStudyBudgit({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Outcome</h3>
+                        <h2>Outcome</h2>
                     </div>
                     {project.outcomeImage?.src ? (
                         <figure className="case-study__outcome-media">

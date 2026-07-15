@@ -48,28 +48,28 @@ export default function CaseStudyAirbnb({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Overview</h3>
+                        <h2>Overview</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>{project.overview}</p>
                 </section>
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>What was the problem?</h3>
+                        <h2>What was the problem?</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>{project.problem}</p>
                 </section>
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Approach</h3>
+                        <h2>Approach</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>{project.solution}</p>
                 </section>
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Outcome</h3>
+                        <h2>Outcome</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>{project.outcome}</p>
                     {project.impactLearnings?.length ? (

@@ -20,7 +20,7 @@ export default function CaseStudy() {
         return (
             <>
                 <section className="case-study case-study--not-found">
-                    <h2>Case study not found</h2>
+                    <h1>Case study not found</h1>
                     <Link className="case-study__back" to="/">Back to Home</Link>
                 </section>
                 <Footer />

@@ -45,7 +45,7 @@ export default function CaseStudyFreepark({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Concept Snapshot</h3>
+                        <h2>Concept Snapshot</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>{project.description}</p>
                     <p className="scroll-reveal" data-case-reveal>This page will expand once the design and development phases are documented.</p>
