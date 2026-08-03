@@ -294,38 +294,6 @@ h3 {
     opacity: 0.72;
 }
 
-.navbar--socials {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.navbar--social-link {
-    display: inline-flex;
-    width: 24px;
-    height: 24px;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-accent);
-    border-radius: 999px;
-    text-decoration: none;
-    transition: color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.navbar--social-link svg {
-    width: 19px;
-    height: 19px;
-    display: block;
-}
-
-.navbar--social-link:hover,
-.navbar--social-link:focus-visible {
-    color: var(--color-text);
-    transform: translateY(-1px);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(168, 255, 157, 0.22);
-}
-
 .navbar--name--jumper {
     display: inline-flex;
 }
@@ -487,22 +455,6 @@ h3 {
         color: var(--color-accent);
     }
 
-    .navbar--socials {
-        gap: 18px;
-        padding-top: 4px;
-        justify-content: center;
-    }
-
-    .navbar--social-link {
-        width: 42px;
-        height: 42px;
-        border: 1px solid rgba(168, 255, 157, 0.45);
-    }
-
-    .navbar--social-link svg {
-        width: 22px;
-        height: 22px;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -539,6 +491,23 @@ h3 {
     justify-content: center;
     text-align: left;
 }
+.hero--section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: clamp(150px, 22vh, 260px);
+    background: linear-gradient(
+        180deg,
+        rgba(1, 9, 45, 0) 0%,
+        rgba(1, 9, 45, 0.34) 24%,
+        rgba(0, 0, 0, 0.72) 68%,
+        var(--color-section-dark) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
 .hero--beams {
     position: absolute;
     inset: 0;
@@ -563,7 +532,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: clamp(26px, 4vh, 44px);
+    gap: clamp(24px, 4vh, 42px);
     font-family: var(--font-body);
     width: fit-content;
     max-width: 100%;
@@ -587,6 +556,13 @@ h3 {
 .hero--section--title span:nth-child(2) {
     padding-left: 0.559em;
 }
+.hero--lower {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(20px, 3vw, 44px);
+    width: 100%;
+}
 .hero--section--description {
     color: var(--color-text);
     font-size: clamp(0.95rem, 1.3vw, 1.08rem);
@@ -595,8 +571,11 @@ h3 {
     width: 100%;
     max-width: none;
     opacity: 0.92;
-    text-align: center;
-    white-space: nowrap;
+    text-align: left;
+}
+.hero--section--description span {
+    display: block;
+    overflow-wrap: anywhere;
 }
 .hero--actions {
     display: inline-flex;
@@ -604,8 +583,41 @@ h3 {
     gap: 14px;
     flex-wrap: wrap;
     justify-content: flex-end;
-    margin-top: clamp(28px, 6vh, 50px);
-    width: 100%;
+    margin-top: 0;
+    width: auto;
+    min-width: 0;
+}
+.hero--socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+.hero--social-link {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    border: 1px solid rgba(168, 255, 157, 0.64);
+    border-radius: 999px;
+    text-decoration: none;
+    background: rgba(1, 9, 45, 0.35);
+    transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.hero--social-link svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+}
+.hero--social-link:hover,
+.hero--social-link:focus-visible {
+    color: var(--color-background);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(168, 255, 157, 0.22);
 }
 .hero--btn {
     border-radius: 999px;
@@ -800,12 +812,19 @@ h3 {
     .contact--section--heading {
         font-size: clamp(3.5rem, 10.8vw, 6.5rem);
     }
+    .hero--lower {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 26px;
+    }
     .hero--section--description {
         width: 100%;
         white-space: normal;
+        text-align: center;
     }
     .hero--actions {
         justify-content: center;
+        width: 100%;
     }
 }
 
@@ -860,6 +879,10 @@ h3 {
     }
 
     .hero--actions {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero--socials {
         width: 100%;
         justify-content: center;
     }
@@ -1224,7 +1247,9 @@ h3 {
     height: auto;
     display: block;
     border-radius: 24px;
-    transition: border-radius 0.35s ease, filter 0.35s ease;
+    transition: border-radius 260ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 260ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .portfolio--section--card {
     display: flex;
@@ -1237,16 +1262,15 @@ h3 {
     cursor: pointer;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    transition: box-shadow 0.35s ease;
 }
 .portfolio--section--card.scroll-reveal {
-    --reveal-duration: 600ms;
+    --reveal-duration: 520ms;
     --reveal-transform-hidden: translate3d(0, 28px, 0);
     --reveal-transform-visible: translate3d(0, 0, 0);
     backface-visibility: hidden;
     transition: opacity var(--reveal-duration, 1120ms) cubic-bezier(0.22, 1, 0.36, 1),
         transform var(--reveal-duration, 1120ms) cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.35s ease;
+        box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1258,41 +1282,47 @@ h3 {
 
 .portfolio--section--card--content {
     display: flex;
-    padding: 12px 6px 6px;
+    padding: 10px 6px 4px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1px;
+    gap: 0;
     align-self: stretch;
 }
 .portfolio--desc {
-    min-height: 72px;
-    color: var(--white);
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    color: rgba(226, 226, 226, 0.9);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
 .portfolio--section--title {
     color: var(--white);
+    font-size: clamp(1.55rem, 2.25vw, 2.15rem);
+    line-height: 1.18;
     margin-bottom: 6px;
 }
 /*tÃ¤Ã¤ on tolle github linkille tos kortis*/
-.portfolio--card-link:hover .portfolio--section--card {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
-}
-.portfolio--card-link:hover .portfolio--section--img img {
+.portfolio--card-link:hover .portfolio--section--img img,
+.portfolio--card-link:focus-visible .portfolio--section--img img {
     filter: saturate(1.05);
     border-radius: 18px;
+    transform: translateY(-4px) scale(1.012);
 }
-
+.portfolio--card-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 8px;
+    border-radius: 24px;
+}
 .portfolio--tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding-top: 8px;
+    padding-top: 4px;
 }
 .portfolio--tag {
-    --tag-tone-color: #cfe8ff;
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1309,22 +1339,22 @@ h3 {
     background: transparent;
 }
 .portfolio--tag.tag-tone--default {
-    --tag-tone-color: rgba(154, 230, 192, 0.9);
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
 }
 .portfolio--tag.tag-tone--green {
-    --tag-tone-color: rgba(154, 230, 192, 0.92);
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
 }
 .portfolio--tag.tag-tone--blue {
-    --tag-tone-color: rgba(182, 224, 255, 0.92);
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
 }
 .portfolio--tag.tag-tone--gray {
     --tag-tone-color: rgba(226, 226, 226, 0.9);
 }
 .portfolio--tag.tag-tone--yellow {
-    --tag-tone-color: rgba(255, 231, 153, 0.92);
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
 }
 .portfolio--tag.tag-tone--red {
-    --tag-tone-color: rgba(255, 179, 179, 0.92);
+    --tag-tone-color: rgba(226, 226, 226, 0.9);
 }
 
 @media screen and (max-width: 900px) {
@@ -1335,13 +1365,13 @@ h3 {
 
 @media screen and (max-width: 768px) {
     .portfolio--section {
-        padding: 96px 20px;
+        padding: 96px 34px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .portfolio--section {
-        padding: 88px 16px;
+        padding: 88px 26px;
     }
 }
 

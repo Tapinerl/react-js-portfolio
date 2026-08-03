@@ -30,7 +30,7 @@
             "id": "1",
             "src": "/img/budgit-hero.png",
             "caseStudySrc": "/img/Bud-preview.png",
-            "description": "Student-centered budgeting concept focused on clear overviews, simple language, and financial planning.",
+            "description": "Student-centered budgeting concept.",
             "title": "budgIT",
             
             "link": "view case study",
@@ -126,7 +126,7 @@
             "src": "/img/alltogether-hero.png",
             "caseStudySrc": "/img/alltogether-hero.png",
             "title": "AllTogether",
-            "description": "A single mobile experience that combines workouts, sleep, recovery, and nutrition into a clear daily overview.",
+            "description": "workouts, sleep, recovery, and nutrition in one mobile experience.",
             "link": "view case study",
             "tags": ["UX/UI", "Case Study"],
             "caseStudyType": "alltogether",
@@ -178,8 +178,8 @@
         {
             "id": "6",
             "src": "/img/mmt-preview.png",
-            "title": "Dashboard - Metrics Monitoring Tool",
-            "description": "Final software engineering course project where I worked as a junior developer and designed the dashboard.",
+            "title": "Dashboard - MMT",
+            "description": "Metrics Monitoring Tool web dashboard for a client",
             "link": "view case study",
             "tags": ["UI", "Programming"]
         },
@@ -187,7 +187,7 @@
             "id": "5",
             "src": "/img/Freepark-preview.png",
             "title": "FreePark Helsinki",
-            "description": "Personal UX/UI project exploring parking discovery and wayfinding. Work in progress.",
+            "description": "Free parking spots for everyone in Helsinki.",
             "link": "view concept",
             "tags": ["UX/UI", "Programming", "WIP"]
         }

@@ -21,6 +21,7 @@ export default function CaseStudyBudgit({ project }) {
         <section className="case-study case-study--centered case-study--budgit" ref={caseStudyRef}>
             <div className="case-study__wrap">
                 <header className="case-study__header scroll-reveal" data-case-reveal>
+                    <h1 className="case-study__title">{project.title}</h1>
                     {project.tags?.length ? (
                         <div className="case-study__tag-row case-study__tag-row--top">
                             {project.tags.map((tag, index) => (
@@ -30,7 +31,6 @@ export default function CaseStudyBudgit({ project }) {
                             ))}
                         </div>
                     ) : null}
-                    <h1 className="case-study__title">{project.title}</h1>
                 </header>
 
                 <div className="case-study__hero">
