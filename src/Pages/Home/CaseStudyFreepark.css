@@ -1,9 +1,7 @@
 .case-study.case-study--freepark {
     padding: 132px 40px 96px;
     color: #ffffff;
-    background:
-        radial-gradient(120% 120% at 0% 0%, rgba(101, 188, 150, 0.2), rgba(0, 0, 0, 0) 52%),
-        #000000;
+    background: var(--page-start-background);
 }
 
 .case-study--freepark [data-case-reveal].scroll-reveal {
@@ -27,6 +25,8 @@
 
 .case-study--freepark .case-study__title {
     margin: 0;
+    color: var(--color-accent);
+    font-family: var(--font-display);
     font-size: 54px;
     line-height: 1.08;
     text-align: left;
@@ -97,43 +97,6 @@
     background: transparent;
 }
 
-.case-study--freepark .case-study__meta-box {
-    display: flex;
-    gap: 10px;
-    padding: 0;
-    border: none;
-    background: transparent;
-    flex-wrap: wrap;
-}
-
-.case-study--freepark .case-study__meta-item {
-    min-width: 160px;
-    flex: 1;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.case-study--freepark .case-study__meta-divider {
-    display: none;
-}
-
-.case-study--freepark .case-study__meta-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.58);
-}
-
-.case-study--freepark .case-study__meta-value {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
-}
-
 .case-study--freepark .case-study__hero-frame {
     border-radius: 14px;
     overflow: hidden;
@@ -155,13 +118,15 @@
 
 .case-study--freepark .case-study__section h3 {
     margin: 0;
+    color: var(--color-accent);
+    font-family: var(--font-display);
     font-size: 22px;
 }
 
 .case-study--freepark .case-study__section p {
     margin: 0;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 2.1;
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -174,7 +139,4 @@
         font-size: 40px;
     }
 
-    .case-study--freepark .case-study__meta-box {
-        flex-direction: column;
-    }
 }

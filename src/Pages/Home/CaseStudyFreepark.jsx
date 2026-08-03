@@ -21,20 +21,6 @@ export default function CaseStudyFreepark({ project }) {
                         </div>
                     ) : null}
                     <h1 className="case-study__title">{project.title}</h1>
-                    <div className="case-study__meta-box">
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Status</span>
-                            <span className="case-study__meta-value">Work in progress</span>
-                        </div>
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Type</span>
-                            <span className="case-study__meta-value">Personal project</span>
-                        </div>
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Location</span>
-                            <span className="case-study__meta-value">Helsinki</span>
-                        </div>
-                    </div>
                 </header>
 
                 <div className="case-study__hero">

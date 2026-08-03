@@ -21,20 +21,9 @@ export default function CaseStudyDashboardMMT({ project }) {
                         </div>
                     ) : null}
                     <h1 className="case-study__title">{project.title}</h1>
-                    <div className="case-study__meta-box">
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Status</span>
-                            <span className="case-study__meta-value">Not started</span>
-                        </div>
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Type</span>
-                            <span className="case-study__meta-value">Course project</span>
-                        </div>
-                        <div className="case-study__meta-item">
-                            <span className="case-study__meta-label">Focus</span>
-                            <span className="case-study__meta-value">Dashboard and metrics UX</span>
-                        </div>
-                    </div>
+                    <p className="case-study__subtitle">
+                        Software Engineering Project · UX/UI Design &amp; Development
+                    </p>
                 </header>
 
                 <div className="case-study__hero">
@@ -45,10 +34,43 @@ export default function CaseStudyDashboardMMT({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>Planned Direction</h2>
+                        <h3>Overview</h3>
                     </div>
-                    <p className="scroll-reveal" data-case-reveal>{project.description}</p>
-                    <p className="scroll-reveal" data-case-reveal>Will be added later.</p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        The Multi Metrics Monitoring Tool, or MMT, was developed for Pekka Mäkiaho’s
+                        doctoral research project. The goal was to create a dashboard for presenting
+                        and monitoring several project-related metrics in one clear and accessible view.
+                    </p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        I worked in a seven-person Agile development team as a junior developer and
+                        UX/UI designer. My main responsibility was designing the dashboard and helping
+                        translate the client’s requirements into practical interface solutions. I
+                        created wireframes and worked on front-end features, including dashboard widgets
+                        for used hours, events, participation, and project progress.
+                    </p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        One of the main challenges was communication. The clients were often busy, so
+                        feedback and requirement clarification were not always immediately available. We
+                        handled this by documenting open questions, making reasonable assumptions based
+                        on the available information, and reviewing our solutions with the client
+                        whenever they were available. Within the team, we used regular meetings, GitLab
+                        issues, and iterative development to keep the project moving forward.
+                    </p>
+                    <p className="scroll-reveal" data-case-reveal>
+                        The project strengthened my understanding of working with real stakeholders,
+                        designing within technical constraints, and collaborating in a larger software
+                        team. At the final project gala, our team received a shared second-place ranking
+                        in the audience evaluation.
+                    </p>
+                    <a
+                        className="case-study__external-link scroll-reveal"
+                        data-case-reveal
+                        href="https://metricsmonitoring.rd.tuni.fi/projects/about"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit the MMT project page →
+                    </a>
                 </section>
             </div>
         </section>

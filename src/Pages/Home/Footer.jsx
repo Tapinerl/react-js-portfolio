@@ -87,7 +87,7 @@ export default function Footer() {
             className="footer__social-link"
             href="https://www.linkedin.com/in/elias-nikkinen"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
@@ -95,7 +95,7 @@ export default function Footer() {
             className="footer__social-link"
             href="https://github.com/Tapinerl"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Github
           </a>

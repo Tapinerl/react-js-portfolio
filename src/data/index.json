@@ -176,31 +176,6 @@
             ]
         },
         {
-            "id": "3",
-            "src": "/img/abnb-usa.png",
-            "title": "Airbnb - Usability study",
-            "description": "Usability evaluation of Airbnb's desktop experience focused on search, filters, navigation, and task success.",
-            "link": "view case study",
-            "tags": ["Usability", "Case Study"],
-            "role": "UX Researcher",
-            "team": "Course team of 5 members",
-            "timeline": "Jan – March 2025",
-            "tools": "Expert Review, Usability Testing, Think-aloud, Task Scenarios, Post-test Interview",
-            "overview": "In this course project, we evaluated the usability of the Airbnb desktop website using established UX research methods. The goal was to identify usability issues affecting search, filtering, navigation, and overall user experience, and to assess how efficiently users can complete common accommodation-related tasks. The project combined individual expert review work with a moderated usability test conducted in a university usability lab.",
-            "problem": "Airbnb supports complex, multi-step search and booking behaviors, but desktop users can encounter friction when filtering, navigating, or interpreting system feedback. We needed to uncover the most impactful usability issues and understand where task flow breaks down.",
-            "solution": "We combined individual expert reviews with a moderated usability test in the university lab. My work included solo expert reviews, observing the lab test, analyzing the think-aloud video, and helping synthesize findings into severity-rated issues. Methods included task-based testing, observation and video analysis, post-test interviews and questionnaires, and severity analysis based on frequency and impact.",
-            "outcome": "Key focus areas included searching with constraints, modifying criteria, using and clearing filters, interpreting reviews and ratings, and moving between list and map views. We found poor discoverability of sorting and filtering, inconsistent filter behavior across views, unclear system feedback when filters were applied or removed, and user uncertainty about navigation state. A recurring insight was that users expected persistence and consistency in filters and became confused when the interface did not match those expectations.",
-            "impactLearnings": [
-                "Apply UX research methods in a structured, academic setting",
-                "Conduct independent expert evaluations of complex digital products",
-                "Observe and analyze real user behavior objectively",
-                "Work with qualitative data such as think-aloud protocols and video recordings",
-                "Collaborate in a research team while maintaining clear individual responsibility",
-                "Translate observations into concrete usability insights"
-            ],
-            "reflection": "Working as an observer and analyst strengthened my understanding of how small interaction design decisions can significantly affect user confidence and task efficiency. The combination of expert review and usability testing highlighted the importance of validating assumptions against real user behavior."
-        },
-        {
             "id": "6",
             "src": "/img/mmt-preview.png",
             "title": "Dashboard - Metrics Monitoring Tool",

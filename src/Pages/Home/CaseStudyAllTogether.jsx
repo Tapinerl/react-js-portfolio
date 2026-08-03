@@ -25,20 +25,6 @@ export default function CaseStudyAllTogether({ project }) {
                     ) : null}
                     <h1 className="case-study-alt__title">{project.title}</h1>
                     <p className="case-study-alt__subtitle">{project.description}</p>
-                    <div className="case-study-alt__meta-grid">
-                        <div className="case-study-alt__meta-card">
-                            <span className="case-study-alt__meta-label">Role</span>
-                            <span className="case-study-alt__meta-value">{project.role || "UX/UI Designer"}</span>
-                        </div>
-                        <div className="case-study-alt__meta-card">
-                            <span className="case-study-alt__meta-label">Team</span>
-                            <span className="case-study-alt__meta-value">{project.team || "Small team"}</span>
-                        </div>
-                        <div className="case-study-alt__meta-card">
-                            <span className="case-study-alt__meta-label">Timeline</span>
-                            <span className="case-study-alt__meta-value">{project.timeline || "Concept phase"}</span>
-                        </div>
-                    </div>
                 </header>
 
                 <div className="case-study-alt__hero">

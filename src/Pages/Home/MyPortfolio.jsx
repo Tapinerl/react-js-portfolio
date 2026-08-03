@@ -5,7 +5,12 @@ import { getTagToneClass } from "./caseStudyUtils";
 export default function MyPortfolio() {
     return (
     <section className="portfolio--section" id="MyPortfolio" data-home-section>
-
+        <h2
+            className="portfolio--section--heading scroll-reveal scroll-reveal--up"
+            data-animate-on-scroll
+        >
+            Work
+        </h2>
         <div className="portfolio--section--container">
             {data?.portfolio?.map((item, index)=>(
                 <Link

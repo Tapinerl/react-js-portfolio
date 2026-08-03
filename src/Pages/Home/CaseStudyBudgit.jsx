@@ -31,20 +31,6 @@ export default function CaseStudyBudgit({ project }) {
                         </div>
                     ) : null}
                     <h1 className="case-study__title">{project.title}</h1>
-                    <div className="case-study-alt__meta-grid">
-                        <div className="case-study-alt__meta-card">
-                            <span className="case-study-alt__meta-label">Role</span>
-                            <span className="case-study-alt__meta-value">{project.role || "UX/UI Designer, Frontend"}</span>
-                        </div>
-                        <div className="case-study-alt__meta-card">
-                            <span className="case-study-alt__meta-label">Team</span>
-                            <span className="case-study-alt__meta-value">{project.team || "Solo"}</span>
-                        </div>
-                        <div className="case-study-alt__meta-card">
-                            <span className="case-study-alt__meta-label">Timeline</span>
-                            <span className="case-study-alt__meta-value">{project.timeline || "4 weeks"}</span>
-                        </div>
-                    </div>
                 </header>
 
                 <div className="case-study__hero">

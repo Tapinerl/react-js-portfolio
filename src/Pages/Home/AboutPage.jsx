@@ -44,34 +44,23 @@ export default function AboutPage() {
           style={{ "--reveal-delay": "0.08s" }}
         >
           <p>
-            Hey there, I'm Elias - a UX/UI Designer and Software
-            Engineering student based in Finland. I'm passionate about
-            creating thoughtful, human-centered digital experiences that not
-            only look good, but genuinely make sense to the people using them.
+            I'm Elias, a technology and design graduate from Finland,
+            currently exploring where UX, product development, data,
+            and software development intersect. I have a Bachelor of Science
+            (Tech) in Information Technology and am
+            continuing my studies in the Master’s programme in Human-Technology
+            Interaction.
           </p>
           <p>
-            I'm graduating with a Bachelor of Science (Tech) in Information Technology 
-            from Tampere University in Spring 2026, majoring in
-            Software Engineering with a minor in Human-Technology Interaction
-            (HTI). After that, I'll continue straight into the Master's
-            program in HTI to deepen my focus on user-centered design and
-            research.
+            I’m naturally curious and enjoy understanding how both people
+            and technology work. I like combining user research, design,
+            and development to create digital experiences that feel clear,
+            accessible, and genuinely useful.
           </p>
           <p>
-            I've worked across the full design process; from research and
-            personas to wireframes, prototypes, and front-end implementation.
-            My approach is iterative and practical: test early, refine often,
-            and design solutions that are both intuitive and technically
-            realistic.
-          </p>
-          <p>
-            In my free time, I enjoy building PCs, cycling, going to the gym, and exploring new technologies -
-            especially the possibilities of AI. Most evenings, you'll
-            also find our Corgi Into nearby, making sure I don't work alone.
-          </p>
-          <p>
-            My goal is to grow into a UX specialist who designs experiences
-            that feel effortless, accessible, and genuinely valuable.
+            Outside of design and technology, I spend my time cycling,
+            going to the gym, building PCs, exploring AI, and of course
+            hanging out with our Corgi, Into!
           </p>
         </div>
       </section>
