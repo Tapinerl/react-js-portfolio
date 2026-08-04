@@ -121,7 +121,7 @@
 
 .case-study--dashboard-mmt .case-study__section {
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: none;
     display: grid;
     gap: 16px;
 }

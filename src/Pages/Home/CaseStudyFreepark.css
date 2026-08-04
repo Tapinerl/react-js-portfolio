@@ -116,7 +116,7 @@
 
 .case-study--freepark .case-study__section {
     padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: none;
     display: flex;
     flex-direction: column;
     gap: 10px;

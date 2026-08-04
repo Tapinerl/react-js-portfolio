@@ -161,7 +161,7 @@
 }
 
 .case-study--alltogether .case-study-alt__section + .case-study-alt__section {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
     padding-top: 26px;
 }
 

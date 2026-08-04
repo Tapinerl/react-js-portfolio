@@ -39,60 +39,47 @@
             "team": "Course team of 3 members",
             "timeline": "Jan – March 2024",
             "tools": "Figma, User Interviews, Wireframing",
-            "visuals": "All visuals were made by me, including prototypes and final design.",
-            "overview": "budgIT is a budgeting and financial management concept designed specifically for Finnish university students (therefore, the wireframes and mockups are presented in Finnish.). The project focused on understanding students’ real financial challenges and designing a user-friendly tool that helps with budgeting, expense tracking, savings goals, and financial awareness across both mobile and desktop platforms. The project was completed as part of a Human–Technology Interaction course and covered the full UX process: user research, conceptual design, information architecture, interaction design, and high-fidelity prototyping.",
-            "problem": "University students often struggle with managing finances due to irregular income (student aid, part-time jobs, loans), high fixed costs (rent, food), and lack of motivation or knowledge to plan finances in advance. User interviews revealed that most students rely on bank apps for passive tracking, but lack tools for proactive budgeting, clear overviews, and student-specific guidance. Existing financial apps were seen as too complex, not tailored to student life, or overwhelming to use.",
-            "solution": "We designed budgIT as a lightweight, student-centric financial hub focused on clarity, flexibility, and ease of use. The solution was shaped directly by user research and iterative design, ensuring that financial information is approachable rather than overwhelming. Design decisions prioritized clear overviews, simple language instead of financial jargon, and layouts that support quick understanding across both mobile and desktop contexts. I took main responsibility for building and visually polishing the interactive prototype, while collaborating closely with the team throughout all design phases.",
-            "researchInsight": "To ground the design in real student needs, we interviewed university students to understand their financial behaviors, pain points, and motivations. Insights from this research informed personas and usage scenarios that guided design and prioritization decisions.",
-            "keyTakeaways": [
-                {
-                    "strong": "Passive tracking",
-                    "text": "Bank apps are used for monitoring, but proactive budgeting tools are missing."
-                },
-                {
-                    "strong": "Irregular income",
-                    "text": "Unpredictable earnings make planning and saving harder."
-                },
-                {
-                    "strong": "Complex tools",
-                    "text": "Motivation drops when financial products feel detailed or overwhelming."
-                }
+            
+            "overview": "budgIT is a budgeting concept designed for Finnish university students, with wireframes and mockups presented in Finnish. It helps students manage expenses, budgets, savings goals, and overall financial awareness across mobile and desktop. Created for a Human–Technology Interaction course, the project covered the full UX process from user research and information architecture to interaction design and high-fidelity prototyping.",
+            "problem": "Students often face irregular income, high living costs, and limited experience with financial planning. Interviews showed that most rely on banking apps for basic tracking but lack simple tools for proactive budgeting, clear overviews, and student-focused guidance. Existing finance apps were often seen as too complex or poorly suited to student life.",
+            "solution": "We designed budgIT as a lightweight financial hub for students, focused on clarity and ease of use. The concept combines budgeting, expense tracking, savings goals, student loans, and discounts in one simple experience.\n\nI was mainly responsible for building and visually refining the interactive prototype while contributing throughout the design process.",
+            "researchInsight": "Interviews with university students helped us identify three main needs:",
+            "researchInsightPoints": [
+                "Clear financial information at a glance",
+                "Simple tools for irregular income and expenses",
+                "Student-focused guidance without complex financial language"
             ],
-            "insightCallout": "The persona kept design decisions anchored in real student constraints and goals.",
-            "structureInteraction": "We designed a dashboard-first information architecture where the primary navigation is organized around a high-level overview and clear feature groups, allowing users to access deeper details without cluttering the main view.",
+            
+            
+            "structureInteraction": "We designed a content structure where the primary navigation is organized around a high-level overview and clear feature groups, allowing users to access deeper details without cluttering the main view.",
             "structureToVisualTitle": "From Structure to Visual Design",
-            "structureToVisualText": "After defining the information architecture, we translated the structure into low-fidelity wireframes. These iterations helped validate hierarchy, grouping, and dashboard clarity before moving into high-fidelity visual design.",
+            "structureToVisualText": "After defining the information architecture, we translated the structure into low-fidelity wireframes. These iterations helped validate hierarchy, grouping, and clarity before moving into high-fidelity visual design.",
             "structureToVisualPlaceholder": "Placeholder for future image",
             "structureToVisualImage": {
-                "src": "/img/budgit-wf.png",
-                "alt": "BudgIT low-fidelity wireframes",
-                "caption": "Low-fidelity wireframes"
+                "src": "/img/budgit-wf.png"
             },
             "structureInteractionImage": {
-                "src": "/img/budgit-map.png",
-                "alt": "Information Architecture (Hierarchical Content Structure) diagram for the budgIT app",
-                "caption": "Information Architecture (Hierarchical Content Structure)"
+                "src": "/img/budgit-map.png"
             },
-            "outcome": "The final result was a fully interactive prototype for mobile and desktop that clearly visualizes monthly budgets, expenses, and remaining funds, supports savings goals and basic financial learning, and adapts to different screen sizes and usage situations. Peer feedback highlighted the clarity, usability, and visual structure of the solution. The project demonstrated how user research can directly shape interaction design and lead to a more approachable financial tool for a specific user group.",
+            "outcome": "The final result was an interactive prototype that clearly visualizes monthly budgets, expenses, and remaining funds, supports savings goals and basic financial learning, and adapts to different screen sizes and usage situations. Peer feedback highlighted the clarity, usability, and visual structure of the solution. The project demonstrated how user research can directly shape interaction design and lead to a more approachable financial tool for a specific user group.",
             "outcomeImage": {
                 "src": "/img/budgit-mock.png",
-                "alt": "Final budgIT mockup design",
-                "caption": "Final mockup design"
+                "alt": "Final budgIT mockup design"
             },
             "persona": {
-                "name": "Persona 2",
+                "name": "Mikko",
                 "age": "22",
                 "role": "University student (Info management)",
                 "way":"it",
                 "goal": "Manage finances clearly and save money without giving up student life.",
                 "needs": [
-                    "Clear, at-a-glance budget overview",
-                    "Simple budgeting & savings tools",
-                    "Support for irregular income"
+                    "Budget overview",
+                    "Saving tools",
+                    "Irregular income"
                 ],
                 "frustrations": [
-                    "Complex financial jargon",
-                    "Budgeting apps not designed for students"
+                    "Complex jargon",
+                    "Not student fit"
                 ],
                 "quote": "I want to understand my finances quickly, without feeling restricted or overwhelmed."
             },

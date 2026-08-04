@@ -1,38 +1,24 @@
 import { useRef } from "react";
 import "./CaseStudyBudgit.css";
-import { getTagToneClass } from "./caseStudyUtils";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
-const getPersonaLine = (persona = {}) => {
+const getPersonaRoleLine = (persona = {}) => {
     const personaRole = persona?.role || "";
     const roleParts = personaRole.split("(");
-    const roleMain = roleParts[0]?.trim() || personaRole;
-    const roleDetail = roleParts[1]?.replace(")", "").trim() || "";
+    const roleMain = (roleParts[0]?.trim() || personaRole).replace(/^University student$/i, "Uni Student");
+    const roleDetail = (roleParts[1]?.replace(")", "").trim() || "").replace(/^Info management$/i, "Information Management");
 
-    return [persona?.age, roleMain, roleDetail].filter(Boolean).join(" · ");
+    return [roleMain, roleDetail].filter(Boolean).map((item) => `[${item}]`).join(" ");
 };
 
 export default function CaseStudyBudgit({ project }) {
     const caseStudyRef = useRef(null);
-    const personaLine = getPersonaLine(project?.persona);
+    const personaLine = getPersonaRoleLine(project?.persona);
     useCaseStudyScrollReveal(caseStudyRef);
 
     return (
         <section className="case-study case-study--centered case-study--budgit" ref={caseStudyRef}>
             <div className="case-study__wrap">
-                <header className="case-study__header scroll-reveal" data-case-reveal>
-                    <h1 className="case-study__title">{project.title}</h1>
-                    {project.tags?.length ? (
-                        <div className="case-study__tag-row case-study__tag-row--top">
-                            {project.tags.map((tag, index) => (
-                                <span key={index} className={`case-study__tag ${getTagToneClass(tag)}`}>
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    ) : null}
-                </header>
-
                 <div className="case-study__hero">
                     <div className="case-study__hero-frame">
                         <img
@@ -47,16 +33,24 @@ export default function CaseStudyBudgit({ project }) {
                     ) : null}
                 </div>
 
-                <section className="case-study__section">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>Overview</h2>
+                <section className="case-study__section case-study__section--overview">
+                    <div className="case-study__overview-layout">
+                        <div className="case-study__section-title case-study__section-title--overview scroll-reveal" data-case-reveal>
+                            <h1 className="case-study__title">{project.title}</h1>
+                            <ul className="case-study__overview-meta">
+                                <li>UX case study</li>
+                                <li>User research</li>
+                                <li>UX/UI design</li>
+                                <li>Product concept</li>
+                            </ul>
+                        </div>
+                        <p className="case-study__overview-text scroll-reveal" data-case-reveal>
+                            {project.overview || "Short overview of the challenge and the product context."}
+                        </p>
                     </div>
-                    <p className="scroll-reveal" data-case-reveal>
-                        {project.overview || "Short overview of the challenge and the product context."}
-                    </p>
                 </section>
 
-                <section className="case-study__section">
+                <section className="case-study__section case-study__section--problem">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h2>What was the problem?</h2>
                     </div>
@@ -69,27 +63,24 @@ export default function CaseStudyBudgit({ project }) {
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h2>Solution</h2>
                     </div>
-                    <p className="scroll-reveal" data-case-reveal>
-                        {project.solution || "The approach, design decisions, and build strategy."}
-                    </p>
-                    {(project.researchInsight || project.keyTakeaways?.length || project.persona) ? (
+                    {(project.solution || project.researchInsight || project.persona) ? (
                         <div className="case-study__insight">
                             <div className="case-study__insight-text scroll-reveal scroll-reveal--left" data-case-reveal>
-                                <p className="case-study__insight-title">Research & Insight</p>
+                                <p className="case-study__insight-body case-study__solution-text">
+                                    {project.solution || "The approach, design decisions, and build strategy."}
+                                </p>
+                                {project.researchInsight ? (
+                                    <h3 className="case-study__insight-title">Research insights</h3>
+                                ) : null}
                                 {project.researchInsight ? (
                                     <p className="case-study__insight-body">{project.researchInsight}</p>
                                 ) : null}
-                                {project.keyTakeaways?.length ? (
-                                    <div className="case-study__insight-block">
-                                        <p className="case-study__insight-subtitle">Key Takeaways</p>
-                                        <ul className="case-study__list case-study__list--compact case-study__list--tight">
-                                            {project.keyTakeaways.map((item, index) => (
-                                                <li key={index}>
-                                                    <strong>{item.strong}</strong> {item.text}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                {project.researchInsightPoints?.length ? (
+                                    <ul className="case-study__research-list">
+                                        {project.researchInsightPoints.map((item, index) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
                                 ) : null}
                                 {project.insightCallout ? (
                                     <p className="case-study__insight-callout">{project.insightCallout}</p>
@@ -99,9 +90,11 @@ export default function CaseStudyBudgit({ project }) {
                                 <div className="case-study__insight-card scroll-reveal scroll-reveal--right" data-case-reveal>
                                     <div className="case-study__persona-card">
                                         <div className="case-study__persona-header">
-                                            <div className="case-study__persona-avatar" aria-hidden="true"></div>
                                             <div className="case-study__persona-meta">
                                                 <p className="case-study__persona-title">Persona</p>
+                                                <p className="case-study__persona-name">
+                                                    {[project.persona.name, project.persona.age].filter(Boolean).join(",")}
+                                                </p>
                                                 <p className="case-study__persona-line">
                                                     {personaLine}
                                                 </p>
@@ -113,24 +106,28 @@ export default function CaseStudyBudgit({ project }) {
                                                 <p className="case-study__persona-text">{project.persona.goal}</p>
                                             </div>
                                         ) : null}
-                                        {project.persona.needs?.length ? (
-                                            <div className="case-study__persona-section">
-                                                <p className="case-study__persona-section-title">Needs</p>
-                                                <ul className="case-study__list case-study__list--compact case-study__list--tight">
-                                                    {project.persona.needs.slice(0, 3).map((item, index) => (
-                                                        <li key={index}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ) : null}
-                                        {project.persona.frustrations?.length ? (
-                                            <div className="case-study__persona-section">
-                                                <p className="case-study__persona-section-title">Frustrations</p>
-                                                <ul className="case-study__list case-study__list--compact case-study__list--tight">
-                                                    {project.persona.frustrations.slice(0, 2).map((item, index) => (
-                                                        <li key={index}>{item}</li>
-                                                    ))}
-                                                </ul>
+                                        {(project.persona.needs?.length || project.persona.frustrations?.length) ? (
+                                            <div className="case-study__persona-columns">
+                                                {project.persona.needs?.length ? (
+                                                    <div className="case-study__persona-section">
+                                                        <p className="case-study__persona-section-title">Needs</p>
+                                                        <ul className="case-study__list case-study__list--compact case-study__list--tight">
+                                                            {project.persona.needs.slice(0, 3).map((item, index) => (
+                                                                <li key={index}>{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                ) : null}
+                                                {project.persona.frustrations?.length ? (
+                                                    <div className="case-study__persona-section">
+                                                        <p className="case-study__persona-section-title">Pain Points</p>
+                                                        <ul className="case-study__list case-study__list--compact case-study__list--tight">
+                                                            {project.persona.frustrations.slice(0, 2).map((item, index) => (
+                                                                <li key={index}>{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                ) : null}
                                             </div>
                                         ) : null}
                                         {project.persona.quote ? (
@@ -143,7 +140,7 @@ export default function CaseStudyBudgit({ project }) {
                     ) : null}
                     {project.structureInteraction ? (
                         <div className="case-study__structure scroll-reveal" data-case-reveal>
-                            <p className="case-study__structure-title">Structure &amp; Interaction</p>
+                            <h3 className="case-study__structure-title">Structure &amp; Interaction</h3>
                             {project.structureInteractionImage?.src ? (
                                 <div className="case-study__structure-image">
                                     <img
@@ -152,9 +149,6 @@ export default function CaseStudyBudgit({ project }) {
                                     />
                                 </div>
                             ) : null}
-                            <p className="case-study__note">
-                                {project.structureInteractionImage?.caption || "Information Architecture"}
-                            </p>
                             <p className="case-study__structure-text">{project.structureInteraction}</p>
                             {project.structureToVisualText ? (
                                 <div className="case-study__structure-followup">
