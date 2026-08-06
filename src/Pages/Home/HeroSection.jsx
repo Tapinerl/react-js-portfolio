@@ -42,7 +42,7 @@ export default function HeroSection() {
                             style={{ "--reveal-delay": "0.12s" }}
                         >
                             <span>UX-focused IT graduate combining human-centred design with</span>
-                            <span>programming and technical problem-solving.</span>
+                            <span>technical problem-solving.</span>
                         </p>
                         <div
                             className="hero--actions scroll-reveal"

@@ -1078,6 +1078,8 @@ h3 {
     margin-top: 52px;
 }
 .about-page__section-head h2 {
+    color: var(--color-accent);
+    font-family: var(--font-display);
     font-size: 34px;
     line-height: 1.2;
     margin: 0;
@@ -1085,9 +1087,8 @@ h3 {
 .about-page__section-head--education,
 .about-page__section-head--technologies {
     padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.about-page__section-head--education + .about-page__study-card {
+.about-page__section-head--education + .about-page__education-list {
     margin-top: 28px;
 }
 .about-page__section-head--technologies + .about-page__method-grid {
@@ -1110,6 +1111,48 @@ h3 {
     border-radius: 0;
     background: transparent;
 }
+.about-page__education-list {
+    display: grid;
+    gap: -0px;
+}
+
+.about-page__study-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.about-page__education-marker {
+    width: 22px;
+    height: 22px;
+    margin-top: 15px;
+    color: var(--color-accent);
+}
+
+.about-page__education-marker svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.about-page__education-content {
+    min-width: 0;
+}
+
+.about-page__school {
+    margin: 0 0 3px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 .about-page__study-card h3,
 .about-page__method-card h3,
 .about-page__closing-card h2 {
@@ -1117,12 +1160,42 @@ h3 {
     font-size: 24px;
     line-height: 1.3;
 }
+.about-page__study-card h3 {
+    font-size: 18px;
+    line-height: 1.45;
+}
 .about-page__study-card p,
 .about-page__closing-card p {
     margin-top: 10px;
     font-size: 16px;
     line-height: 2.1;
     color: rgba(255, 255, 255, 0.78);
+}
+.about-page__education-year {
+    margin: 4px 0 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.5;
+}
+.about-page__education-details {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.about-page__education-details li {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 9px;
+    border-radius: 7px;
+    background: rgba(128, 128, 128, 0.22);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    line-height: 1.4;
 }
 .about-page__study-card h4 {
     margin: 0;
@@ -1135,14 +1208,38 @@ h3 {
 .about-page__method-grid {
     margin-top: 18px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 22px;
 }
 .about-page__method-card {
     margin-top: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
 }
 .about-page__method-card h3 {
-    margin-bottom: 14px;
+    margin-bottom: 6px;
+}
+.about-page__skill-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.about-page__skill-tags li {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(128, 128, 128, 0.28);
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 14px;
+    line-height: 1.45;
 }
 .about-page__list {
     list-style: none;
@@ -1190,7 +1287,7 @@ h3 {
         margin-top: calc(56px * 1.03 - 12px);
     }
     .about-page__method-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
     }
 }
 @media screen and (max-width: 768px) {
@@ -1234,7 +1331,7 @@ h3 {
         padding: 0;
     }
     .about-page__method-card {
-        padding: 20px;
+        padding: 0;
     }
 }
 
@@ -1490,15 +1587,15 @@ h3 {
     justify-content: center;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background: rgb(0, 0, 0);
+    border-radius: 0;
+    background: transparent;
     color: rgb(218, 218, 218);
     transition: all 0.3s ease;
 }
 
 .contact--info:hover .contact--icon {
     transform: scale(1.1);
-    background: var(--black);
+    background: transparent;
 }
 
 .contact--text {
