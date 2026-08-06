@@ -113,53 +113,55 @@
             "src": "/img/alltogether-hero.png",
             "caseStudySrc": "/img/alltogether-hero.png",
             "title": "AllTogether",
-            "description": "workouts, sleep, recovery, and nutrition in one mobile experience.",
+            "description": "Fitness, nutrition, sleep and recovery in one clear wellbeing interface.",
             "link": "view case study",
             "tags": ["UX/UI", "Case Study"],
             "caseStudyType": "alltogether",
             "role": "UX/UI Designer",
-            "team": "Small team",
-            "timeline": "Concept project",
-            "challenge": "People who care about their health often use multiple apps and devices to track workouts, sleep, recovery, and nutrition. The result is fragmented data and poor overview - users know they are tracking, but not necessarily how they are doing. Our goal was to design a single mobile experience that brings this information together in a way that feels motivating, clear, and easy to understand at a glance.",
-            "myRoleSummary": "I worked as a UX/UI designer in a small team, contributing especially to:",
+            "team": "University group project",
+            "timeline": "2025",
+            "platform": "Mobile and desktop",
+            "overview": "People often use several apps and devices to track different parts of their health. This can make it difficult to understand how activity, recovery, sleep and nutrition connect.",
+            "problem": "Health-conscious users may collect a lot of data from fitness trackers and health apps, but the information is often fragmented. They can see individual numbers, but not always the bigger picture. Manually adding data can also feel repetitive, while detailed dashboards may become overwhelming. The challenge was to create an all-in-one experience that feels useful, simple and quick to check.",
+            "solution": "We designed a mobile-first health app that combines data from fitness devices and services such as Oura, Whoop, Garmin, Apple Watch and Strava. The concept was later expanded to include a desktop interface as well. The home dashboard highlights activity, sleep and recovery, while other areas support workouts, nutrition, social features and adding personal content.",
+            "challenge": "The challenge was to create an all-in-one experience that feels useful, simple and quick to check.",
+            "myRoleSummary": "Role: UX/UI Designer",
             "myRolePoints": [
-                "Defining the product vision and target users",
-                "Designing the mobile home screen focused on data clarity",
-                "Creating and iterating early wireframes",
-                "Refining visual hierarchy, spacing, and UX writing",
-                "Evolving the design into a high-fidelity mobile UI"
+                "University group project",
+                "Mobile and desktop",
+                "2025"
             ],
-            "userUnderstanding": "We designed for 20-40-year-old health-conscious users who want to track their wellbeing without feeling overwhelmed by numbers or complex tools.",
+            "userUnderstanding": "We began by defining the target users: people aged roughly 20-40 who are interested in fitness, wellbeing, nutrition or health tracking.",
             "userDecisionAnchors": [
-                "Showing insights instead of raw data",
-                "Keeping interactions lightweight",
-                "Supporting motivation without pressure"
+                "Useful insights without complex data",
+                "Simple navigation between home, search, social, add and profile views",
+                "Less visual clutter and stronger hierarchy"
             ],
-            "visionSummary": "Early on, we aligned on a clear vision: a mobile-first, all-in-one health app where users understand their daily status within seconds of opening the app.",
+            "visionSummary": "The product vision helped us keep the experience supportive and easy to understand. We also considered automatic data syncing, customization, accessibility and future integration with new devices.",
             "visionPriorities": [
-                "A dashboard-first experience",
-                "Clear visual hierarchy",
-                "Modular content that can grow over time",
-                "Social features that feel supportive, not competitive"
+                "Automatic data syncing",
+                "Customization",
+                "Accessibility",
+                "Future integrations with new devices"
             ],
-            "wireframesSummary": "We designed a simple navigation flow that always brings the user back to a clear overview. In the wireframing phase, we explored different dashboard layouts and tested how much information could be shown without overwhelming the user.",
-            "wireframesInsight": "Through iteration, it became clear that fewer, well-prioritized metrics worked better than dense data views.",
+            "wireframesSummary": "Next, we explored different mobile and desktop wireframes.",
+            "wireframesInsight": "The first dashboard versions contained more information and less spacing. Based on feedback, we reduced visual clutter, added more white space and improved the hierarchy.",
             
             "finalExperiencePoints": [
-                "Glanceable activity, sleep, and recovery data",
-                "Card-based layout for clarity and flexibility",
-                "Calm colors and increased white space",
-                "Familiar interaction patterns to reduce friction",
-                "Optional dark mode for real-world usage"
+                "Activity, workouts, recovery, nutrition and social features",
+                "A quick daily overview on mobile",
+                "Search for workouts and plans",
+                "Add workouts, recipes and personal notes",
+                "A desktop version that shows more content at once"
             ],
-            "finalExperienceResult": "The result is a mobile UI that feels informative but calm - something users can quickly check during everyday routines.",
-            "outcome": "The final concept delivers a cohesive mobile experience that combines fitness, nutrition, recovery, and social motivation into one interface. The project reinforced how much impact visual hierarchy, spacing, and prioritization have when designing data-heavy products.",
-            "reflection": "If continued, the next steps would include usability testing with real users and deeper validation of how users interpret the shown metrics.",
+            "finalExperienceResult": "We also tested a dark version of the mobile interface and adjusted the colors, spacing and navigation based on feedback.",
+            "outcome": "The final design combines activity, workouts, recovery, nutrition and social features within one consistent system.",
+            "reflection": "The project showed how important iteration is when designing a data-heavy product. The next step would be usability testing, user surveys and real-world feedback to understand how people interpret the dashboard and which features they value most.",
             "placeholders": [
-                { "slot": "persona", "label": "Insert persona card here" },
-                { "slot": "visionBoard", "label": "Insert product vision board image here" },
+                { "slot": "visionBoard", "label": "Insert product vision board here" },
+                { "slot": "informationArchitecture", "label": "Information architecture", "src": "/img/alltogether-information-architecture.png" },
                 { "slot": "wireframes", "label": "Insert early wireframes here" },
-                { "slot": "finalMockups", "label": "Insert final mobile mockups here" }
+                { "slot": "finalMockups", "label": "Insert final mobile and desktop mockups here" }
             ]
         },
         {

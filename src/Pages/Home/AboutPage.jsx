@@ -32,6 +32,7 @@ export default function AboutPage() {
   return (
     <main className="about-page" ref={aboutPageRef}>
       <section className="about-page__hero">
+        <div className="about-page__hero-copy">
         <h1
           className="about-page__title scroll-reveal scroll-reveal--up"
           data-case-reveal
@@ -63,6 +64,14 @@ export default function AboutPage() {
             hanging out with our Corgi, Into!
           </p>
         </div>
+        </div>
+        <figure
+          className="about-page__portrait scroll-reveal scroll-reveal--right"
+          data-case-reveal
+          style={{ "--reveal-delay": "0.14s" }}
+        >
+          <img src="/img/profile-pic.png" alt="Elias taking a mirror selfie" />
+        </figure>
       </section>
 
       <section className="about-page__section">

@@ -1,50 +1,55 @@
 import { useRef } from "react";
+import "./CaseStudyBudgit.css";
 import "./CaseStudyDashboardMMT.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
-import { getTagToneClass } from "./caseStudyUtils";
 
 export default function CaseStudyDashboardMMT({ project }) {
     const caseStudyRef = useRef(null);
     useCaseStudyScrollReveal(caseStudyRef);
 
     return (
-        <section className="case-study case-study--centered case-study--dashboard-mmt" ref={caseStudyRef}>
+        <section
+            className="case-study case-study--centered case-study--budgit case-study--dashboard-mmt"
+            ref={caseStudyRef}
+        >
             <div className="case-study__wrap">
-                <header className="case-study__header scroll-reveal" data-case-reveal>
-                    <h1 className="case-study__title">{project.title}</h1>
-                    {project.tags?.length ? (
-                        <div className="case-study__tag-row">
-                            {project.tags.map((tag, index) => (
-                                <span key={index} className={`case-study__tag ${getTagToneClass(tag)}`}>
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    ) : null}
-                    <p className="case-study__subtitle">
-                        Software Engineering Project · UX/UI Design &amp; Development
-                    </p>
-                </header>
-
                 <div className="case-study__hero">
                     <div className="case-study__hero-frame">
                         <img src={project.caseStudySrc || project.src} alt={`${project.title} preview`} />
                     </div>
                 </div>
 
+                <section className="case-study__section case-study__section--overview">
+                    <div className="case-study__overview-layout">
+                        <div
+                            className="case-study__section-title case-study__section-title--overview scroll-reveal"
+                            data-case-reveal
+                        >
+                            <h1 className="case-study__title">{project.title}</h1>
+                            <ul className="case-study__overview-meta">
+                                <li>Software Engineering Project</li>
+                                <li>UX/UI Design &amp; Development</li>
+                                <li>Year: 2025</li>
+                            </ul>
+                        </div>
+                        <p className="case-study__overview-text scroll-reveal" data-case-reveal>
+                            The Multi Metrics Monitoring Tool, or MMT, was developed as part of Pekka
+                            M&auml;kiaho&rsquo;s doctoral research project. The aim was to design and build a
+                            dashboard that brings several project-related metrics into one clear view,
+                            making it easier to follow progress, participation, events and the use of
+                            project resources.
+                        </p>
+                    </div>
+                </section>
+
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h3>Overview</h3>
+                        <h2>My contribution</h2>
                     </div>
-                    <p className="scroll-reveal" data-case-reveal>
-                        The Multi Metrics Monitoring Tool, or MMT, was developed for Pekka Mäkiaho’s
-                        doctoral research project. The goal was to create a dashboard for presenting
-                        and monitoring several project-related metrics in one clear and accessible view.
-                    </p>
                     <p className="scroll-reveal" data-case-reveal>
                         I worked in a seven-person Agile development team as a junior developer and
                         UX/UI designer. My main responsibility was designing the dashboard and helping
-                        translate the client’s requirements into practical interface solutions. I
+                        translate the client&rsquo;s requirements into practical interface solutions. I
                         created wireframes and worked on front-end features, including dashboard widgets
                         for used hours, events, participation, and project progress.
                     </p>
@@ -69,7 +74,7 @@ export default function CaseStudyDashboardMMT({ project }) {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Visit the MMT project page →
+                        Visit the MMT project page -&gt;
                     </a>
                 </section>
             </div>
