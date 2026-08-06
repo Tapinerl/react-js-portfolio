@@ -11,6 +11,13 @@ const getPersonaRoleLine = (persona = {}) => {
     return [roleMain, roleDetail].filter(Boolean).map((item) => `[${item}]`).join(" ");
 };
 
+const overviewMeta = [
+    "Role: UX/UI Designer",
+    "Project: University group project",
+    "Platform: Mobile",
+    "Year: 2024",
+];
+
 export default function CaseStudyBudgit({ project }) {
     const caseStudyRef = useRef(null);
     const personaLine = getPersonaRoleLine(project?.persona);
@@ -38,10 +45,9 @@ export default function CaseStudyBudgit({ project }) {
                         <div className="case-study__section-title case-study__section-title--overview scroll-reveal" data-case-reveal>
                             <h1 className="case-study__title">{project.title}</h1>
                             <ul className="case-study__overview-meta">
-                                <li>UX case study</li>
-                                <li>User research</li>
-                                <li>UX/UI design</li>
-                                <li>Product concept</li>
+                                {overviewMeta.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
                             </ul>
                         </div>
                         <p className="case-study__overview-text scroll-reveal" data-case-reveal>

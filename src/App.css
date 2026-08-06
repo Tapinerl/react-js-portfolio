@@ -49,11 +49,6 @@ p {
     --page-gutter-desktop: 40px;
     --page-gutter-tablet: 18px;
     --page-gutter-mobile: 10px;
-    --site-scale: 1.1;
-}
-
-.App {
-    zoom: var(--site-scale);
 }
 
 .scroll-reveal {

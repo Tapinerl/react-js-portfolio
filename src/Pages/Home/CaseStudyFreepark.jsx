@@ -3,6 +3,13 @@ import "./CaseStudyBudgit.css";
 import "./CaseStudyFreepark.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
+const overviewMeta = [
+    "Role: UX/UI Designer and Developer",
+    "Project: Personal project",
+    "Platform: Mobile",
+    "Year: 2026",
+];
+
 export default function CaseStudyFreepark({ project }) {
     const caseStudyRef = useRef(null);
     useCaseStudyScrollReveal(caseStudyRef);
@@ -27,8 +34,8 @@ export default function CaseStudyFreepark({ project }) {
                         >
                             <h1 className="case-study__title">{project.title}</h1>
                             <ul className="case-study__overview-meta">
-                                {project.tags?.map((tag, index) => (
-                                    <li key={index}>{tag}</li>
+                                {overviewMeta.map((item) => (
+                                    <li key={item}>{item}</li>
                                 ))}
                             </ul>
                         </div>

@@ -3,6 +3,13 @@ import "./CaseStudyBudgit.css";
 import "./CaseStudyDashboardMMT.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
+const overviewMeta = [
+    "Role: UX/UI Designer and Junior Developer",
+    "Project: University group project",
+    "Platform: Desktop",
+    "Year: 2025",
+];
+
 export default function CaseStudyDashboardMMT({ project }) {
     const caseStudyRef = useRef(null);
     useCaseStudyScrollReveal(caseStudyRef);
@@ -27,9 +34,9 @@ export default function CaseStudyDashboardMMT({ project }) {
                         >
                             <h1 className="case-study__title">{project.title}</h1>
                             <ul className="case-study__overview-meta">
-                                <li>Software Engineering Project</li>
-                                <li>UX/UI Design &amp; Development</li>
-                                <li>Year: 2025</li>
+                                {overviewMeta.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
                             </ul>
                         </div>
                         <p className="case-study__overview-text scroll-reveal" data-case-reveal>
