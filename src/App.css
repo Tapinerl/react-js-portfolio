@@ -130,11 +130,23 @@ h3 {
     padding: var(--safe-area-top) 0 0;
     background: transparent;
     box-shadow: none;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    transform: translate3d(0, 0, 0);
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+.navbar.is-fixed {
+    position: fixed;
+}
+.navbar.is-hidden {
+    transform: translate3d(0, calc(-100% - var(--safe-area-top) - 12px), 0);
+}
+.navbar.is-hidden-instant {
+    transition: none;
 }
 .navbar__inner {
     width: min(var(--content-max-width), calc(100% - (var(--page-gutter-desktop) * 2)));
@@ -311,6 +323,9 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .navbar {
+        transition: none;
+    }
     .navbar--name--logo:hover .navbar--name--letter {
         animation: none;
     }

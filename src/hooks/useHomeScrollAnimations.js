@@ -80,12 +80,13 @@ export default function useHomeScrollAnimations(rootRef) {
             (entries) => {
                 entries.forEach((entry) => {
                     const target = entry.target;
+                    const isHeroTarget = Boolean(target.closest("#heroSection"));
                     if (entry.intersectionRatio >= 0.2) {
                         target.classList.add("is-visible");
                         return;
                     }
 
-                    if (entry.intersectionRatio <= 0.02) {
+                    if (!isHeroTarget && entry.intersectionRatio <= 0.02) {
                         target.classList.remove("is-visible");
                     }
                 });
