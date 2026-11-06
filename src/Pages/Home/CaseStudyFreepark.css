@@ -2,10 +2,6 @@
     max-width: 26ch;
 }
 
-.case-study--freepark .case-study__overview-text {
-    max-width: 52ch;
-}
-
 .case-study--freepark .case-study__freepark-snapshot {
     width: 100%;
     margin: 0;

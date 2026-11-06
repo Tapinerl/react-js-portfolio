@@ -1,5 +1,10 @@
 /* GLobal CSS*/
 
+html {
+    /* Keep offscreen reveal animations from widening the viewport. */
+    overflow-x: clip;
+}
+
 body{
     margin: 0;
     font-family: var(--font-body);
@@ -26,9 +31,9 @@ p {
     --color-background: #01092D;
     --color-accent: #A8FF9D;
     --color-section-dark: #000000;
-    --color-text: #f7f3ea;
+    --color-text: #ffffff;
     --font-display: "Krona One", sans-serif;
-    --font-body: "Arvo", serif;
+    --font-body: "DM Sans", sans-serif;
     --hero-title-letter-spacing: -0.09756em;
     --page-start-background: linear-gradient(
         180deg,
@@ -334,7 +339,7 @@ h3 {
 /* Mobile menu styles */
 @media screen and (max-width: 768px) {
     .navbar {
-        --navbar-glass-bleed: 52px;
+        --navbar-glass-bleed: var(--page-gutter-tablet);
     }
     .navbar__inner {
         width: min(var(--content-max-width), calc(100% - (var(--page-gutter-tablet) * 2)));
@@ -470,7 +475,7 @@ h3 {
 
 @media screen and (max-width: 480px) {
     .navbar {
-        --navbar-glass-bleed: 34px;
+        --navbar-glass-bleed: var(--page-gutter-mobile);
     }
     .navbar__inner {
         width: min(var(--content-max-width), calc(100% - (var(--page-gutter-mobile) * 2)));
@@ -1009,7 +1014,7 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 0.22em;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.62);
+    color: #ffffff;
 }
 .about-page__title {
     color: var(--color-accent);
@@ -1024,7 +1029,7 @@ h3 {
     gap: 16px;
     font-size: 16px;
     line-height: 2.1;
-    color: rgba(255, 255, 255, 0.84);
+    color: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1073,14 +1078,14 @@ h3 {
 .about-page__panel p {
     font-size: 16px;
     line-height: 2.1;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
 }
 .about-page__focus {
     margin-top: 4px;
     max-width: 820px;
     font-size: 16px;
     line-height: 2.1;
-    color: #d9eeff;
+    color: #ffffff;
     border-left: 2px solid rgba(144, 199, 236, 0.6);
     padding-left: 14px;
 }
@@ -1158,7 +1163,7 @@ h3 {
 
 .about-page__school {
     margin: 0 0 3px;
-    color: rgba(255, 255, 255, 0.58);
+    color: #ffffff;
     font-size: 13px;
     line-height: 1.5;
 }
@@ -1179,11 +1184,11 @@ h3 {
     margin-top: 10px;
     font-size: 16px;
     line-height: 2.1;
-    color: rgba(255, 255, 255, 0.78);
+    color: #ffffff;
 }
 .about-page__education-year {
     margin: 4px 0 0;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     font-size: 13px;
     font-style: italic;
     line-height: 1.5;
@@ -1203,7 +1208,7 @@ h3 {
     padding: 4px 9px;
     border-radius: 7px;
     background: rgba(128, 128, 128, 0.22);
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     font-size: 12px;
     line-height: 1.4;
 }
@@ -1213,7 +1218,7 @@ h3 {
     font-size: 16px;
     line-height: 2.1;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.72);
+    color: #ffffff;
 }
 .about-page__method-grid {
     margin-top: 18px;
@@ -1247,7 +1252,7 @@ h3 {
     padding: 6px 12px;
     border-radius: 8px;
     background: rgba(128, 128, 128, 0.28);
-    color: rgba(255, 255, 255, 0.86);
+    color: #ffffff;
     font-size: 14px;
     line-height: 1.45;
 }
@@ -1263,7 +1268,7 @@ h3 {
     padding-left: 22px;
     font-size: 16px;
     line-height: 2.1;
-    color: rgba(255, 255, 255, 0.82);
+    color: #ffffff;
 }
 .about-page__list li::before {
     content: "";
@@ -1441,7 +1446,7 @@ h3 {
     min-height: 58px;
     display: flex;
     align-items: center;
-    color: rgba(226, 226, 226, 0.9);
+    color: #ffffff;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -1471,7 +1476,7 @@ h3 {
     padding-top: 4px;
 }
 .portfolio--tag {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1488,22 +1493,22 @@ h3 {
     background: transparent;
 }
 .portfolio--tag.tag-tone--default {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
 }
 .portfolio--tag.tag-tone--green {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
 }
 .portfolio--tag.tag-tone--blue {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
 }
 .portfolio--tag.tag-tone--gray {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
 }
 .portfolio--tag.tag-tone--yellow {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
 }
 .portfolio--tag.tag-tone--red {
-    --tag-tone-color: rgba(226, 226, 226, 0.9);
+    --tag-tone-color: #ffffff;
 }
 
 @media screen and (max-width: 900px) {
@@ -1599,7 +1604,7 @@ h3 {
     height: 50px;
     border-radius: 0;
     background: transparent;
-    color: rgb(218, 218, 218);
+    color: #ffffff;
     transition: all 0.3s ease;
 }
 
@@ -1613,14 +1618,14 @@ h3 {
 }
 
 .contact--text h3 {
-    color: rgb(236, 236, 236);
+    color: #ffffff;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .contact--text p {
-    color: rgb(236, 236, 236);
+    color: #ffffff;
     font-size: 16px;
     font-weight: 400;
 }
@@ -1685,7 +1690,7 @@ h3 {
 .footer__social-link {
     display: inline-flex;
     align-items: center;
-    color: rgba(255, 255, 255, 0.86);
+    color: #ffffff;
     text-decoration: none;
     font-size: 17px;
     line-height: 1.25;

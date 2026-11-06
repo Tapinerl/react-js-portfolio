@@ -1,23 +1,37 @@
-# Getting Started with Create React App
+# Elias Nikkinen's portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React portfolio with case studies, an about page, and a Three.js hero animation. Built with Vite.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+Use Node.js 22.12+ (22.x) or Node.js 24+ and npm.
 
-### `npm start`
+## Development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+npm ci
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open http://localhost:3000. Vite will choose another port if 3000 is occupied.
 
-### `npm run build`
+## Production
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm run build
+npm run preview
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The deployable site is written to `build/`. Preview serves it at http://localhost:4173.
+Configure the host to serve `index.html` for unknown routes so direct visits to `/about` and `/case-studies/:id` work. `public/_redirects` supplies this rule for hosts that support it.
+
+Vite targets modern browsers by default. The Three.js hero requires WebGL.
+
+## Dependency checks
+
+```sh
+npm outdated
+npm audit
+```
+
+React 18 and React Three Fiber 8 are intentionally kept together. Three.js stays on 0.160.x because the hero customizes its shader internals; upgrading it or the React/Fiber major versions requires visual regression testing.

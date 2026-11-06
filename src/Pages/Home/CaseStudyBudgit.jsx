@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import CaseStudyHeader from "./CaseStudyHeader";
 import "./CaseStudyBudgit.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
@@ -26,30 +27,13 @@ export default function CaseStudyBudgit({ project }) {
     return (
         <section className="case-study case-study--centered case-study--budgit" ref={caseStudyRef}>
             <div className="case-study__wrap">
-                <div className="case-study__hero">
-                    <div className="case-study__hero-frame">
-                        <img
-                            src={project.caseStudySrc || project.src}
-                            alt={`${project.title} preview`}
-                        />
-                    </div>
-                    {project.visuals ? (
-                        <p className="case-study__note case-study__note--hero scroll-reveal" data-case-reveal>
-                            {project.visuals}
-                        </p>
-                    ) : null}
-                </div>
+                <CaseStudyHeader project={project} metadata={overviewMeta} />
 
                 <section className="case-study__section case-study__section--overview">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
+                        <h2>01. Overview</h2>
+                    </div>
                     <div className="case-study__overview-layout">
-                        <div className="case-study__section-title case-study__section-title--overview scroll-reveal" data-case-reveal>
-                            <h1 className="case-study__title">{project.title}</h1>
-                            <ul className="case-study__overview-meta">
-                                {overviewMeta.map((item) => (
-                                    <li key={item}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
                         <p className="case-study__overview-text scroll-reveal" data-case-reveal>
                             {project.overview || "Short overview of the challenge and the product context."}
                         </p>
@@ -58,7 +42,7 @@ export default function CaseStudyBudgit({ project }) {
 
                 <section className="case-study__section case-study__section--problem">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>What was the problem?</h2>
+                        <h2>02. Problem</h2>
                     </div>
                     <p className="scroll-reveal" data-case-reveal>
                         {project.problem || "What was broken or missing, and who it affected."}

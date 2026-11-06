@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import CaseStudyHeader from "./CaseStudyHeader";
 import "./CaseStudyBudgit.css";
 import "./CaseStudyAllTogether.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
@@ -81,28 +82,13 @@ export default function CaseStudyAllTogether({ project }) {
             ref={caseStudyRef}
         >
             <div className="case-study__wrap">
-                <div className="case-study__hero">
-                    <div className="case-study__hero-frame">
-                        <img
-                            src={project.caseStudySrc || project.src}
-                            alt={`${project.title} mobile and dark mode mockups`}
-                        />
-                    </div>
-                </div>
+                <CaseStudyHeader project={project} metadata={overviewMeta} />
 
                 <section className="case-study__section case-study__section--overview">
+                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
+                        <h2>01. Overview</h2>
+                    </div>
                     <div className="case-study__overview-layout">
-                        <div
-                            className="case-study__section-title case-study__section-title--overview scroll-reveal"
-                            data-case-reveal
-                        >
-                            <h1 className="case-study__title">AllTogether</h1>
-                            <ul className="case-study__overview-meta">
-                                {overviewMeta.map((item) => (
-                                    <li key={item}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
                         <div className="case-study__copy-stack scroll-reveal" data-case-reveal>
                             <p className="case-study__overview-text">
                                 People often use several apps and devices to track workouts, sleep, recovery, and nutrition. Because this information is spread across different services, it can be difficult to understand how the different parts of their health connect or what their overall daily status looks like.
@@ -116,7 +102,7 @@ export default function CaseStudyAllTogether({ project }) {
 
                 <section className="case-study__section case-study__section--problem">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>The problem</h2>
+                        <h2>02. Problem</h2>
                     </div>
                     <div className="case-study__copy-stack scroll-reveal" data-case-reveal>
                         <p>

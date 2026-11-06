@@ -54,8 +54,8 @@
 }
 
 .case-study--alltogether .case-study__section .case-study__vision-board-text {
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 13px;
+    color: #ffffff;
+    font-size: 15px;
     line-height: 1.85;
     width: 94%;
     max-width: none;
@@ -73,7 +73,7 @@
     box-sizing: border-box;
     padding: clamp(34px, 5vw, 56px) max(24px, calc((100vw - var(--content-max-width)) / 2));
     border-radius: 0;
-    background: var(--color-accent);
+    background: var(--color-background);
 }
 
 .case-study--alltogether .case-study__ia-media {
@@ -93,7 +93,7 @@
 }
 
 .case-study--alltogether .case-study__ia-media .case-study__note {
-    color: rgba(1, 9, 45, 0.62);
+    color: #ffffff;
 }
 
 .case-study--alltogether .case-study__ia-text {
@@ -106,9 +106,9 @@
 }
 
 .case-study--alltogether .case-study__ia-text p {
-    color: #01092d;
-    font-size: 15px;
-    line-height: 2.2;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 2.0;
     max-width: 62ch;
     overflow-wrap: break-word;
 }
@@ -118,24 +118,24 @@
     border-radius: 10px;
     border: 1px dashed rgba(144, 199, 236, 0.75);
     background: rgba(144, 199, 236, 0.08);
-    color: #d9eeff;
+    color: #ffffff;
     padding: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
 .case-study--alltogether .case-study__placeholder-card p {
     color: inherit;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
 .case-study--alltogether .case-study__placeholder {
-    text-align: center;
+    text-align: left;
 }
 
 .case-study--alltogether .case-study__structure {
@@ -210,9 +210,9 @@
 }
 
 .case-study--alltogether .case-study__final-followup-text p {
-    color: #d7d7d7;
-    font-size: 15px;
-    line-height: 2.2;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 2.0;
     max-width: 62ch;
 }
 
@@ -230,9 +230,9 @@
 }
 
 .case-study--alltogether .case-study__desktop-final-text p {
-    color: #d7d7d7;
-    font-size: 15px;
-    line-height: 2.2;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 2.0;
     max-width: 48ch;
     text-align: left;
 }
@@ -325,7 +325,7 @@
     }
 
     .case-study--alltogether .case-study__ia-media .case-study__note {
-        text-align: center;
+        text-align: left;
     }
 
     .case-study--alltogether .case-study__home-screen-gallery {
