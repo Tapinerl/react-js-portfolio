@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import CaseStudyHeader from "./CaseStudyHeader";
+import CaseStudyImage from "./CaseStudyImage";
 import "./CaseStudyBudgit.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
@@ -11,22 +12,6 @@ const getPersonaRoleLine = (persona = {}) => {
 
     return [roleMain, roleDetail].filter(Boolean).map((item) => `[${item}]`).join(" ");
 };
-
-function ProjectImage({ image, alt, caption, className = "case-study__structure-image" }) {
-    if (!image?.src) return null;
-
-    return (
-        <figure className={className}>
-            <a className="budgit-content__image-link" href={image.src} target="_blank" rel="noreferrer">
-                <img src={image.src} alt={image.alt || alt} loading="lazy" />
-                <span className="budgit-content__image-hint">View full-size image (opens in a new tab)</span>
-            </a>
-            {(image.caption || caption) && (
-                <figcaption className="case-study__note">{image.caption || caption}</figcaption>
-            )}
-        </figure>
-    );
-}
 
 const overviewMeta = [
     "Role: UX/UI Designer",
@@ -151,7 +136,7 @@ export default function CaseStudyBudgit({ project }) {
                     <div className="budgit-content__subsection">
                         <h3>Information Architecture</h3>
                         <p className="budgit-content__copy">{project.structureInteraction}</p>
-                        <ProjectImage
+                        <CaseStudyImage
                             image={project.structureInteractionImage}
                             className="case-study__structure-image budgit-content__architecture-image"
                             alt="budgIT information architecture: financial matters, student loans, and student discounts, with related budgeting, savings, repayment, and discount tools."
@@ -161,7 +146,7 @@ export default function CaseStudyBudgit({ project }) {
                     <div className="budgit-content__subsection">
                         <h3>Wireframing &amp; Visual Design</h3>
                         <p className="budgit-content__copy">{project.structureToVisualText}</p>
-                        <ProjectImage
+                        <CaseStudyImage
                             image={project.structureToVisualImage}
                             alt="Low-fidelity budgIT wireframes exploring screen hierarchy and financial information grouping, with Finnish labels."
                             caption="Low-fidelity wireframes translated the information architecture into screen layouts."
@@ -179,7 +164,7 @@ export default function CaseStudyBudgit({ project }) {
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
                         <h2>05. Final Solution &amp; Reflection</h2>
                     </div>
-                    <ProjectImage
+                    <CaseStudyImage
                         image={project.outcomeImage}
                         alt="Final budgIT budgeting interface mockup, with Finnish labels."
                         className="case-study__outcome-media"

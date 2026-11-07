@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import CaseStudyEvolution from "./CaseStudyEvolution";
 import CaseStudyHeader from "./CaseStudyHeader";
+import CaseStudyImage from "./CaseStudyImage";
 import "./CaseStudyBudgit.css";
 import "./CaseStudyAllTogether.css";
-import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 
 const overviewMeta = [
     "Role: UX/UI Designer",
@@ -13,263 +13,144 @@ const overviewMeta = [
 
 const homeScreenIterations = [
     {
-        src: "/img/alltogether-home-early-wireframe.png",
-        alt: "Early AllTogether home screen wireframe",
+        "title": "Early Wireframe",
+        "src": "/img/alltogether-home-early-wireframe.png",
+        "description": "Exploring the initial layout and information hierarchy."
     },
     {
-        src: "/img/alltogether-home-first-mockup.png",
-        alt: "First AllTogether home screen mockup",
+        "title": "First Mockup",
+        "src": "/img/alltogether-home-first-mockup.png",
+        "description": "Translating the structure into an early visual interface."
     },
     {
-        src: "/img/alltogether-home-second-mockup.png",
-        alt: "Second AllTogether home screen mockup",
+        "title": "Second Mockup",
+        "src": "/img/alltogether-home-second-mockup.png",
+        "description": "Continuing to develop the dashboard's layout and content."
     },
     {
-        src: "/img/alltogether-home-more-defined-mockup.png",
-        alt: "More defined AllTogether home screen mockup",
+        "title": "Refined Mockup",
+        "src": "/img/alltogether-home-more-defined-mockup.png",
+        "description": "Improving spacing, visual hierarchy and the organization of information."
     },
     {
-        src: "/img/alltogether-home-production-mockup.png",
-        alt: "First production version of the AllTogether home screen",
+        "title": "Developed Version",
+        "src": "/img/alltogether-home-production-mockup.png",
+        "description": "Building a more consistent and complete interface."
     },
+    {
+        "title": "Final Design",
+        "src": "/img/alltogether-final-home-screen.png",
+        "description": "Bringing the layout and visual direction together."
+    }
 ];
 
-const finalMobileScreens = [
-    {
-        src: "/img/alltogether-final-mobile-login.png",
-        alt: "AllTogether mobile login screen",
-    },
-    {
-        src: "/img/alltogether-final-mobile-signup.png",
-        alt: "AllTogether mobile signup screen",
-    },
-    {
-        src: "/img/alltogether-final-loading-screen.png",
-        alt: "AllTogether mobile loading screen",
-    },
-    {
-        src: "/img/alltogether-final-home-screen.png",
-        alt: "AllTogether final mobile home screen",
-    },
-    {
-        src: "/img/alltogether-final-workout-page.png",
-        alt: "AllTogether final mobile workout page",
-    },
-];
-
-const finalMobileFollowupScreens = [
-    {
-        src: "/img/alltogether-final-nutrition-page.png",
-        alt: "AllTogether final mobile nutrition page",
-    },
-    {
-        src: "/img/alltogether-final-socials-page.png",
-        alt: "AllTogether final mobile socials page",
-    },
-    {
-        src: "/img/alltogether-final-profile.png",
-        alt: "AllTogether final mobile profile page",
-    },
+const mobileGroups = [
+    { title: "Onboarding", screens: [
+        { file: "mobile-login", title: "Login" },
+        { file: "mobile-signup", title: "Signup" },
+        { file: "loading-screen", title: "Loading" },
+    ] },
+    { title: "Overview", screens: [{ file: "home-screen", title: "Home dashboard" }] },
+    { title: "Workouts & Nutrition", screens: [
+        { file: "workout-page", title: "Workouts" },
+        { file: "nutrition-page", title: "Nutrition" },
+    ] },
+    { title: "Social & Profile", screens: [
+        { file: "socials-page", title: "Social" },
+        { file: "profile", title: "Profile" },
+    ] },
 ];
 
 export default function CaseStudyAllTogether({ project }) {
-    const caseStudyRef = useRef(null);
-    useCaseStudyScrollReveal(caseStudyRef);
-
     return (
-        <section
-            className="case-study case-study--centered case-study--budgit case-study--alltogether"
-            ref={caseStudyRef}
-        >
+        <section className="case-study case-study--centered case-study--budgit case-study--alltogether budgit-content">
             <div className="case-study__wrap">
                 <CaseStudyHeader project={project} metadata={overviewMeta} />
 
                 <section className="case-study__section case-study__section--overview">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>01. Overview</h2>
-                    </div>
-                    <div className="case-study__overview-layout">
-                        <div className="case-study__copy-stack scroll-reveal" data-case-reveal>
-                            <p className="case-study__overview-text">
-                                People often use several apps and devices to track workouts, sleep, recovery, and nutrition. Because this information is spread across different services, it can be difficult to understand how the different parts of their health connect or what their overall daily status looks like.
-                            </p>
-                            <p className="case-study__overview-text">
-                                AllTogether was designed to bring this information into one clear, mobile-first experience. The main focus was the mobile app, while the desktop exploration was limited to adapting the home dashboard for a larger screen.
-                            </p>
-                        </div>
+                    <div className="case-study__section-title"><h2>01. Overview</h2></div>
+                    <div className="case-study__copy-stack">
+                        <p>AllTogether is a mobile-first health and fitness app concept that brings activity, sleep, recovery and nutrition data into one place. Designed as a university group project, it explores how users could understand their overall wellbeing without switching between multiple apps and services.</p>
+                        <p>The project focused on designing a complete mobile experience, with an additional desktop exploration of the home dashboard.</p>
                     </div>
                 </section>
 
                 <section className="case-study__section case-study__section--problem">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>02. Problem</h2>
+                    <div className="case-study__section-title"><h2>02. Problem</h2></div>
+                        <p>Fitness trackers and health apps provide valuable information, but that data is often scattered across different services. Users may see individual metrics without understanding their overall daily status, while manually tracking activities and navigating complex dashboards can become time-consuming.</p>
+                    <p className="case-study__insight-callout"><strong>Design challenge:</strong> How might we bring essential health information together in a way that is quick to understand and easy to use?</p>
+                </section>
+
+                <section className="case-study__section">
+                    <div className="case-study__section-title"><h2>03. Research &amp; Direction</h2></div>
+                    <div className="case-study__copy-stack">
+                        <p>We focused on health-conscious adults aged approximately 20–40 who use fitness apps or tracking devices and want a clearer overview of their daily wellbeing.</p>
+                        <p>Our product vision was to create a supportive and accessible experience that connects information from multiple services while prioritizing clarity over the number of available metrics.</p>
                     </div>
-                    <div className="case-study__copy-stack scroll-reveal" data-case-reveal>
-                        <p>
-                            Health-conscious users may collect a lot of data from fitness trackers and health apps, but the information is often fragmented. They can see individual numbers, but not always the bigger picture. Manually adding data can also feel repetitive, while detailed dashboards may become overwhelming. The challenge was to create an all-in-one experience that feels useful, simple and quick to check.
-                        </p>
+                    <div className="budgit-content__subsection">
+                        <h3>Product Vision</h3>
+                        <CaseStudyImage enlarge={false} image={{ src: "/img/alto-visiooni1.png" }} alt="AllTogether product vision board outlining the target group, needs, product and business goals." caption="AllTogether product vision board" className="alltogether-vision-image" />
+                        <dl className="alltogether-priorities">
+                            <div><dt>Clarity</dt><dd>Prioritize essential daily information.</dd></div>
+                            <div><dt>Convenience</dt><dd>Reduce repetitive data entry through proposed device and service integrations.</dd></div>
+                            <div><dt>Accessibility</dt><dd>Make health data easy to interpret and navigate.</dd></div>
+                        </dl>
                     </div>
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>The solution</h2>
+                    <div className="case-study__section-title"><h2>04. Design Process</h2></div>
+                    <div className="budgit-content__subsection">
+                        <h3>Information Architecture</h3>
+                        <p>We organized the app around five main areas: Home, Workouts, Nutrition, Social and Profile. The home dashboard was designed first, establishing the information hierarchy and card-based layout that would guide the rest of the mobile experience.</p>
+                        <CaseStudyImage enlarge={false} image={{ src: "/img/alltogether-information-architecture.png" }} alt="AllTogether information architecture showing Home, Workouts, Nutrition, Social and Profile and their related views." caption="AllTogether information architecture" className="case-study__structure-image budgit-content__architecture-image" />
                     </div>
-                    <div className="case-study__insight case-study__insight--vision">
-                        <div
-                            className="case-study__insight-text scroll-reveal scroll-reveal--left"
-                            data-case-reveal
-                        >
-                            <p className="case-study__insight-body">
-                                We designed a mobile-first health app that combines data from fitness devices and services such as Oura, Whoop, Garmin, Apple Watch and Strava. The concept was later expanded to include a desktop interface as well.
-                            </p>
-                            <p className="case-study__insight-body">
-                                The home dashboard highlights activity, sleep and recovery, while other areas support workouts, nutrition, social features and adding personal content.
-                            </p>
-                            <p className="case-study__insight-body">
-                                Instead of showing every available metric, the design focuses on the most useful information and presents it through clear, modular cards.
-                            </p>
-                        </div>
-                        <figure
-                            className="case-study__insight-card case-study__visual-card case-study__visual-card--vision scroll-reveal scroll-reveal--right"
-                            data-case-reveal
-                        >
-                            <p className="case-study__vision-board-text">
-                                The product vision helped us keep the experience supportive and easy to understand. We also considered automatic data syncing, customization, accessibility and future integration with new devices.
-                            </p>
-                            <img
-                                src="/img/alto-visiooni1.png"
-                                alt="AllTogether product vision board"
-                            />
-                        </figure>
+                    <div className="budgit-content__subsection">
+                        <h3>Developing the Home Screen</h3>
+                        <p>We developed the home dashboard through several iterations, starting with an early wireframe and gradually refining the layout, information hierarchy and visual design. As the central view of the app, the dashboard established patterns that were later applied to the other mobile screens.</p>
+                        <CaseStudyEvolution stages={homeScreenIterations} label="AllTogether home screen design evolution" />
+                        <p>Through these iterations, we refined the dashboard into a clearer and more structured interface while establishing a visual direction for the rest of the app.</p>
                     </div>
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>The process</h2>
-                    </div>
-                    <div className="case-study__ia-section scroll-reveal" data-case-reveal>
-                        <figure
-                            className="case-study__ia-media"
-                        >
-                            <img
-                                src="/img/alltogether-information-architecture.png"
-                                alt="AllTogether information architecture"
-                            />
-                            <figcaption className="case-study__note">
-                                Information architecture
-                            </figcaption>
-                        </figure>
-                        <div className="case-study__ia-text">
-                            <p>
-                                We began by defining the target users: people aged roughly 20-40 who are interested in fitness, wellbeing and health tracking.
-                            </p>
-                            <p>
-                                The persona helped us focus on users who want a clear overview of their health without having to interpret complex data.
-                            </p>
-                            <p>
-                                Instead of designing every view at once, we started with the mobile home screen. We explored what information users would need most often and how workouts, sleep, recovery and nutrition could fit into one clear overview.
-                            </p>
-                            <p>
-                                The home screen became the foundation for the rest of the app. Its content structure, card layout and navigation patterns guided the later workout, nutrition, social and profile views.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="case-study__structure scroll-reveal" data-case-reveal>
-                        <h3 className="case-study__structure-title">Developing the home screen</h3>
-                        <div className="case-study__home-screen-gallery">
-                            {homeScreenIterations.map((item) => (
-                                <figure className="case-study__home-screen-item" key={item.src}>
-                                    <img src={item.src} alt={item.alt} />
-                                </figure>
+                    <div className="case-study__section-title"><h2>05. Final Solution &amp; Reflection</h2></div>
+                    <div className="budgit-content__subsection">
+                        <h3>Final Mobile Experience</h3>
+                        <p>The final mobile design brings activity, workouts, recovery, nutrition and social features into one consistent experience.</p>
+                        <p>The home dashboard provides a quick daily overview, while dedicated sections allow users to explore workout plans, manage nutrition, participate in social activities and customize their profile.</p>
+                        <div className="alltogether-mobile-gallery">
+                            <div className="alltogether-mobile-gallery__scroll" role="region" aria-label="Final mobile designs, scroll horizontally to view all screens" tabIndex={0}>
+                            <div className="alltogether-mobile-gallery__row">
+                            {mobileGroups.map((group) => (
+                                <div className="alltogether-mobile-gallery__group" key={group.title} style={{ "--screen-count": group.screens.length }}>
+                                    <p className="alltogether-mobile-gallery__label"><strong>{group.title}</strong></p>
+                                    <div className="alltogether-mobile-gallery__screens">
+                                        {group.screens.map((screen) => (
+                                            <CaseStudyImage enlarge={false}
+                                                key={screen.file}
+                                                image={{ src: `/img/alltogether-final-${screen.file}.png` }}
+                                                alt={`AllTogether final mobile ${screen.title.toLowerCase()} screen`}
+                                                caption={screen.title}
+                                                className="alltogether-mobile-gallery__image"
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
                             ))}
-                        </div>
-                        <p className="case-study__structure-text">
-                            We created several versions of the home screen, moving from rough wireframes toward a more defined visual direction. The home screen became the foundation for the rest of the app. Its hierarchy, card structure and navigation patterns were later reused across other views.
-                        </p>
-                        <p className="case-study__structure-text">
-                            The home screen evolved through several iterations. We gradually added the necessary content, improved spacing and refined the layout based on usability considerations. This helped turn the initial wireframe into a clearer and more structured dashboard.
-                        </p>
-                    </div>
-                </section>
-
-                <section className="case-study__section">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>Final design</h2>
-                    </div>
-                    <figure className="case-study__outcome-media scroll-reveal" data-case-reveal>
-                        <img
-                            src="/img/alltogether-final-flow.jpg"
-                            alt="Final AllTogether mobile screen flow"
-                        />
-                        <figcaption className="case-study__note">
-                            Final mobile flow
-                        </figcaption>
-                    </figure>
-                    <div className="case-study__final-screen-gallery scroll-reveal" data-case-reveal>
-                        {finalMobileScreens.map((item) => (
-                            <figure className="case-study__final-screen-item" key={item.src}>
-                                <img src={item.src} alt={item.alt} />
-                            </figure>
-                        ))}
-                    </div>
-                    <div className="case-study__final-followup scroll-reveal" data-case-reveal>
-                        <div className="case-study__final-screen-gallery case-study__final-screen-gallery--followup">
-                            {finalMobileFollowupScreens.map((item) => (
-                                <figure className="case-study__final-screen-item" key={item.src}>
-                                    <img src={item.src} alt={item.alt} />
-                                </figure>
-                            ))}
-                        </div>
-                        <div className="case-study__final-followup-text">
-                            <p>
-                                The final design combines activity, workouts, recovery, nutrition and social features within one consistent mobile experience.
-                            </p>
-                            <p>
-                                The home screen gives users a quick daily overview of their health, including activity, calories, protein, upcoming workouts and meal suggestions. Dedicated workout and nutrition views allow users to follow plans, track progress and find relevant content without overcrowding the dashboard.
-                            </p>
-                            <p>
-                                The social section supports motivation through shared challenges, friend activity and invitations, while the profile view brings together personal information, connected devices, privacy and app preferences.
-                            </p>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="case-study__desktop-final scroll-reveal" data-case-reveal>
-                        <div className="case-study__desktop-final-text">
-                            <p>
-                                The desktop version uses the larger canvas to present the main health information in a single dashboard. Activity, workout progress, nutrition, weight tracking, social updates, water intake and meal suggestions are visible at once, while the side navigation keeps the same core sections as the mobile app.
-                            </p>
-                        </div>
-                        <figure className="case-study__desktop-final-media">
-                            <img
-                                src="/img/alltogether-final-desktop.png"
-                                alt="AllTogether final desktop dashboard"
-                            />
-                        </figure>
+                    <div className="budgit-content__subsection">
+                        <h3>Desktop Exploration</h3>
+                        <p>The desktop design adapts the mobile home dashboard to a larger screen, allowing users to view more information simultaneously. The concept retains the core navigation while bringing activity, nutrition, workouts and other daily metrics into a unified dashboard.</p>
+                        <CaseStudyImage enlarge={false} image={{ src: "/img/alltogether-final-desktop.png" }} alt="AllTogether desktop home dashboard exploration, adapting the mobile daily overview to a larger screen." caption="Desktop exploration: home dashboard" className="case-study__outcome-media alltogether-desktop-image" />
                     </div>
-                </section>
-
-                <section className="case-study__section case-study__section--reflection">
-                    <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>Reflection</h2>
-                    </div>
-                    <div className="case-study__copy-stack scroll-reveal" data-case-reveal>
-                        <p>
-                            The project showed how important iteration is when designing a data-heavy product.
-                        </p>
-                        <p>
-                            Our early designs changed several times, but the main goal remained the same: create one clear place for fitness, nutrition, sleep and social motivation.
-                        </p>
-                        <p>
-                            One challenge was that the visual style and color palette were finalized quite late, which caused some inconsistency between early screens. In a future project, I would define the visual system earlier and validate the interface with users throughout the process.
-                        </p>
-                        <p>
-                            The next step would be usability testing, user surveys and real-world feedback to understand how people interpret the dashboard and which features they value most.
-                        </p>
-                        <p className="case-study__insight-callout">
-                            AllTogether brings this information into one clear interface, helping users understand their daily wellbeing without switching between multiple services.
-                        </p>
+                    <div className="budgit-content__subsection">
+                        <h3>Reflection</h3>
+                        <p>The project demonstrated the importance of iteration when designing information-heavy interfaces. Developing the home screen through multiple versions helped us refine its hierarchy, layout and overall clarity.</p>
+                        <p>One challenge was finalizing the visual style and color palette relatively late, which created inconsistencies between earlier designs. In future projects, I would establish a shared visual system earlier and conduct usability testing throughout the design process.</p>
                     </div>
                 </section>
             </div>
