@@ -12,6 +12,22 @@ const getPersonaRoleLine = (persona = {}) => {
     return [roleMain, roleDetail].filter(Boolean).map((item) => `[${item}]`).join(" ");
 };
 
+function ProjectImage({ image, alt, caption, className = "case-study__structure-image" }) {
+    if (!image?.src) return null;
+
+    return (
+        <figure className={className}>
+            <a className="budgit-content__image-link" href={image.src} target="_blank" rel="noreferrer">
+                <img src={image.src} alt={image.alt || alt} loading="lazy" />
+                <span className="budgit-content__image-hint">View full-size image (opens in a new tab)</span>
+            </a>
+            {(image.caption || caption) && (
+                <figcaption className="case-study__note">{image.caption || caption}</figcaption>
+            )}
+        </figure>
+    );
+}
+
 const overviewMeta = [
     "Role: UX/UI Designer",
     "Project: University group project",
@@ -25,7 +41,7 @@ export default function CaseStudyBudgit({ project }) {
     useCaseStudyScrollReveal(caseStudyRef);
 
     return (
-        <section className="case-study case-study--centered case-study--budgit" ref={caseStudyRef}>
+        <section className="case-study case-study--centered case-study--budgit budgit-content" ref={caseStudyRef}>
             <div className="case-study__wrap">
                 <CaseStudyHeader project={project} metadata={overviewMeta} />
 
@@ -51,17 +67,11 @@ export default function CaseStudyBudgit({ project }) {
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>Solution</h2>
+                        <h2>03. Research &amp; Insights</h2>
                     </div>
-                    {(project.solution || project.researchInsight || project.persona) ? (
+                    {(project.researchInsight || project.researchInsightPoints?.length || project.persona) ? (
                         <div className="case-study__insight">
                             <div className="case-study__insight-text scroll-reveal scroll-reveal--left" data-case-reveal>
-                                <p className="case-study__insight-body case-study__solution-text">
-                                    {project.solution || "The approach, design decisions, and build strategy."}
-                                </p>
-                                {project.researchInsight ? (
-                                    <h3 className="case-study__insight-title">Research insights</h3>
-                                ) : null}
                                 {project.researchInsight ? (
                                     <p className="case-study__insight-body">{project.researchInsight}</p>
                                 ) : null}
@@ -81,9 +91,9 @@ export default function CaseStudyBudgit({ project }) {
                                     <div className="case-study__persona-card">
                                         <div className="case-study__persona-header">
                                             <div className="case-study__persona-meta">
-                                                <p className="case-study__persona-title">Persona</p>
+                                                <h3 className="case-study__persona-title">Persona: {project.persona.name}</h3>
                                                 <p className="case-study__persona-name">
-                                                    {[project.persona.name, project.persona.age].filter(Boolean).join(",")}
+                                                    {[project.persona.name, project.persona.age].filter(Boolean).join(", ")}
                                                 </p>
                                                 <p className="case-study__persona-line">
                                                     {personaLine}
@@ -102,7 +112,7 @@ export default function CaseStudyBudgit({ project }) {
                                                     <div className="case-study__persona-section">
                                                         <p className="case-study__persona-section-title">Needs</p>
                                                         <ul className="case-study__list case-study__list--compact case-study__list--tight">
-                                                            {project.persona.needs.slice(0, 3).map((item, index) => (
+                                                            {project.persona.needs.map((item, index) => (
                                                                 <li key={index}>{item}</li>
                                                             ))}
                                                         </ul>
@@ -112,7 +122,7 @@ export default function CaseStudyBudgit({ project }) {
                                                     <div className="case-study__persona-section">
                                                         <p className="case-study__persona-section-title">Pain Points</p>
                                                         <ul className="case-study__list case-study__list--compact case-study__list--tight">
-                                                            {project.persona.frustrations.slice(0, 2).map((item, index) => (
+                                                            {project.persona.frustrations.map((item, index) => (
                                                                 <li key={index}>{item}</li>
                                                             ))}
                                                         </ul>
@@ -128,76 +138,78 @@ export default function CaseStudyBudgit({ project }) {
                             ) : null}
                         </div>
                     ) : null}
-                    {project.structureInteraction ? (
-                        <div className="case-study__structure scroll-reveal" data-case-reveal>
-                            <h3 className="case-study__structure-title">Structure &amp; Interaction</h3>
-                            {project.structureInteractionImage?.src ? (
-                                <div className="case-study__structure-image">
-                                    <img
-                                        src={project.structureInteractionImage.src}
-                                        alt={project.structureInteractionImage.alt || "Information architecture"}
-                                    />
-                                </div>
-                            ) : null}
-                            <p className="case-study__structure-text">{project.structureInteraction}</p>
-                            {project.structureToVisualText ? (
-                                <div className="case-study__structure-followup">
-                                    <h3 className="case-study__structure-followup-title">
-                                        {project.structureToVisualTitle || "From Structure to Visual Design"}
-                                    </h3>
-                                    <p className="case-study__structure-text case-study__structure-text--followup">
-                                        {project.structureToVisualText}
-                                    </p>
-                                    {project.structureToVisualImage?.src ? (
-                                        <>
-                                            <div className="case-study__structure-image">
-                                                <img
-                                                    src={project.structureToVisualImage.src}
-                                                    alt={project.structureToVisualImage.alt || "Wireframes"}
-                                                />
-                                            </div>
-                                            {project.structureToVisualImage?.caption ? (
-                                                <p className="case-study__note">{project.structureToVisualImage.caption}</p>
-                                            ) : null}
-                                        </>
-                                    ) : (
-                                        <div className="case-study__placeholder">
-                                            {project.structureToVisualPlaceholder || "Placeholder for future image"}
-                                        </div>
-                                    )}
-                                </div>
-                            ) : null}
-                        </div>
-                    ) : null}
+                    <p className="budgit-content__copy">
+                        These needs guided the design process: a clear overview, simple feature groups,
+                        and financial information that students could understand quickly.
+                    </p>
+                </section>
+
+                <section className="case-study__section">
+                    <div className="case-study__section-title">
+                        <h2>04. Design Process</h2>
+                    </div>
+                    <div className="budgit-content__subsection">
+                        <h3>Information Architecture</h3>
+                        <p className="budgit-content__copy">{project.structureInteraction}</p>
+                        <ProjectImage
+                            image={project.structureInteractionImage}
+                            className="case-study__structure-image budgit-content__architecture-image"
+                            alt="budgIT information architecture: financial matters, student loans, and student discounts, with related budgeting, savings, repayment, and discount tools."
+                            caption="Information architecture: organizing the overview and feature groups."
+                        />
+                    </div>
+                    <div className="budgit-content__subsection">
+                        <h3>Wireframing &amp; Visual Design</h3>
+                        <p className="budgit-content__copy">{project.structureToVisualText}</p>
+                        <ProjectImage
+                            image={project.structureToVisualImage}
+                            alt="Low-fidelity budgIT wireframes exploring screen hierarchy and financial information grouping, with Finnish labels."
+                            caption="Low-fidelity wireframes translated the information architecture into screen layouts."
+                        />
+                        <p className="budgit-content__copy">{project.uxDecision}</p>
+                        <p className="budgit-content__copy">
+                            I was mainly responsible for building and visually refining the interactive prototype,
+                            while contributing throughout the group's design process. The final mockup below
+                            shows the progression from wireframes to high-fidelity design.
+                        </p>
+                    </div>
                 </section>
 
                 <section className="case-study__section">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
-                        <h2>Outcome</h2>
+                        <h2>05. Final Solution &amp; Reflection</h2>
                     </div>
-                    {project.outcomeImage?.src ? (
-                        <figure className="case-study__outcome-media">
-                            <img
-                                src={project.outcomeImage.src}
-                                alt={project.outcomeImage.alt || "Outcome mockup"}
-                            />
-                            {project.outcomeImage.caption ? (
-                                <figcaption className="case-study__note">
-                                    {project.outcomeImage.caption}
-                                </figcaption>
-                            ) : null}
-                        </figure>
-                    ) : null}
-                    <p className="scroll-reveal" data-case-reveal>
-                        {project.outcome || "Result, impact, and what you learned."}
+                    <ProjectImage
+                        image={project.outcomeImage}
+                        alt="Final budgIT budgeting interface mockup, with Finnish labels."
+                        className="case-study__outcome-media"
+                        caption="Final budgIT mockup"
+                    />
+                    <p className="budgit-content__copy">
+                        We designed budgIT as a lightweight financial hub for students. The concept combines
+                        budgeting, expense tracking, savings goals, student loans, and discounts in one experience.
                     </p>
-                    {project.impactLearnings?.length ? (
-                        <ul className="case-study__list case-study__impact-grid scroll-reveal" data-case-reveal>
-                            {project.impactLearnings.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>
-                    ) : null}
+                    <ul className="case-study__research-list budgit-content__copy">
+                        <li><strong>Financial overview:</strong> monthly budgets, expenses, and remaining funds make the financial situation easier to understand at a glance.</li>
+                        <li><strong>Planning tools:</strong> budgeting and savings goals support planning around irregular income and expenses.</li>
+                        <li><strong>Student-focused support:</strong> basic financial learning, student loans, and discounts address needs beyond basic bank transaction tracking.</li>
+                    </ul>
+                    <div className="budgit-content__subsection">
+                        <h3>Peer Feedback</h3>
+                        <p className="budgit-content__copy">
+                            The final result was an interactive prototype that adapts to different screen sizes
+                            and usage situations. Peer feedback highlighted its clarity, usability, and visual structure.
+                        </p>
+                    </div>
+                    <div className="budgit-content__subsection">
+                        <h3>Reflection</h3>
+                        {project.impactLearnings?.length ? (
+                            <ul className="case-study__list budgit-content__copy">
+                                {project.impactLearnings.map((item) => <li key={item}>{item}</li>)}
+                            </ul>
+                        ) : null}
+                        <p className="budgit-content__copy">{project.reflection}</p>
+                    </div>
                 </section>
             </div>
         </section>

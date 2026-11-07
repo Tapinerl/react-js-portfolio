@@ -723,3 +723,179 @@
         grid-template-columns: 1fr;
     }
 }
+/* Content hierarchy is scoped to budgIT; other case studies reuse the base styles. */
+.budgit-content .case-study__section {
+    width: 100%;
+    max-width: 78ch;
+    margin-inline: auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.budgit-content .case-study__section-title {
+    width: 100%;
+    max-width: 78ch;
+    margin-inline: auto;
+}
+
+.budgit-content .budgit-content__copy {
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+
+.budgit-content .budgit-content__subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.budgit-content .case-study__section h3 {
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 1.3;
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+}
+
+.budgit-content .case-study__insight {
+    margin-top: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+}
+
+.budgit-content .case-study__insight-body {
+    max-width: none;
+}
+
+.budgit-content .case-study__insight-card {
+    width: 100%;
+    justify-self: center;
+}
+
+.budgit-content .case-study__persona-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px 28px;
+}
+
+.budgit-content .case-study__persona-columns,
+.budgit-content .case-study__persona-quote {
+    grid-column: 1 / -1;
+}
+
+.budgit-content .case-study__persona-card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.budgit-content .case-study__persona-card .case-study__persona-section-title {
+    font-size: 17px;
+}
+
+.budgit-content .case-study__persona-card .case-study__persona-quote {
+    margin-top: 0;
+}
+
+.budgit-content .case-study__research-list {
+    gap: 16px;
+    line-height: 1.7;
+}
+
+.budgit-content .case-study__structure-image,
+.budgit-content .case-study__outcome-media {
+    margin: 16px 0;
+    padding-block: clamp(32px, 5vw, 64px);
+    width: min(var(--content-max-width), calc(100vw - 96px));
+    align-self: center;
+    background: var(--color-background);
+    /* Extend only the background to the viewport edges without adding overflow. */
+    box-shadow: 0 0 0 100vmax var(--color-background);
+    clip-path: inset(0 -100vmax);
+    overflow: visible;
+}
+
+.budgit-content .case-study__structure-image .case-study__note,
+.budgit-content .case-study__outcome-media .case-study__note {
+    text-align: center;
+}
+
+.budgit-content .budgit-content__image-link {
+    display: block;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.budgit-content .budgit-content__image-link img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.budgit-content .budgit-content__image-hint {
+    display: block;
+    padding-block: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.budgit-content .budgit-content__image-link:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 5px;
+}
+
+.budgit-content .case-study__insight-card.scroll-reveal--right {
+    --reveal-transform-hidden: translate3d(0, 24px, 0);
+}
+
+.budgit-content .case-study__insight-text,
+.budgit-content .case-study__insight-card {
+    min-width: 0;
+}
+
+.budgit-content .case-study__persona-card {
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .budgit-content .case-study__structure-image,
+    .budgit-content .case-study__outcome-media {
+        width: min(var(--content-max-width), calc(100vw - 32px));
+    }
+
+    .budgit-content .case-study__section h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .budgit-content .case-study__persona-card {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .budgit-content [data-case-reveal].scroll-reveal {
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Keep the architecture diagram in the reading column at every breakpoint. */
+.budgit-content .case-study__structure-image.budgit-content__architecture-image {
+    width: 100%;
+    margin-block: 0;
+    padding-block: 12px;
+    background: var(--color-section-dark);
+    box-shadow: none;
+    clip-path: none;
+}
