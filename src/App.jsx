@@ -9,8 +9,8 @@ import {
 } from "react-router-dom";
 import Navbar from "./Pages/Home/Navbar";
 import Home from "./Pages/Home/Homescreen";
-import AboutPage from "./Pages/Home/AboutPage";
-import CaseStudy from "./Pages/Home/CaseStudy";
+const AboutPage = React.lazy(() => import("./Pages/Home/AboutPage"));
+const CaseStudy = React.lazy(() => import("./Pages/Home/CaseStudy"));
 
 function ScrollManager() {
   const location = useLocation();
@@ -54,12 +54,14 @@ function App() {
         <div>
           <ScrollManager />
           <Navbar />
+          <React.Suspense fallback={<main className="route-loading" aria-busy="true"><p role="status">Loading page…</p></main>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/case-studies/:id" element={<CaseStudy />} />
             <Route path="*" element={<div>404 Not Found</div>} />
           </Routes>
+          </React.Suspense>
         </div>
       </Router>
     </div>

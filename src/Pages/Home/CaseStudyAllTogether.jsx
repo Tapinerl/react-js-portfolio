@@ -1,15 +1,8 @@
 import CaseStudyEvolution from "./CaseStudyEvolution";
-import CaseStudyHeader from "./CaseStudyHeader";
+import CaseStudyHero from "./CaseStudyHero";
 import CaseStudyImage from "./CaseStudyImage";
 import "./CaseStudyBudgit.css";
 import "./CaseStudyAllTogether.css";
-
-const overviewMeta = [
-    "Role: UX/UI Designer",
-    "Project: University group project",
-    "Platform: Mobile and desktop",
-    "Year: 2025",
-];
 
 const homeScreenIterations = [
     {
@@ -65,7 +58,7 @@ export default function CaseStudyAllTogether({ project }) {
     return (
         <section className="case-study case-study--centered case-study--budgit case-study--alltogether budgit-content">
             <div className="case-study__wrap">
-                <CaseStudyHeader project={project} metadata={overviewMeta} />
+                <CaseStudyHero project={project} />
 
                 <section className="case-study__section case-study__section--overview">
                     <div className="case-study__section-title"><h2>01. Overview</h2></div>
@@ -108,7 +101,7 @@ export default function CaseStudyAllTogether({ project }) {
                     <div className="budgit-content__subsection">
                         <h3>Developing the Home Screen</h3>
                         <p>We developed the home dashboard through several iterations, starting with an early wireframe and gradually refining the layout, information hierarchy and visual design. As the central view of the app, the dashboard established patterns that were later applied to the other mobile screens.</p>
-                        <CaseStudyEvolution stages={homeScreenIterations} label="AllTogether home screen design evolution" />
+                        <CaseStudyEvolution stages={homeScreenIterations} label="AllTogether home screen design evolution" imageSizes="320px" />
                         <p>Through these iterations, we refined the dashboard into a clearer and more structured interface while establishing a visual direction for the rest of the app.</p>
                     </div>
                 </section>
@@ -120,7 +113,7 @@ export default function CaseStudyAllTogether({ project }) {
                         <p>The final mobile design brings activity, workouts, recovery, nutrition and social features into one consistent experience.</p>
                         <p>The home dashboard provides a quick daily overview, while dedicated sections allow users to explore workout plans, manage nutrition, participate in social activities and customize their profile.</p>
                         <div className="alltogether-mobile-gallery">
-                            <div className="alltogether-mobile-gallery__scroll" role="region" aria-label="Final mobile designs, scroll horizontally to view all screens" tabIndex={0}>
+                            <div className="alltogether-mobile-gallery__scroll">
                             <div className="alltogether-mobile-gallery__row">
                             {mobileGroups.map((group) => (
                                 <div className="alltogether-mobile-gallery__group" key={group.title} style={{ "--screen-count": group.screens.length }}>
@@ -133,6 +126,7 @@ export default function CaseStudyAllTogether({ project }) {
                                                 alt={`AllTogether final mobile ${screen.title.toLowerCase()} screen`}
                                                 caption={screen.title}
                                                 className="alltogether-mobile-gallery__image"
+                                                sizes="220px"
                                             />
                                         ))}
                                     </div>

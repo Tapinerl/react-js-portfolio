@@ -13,12 +13,22 @@
     "three": "^0.160.1"
   },
   "scripts": {
+    "prestart": "node scripts/optimize-images.mjs",
     "start": "vite",
+    "prebuild": "node scripts/optimize-images.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "perf:audit": "node scripts/audit-performance.mjs",
+    "perf:serve": "node scripts/serve-performance.mjs",
+    "perf:profile": "node scripts/profile-main-thread.mjs",
+    "perf:check": "node scripts/check-portfolio.mjs"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.2.1",
+    "chrome-launcher": "^1.2.3",
+    "lighthouse": "^13.6.0",
+    "playwright": "^1.65.0",
+    "sharp": "^0.35.5",
     "vite": "^8.3.6"
   }
 }

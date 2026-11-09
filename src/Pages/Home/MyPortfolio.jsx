@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import data from "../../data/index.json";
 import { getTagToneClass } from "./caseStudyUtils";
+import ResponsiveImage from "../../components/ResponsiveImage";
 
 export default function MyPortfolio() {
     return (
@@ -25,7 +26,7 @@ export default function MyPortfolio() {
                         data-portfolio-order={index}
                     >
                         <div className="portfolio--section--img">
-                            <img src={item.src} alt={item.title}></img>
+                            <ResponsiveImage src={item.src} alt={item.title} sizes="(max-width: 900px) calc(100vw - 52px), (max-width: 1200px) calc((100vw - 138px) / 2), 531px" />
                         </div>
                         <div className="portfolio--section--card--content">
                             <div>

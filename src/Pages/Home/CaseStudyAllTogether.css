@@ -41,7 +41,7 @@
 .case-study--alltogether .alltogether-mobile-gallery__group {
     position: relative;
     isolation: isolate;
-    padding-block: 24px;
+    padding-block: clamp(16px, 2vw, 24px);
     display: grid;
     grid-template-columns: subgrid;
     grid-column: span var(--screen-count);
@@ -52,7 +52,7 @@
 .case-study--alltogether .alltogether-mobile-gallery__group::before {
     content: "";
     position: absolute;
-    inset: 0 -24px;
+    inset: 0 calc(-1 * clamp(6px, 1.6vw, 24px));
     z-index: -1;
     border-radius: 8px;
     background: #0b173d;
@@ -61,7 +61,9 @@
 
 .case-study--alltogether .alltogether-mobile-gallery__label {
     grid-column: 1 / -1;
-    margin-bottom: 20px;
+    margin-bottom: clamp(10px, 1.5vw, 20px);
+    font-size: clamp(12px, 1.4vw, 16px);
+    overflow-wrap: anywhere;
     min-height: 4em;
     display: flex;
     align-items: center;
@@ -89,7 +91,8 @@
 
 .case-study--alltogether .alltogether-mobile-gallery__image .case-study__note {
     text-align: center;
-    font-size: 13px;
+    font-size: clamp(10px, 1.1vw, 13px);
+    overflow-wrap: anywhere;
     letter-spacing: 0.04em;
 }
 
@@ -120,18 +123,13 @@
 
 
 .case-study--alltogether .alltogether-mobile-gallery__scroll {
-    overflow-x: auto;
-    padding: 6px 26px 16px;
-}
-
-.case-study--alltogether .alltogether-mobile-gallery__scroll:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: -3px;
+    padding: 6px clamp(8px, 1.8vw, 26px) 16px;
+    min-width: 0;
 }
 
 .case-study--alltogether .alltogether-mobile-gallery__row {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 64px;
-    min-width: 720px;
+    gap: clamp(16px, 4.5vw, 64px);
+    min-width: 0;
 }

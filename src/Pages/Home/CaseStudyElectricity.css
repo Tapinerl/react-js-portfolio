@@ -1,0 +1,369 @@
+.case-study--electricity.electricity-teaser {
+    padding-bottom: 80px;
+}
+
+.electricity-teaser .case-study__wrap {
+    gap: 64px;
+}
+
+.electricity-teaser .electricity-section {
+    width: 100%;
+    max-width: 78ch;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+.electricity-teaser h2 {
+    margin: 0;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: clamp(23px, 2.6vw, 30px);
+    line-height: 1.3;
+}
+
+.electricity-teaser h3 {
+    margin: 0;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.electricity-teaser p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--white);
+}
+
+.electricity-teaser .electricity-section__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: none;
+}
+
+.electricity-teaser .electricity-idea {
+    gap: 24px;
+}
+
+.electricity-teaser .electricity-idea > .electricity-highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.electricity-teaser .electricity-highlights {
+    display: grid;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.electricity-teaser .electricity-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    min-width: 0;
+}
+
+.electricity-teaser .electricity-highlights svg {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+.electricity-teaser .electricity-highlights strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.electricity-teaser .electricity-highlights p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d9dfec;
+}
+
+.electricity-teaser .electricity-states {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.electricity-teaser .electricity-states__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    text-align: center;
+    position: relative;
+    padding-top: calc(62.5% + 22px);
+}
+
+.electricity-teaser .electricity-states dt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.electricity-teaser .electricity-states small {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #d9dfec;
+}
+
+.electricity-teaser .electricity-states dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.electricity-teaser .electricity-states .electricity-states__price {
+    position: absolute;
+    inset: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px;
+    width: 100%;
+    aspect-ratio: 1.6;
+    border-radius: 16px;
+    color: #241d12;
+    font-size: 16px;
+    font-weight: 700;
+    background: radial-gradient(ellipse at center, #ffe8aa 0%, #ffda78 70%, #e8b956 100%);
+    box-shadow: 0 0 24px 2px #ffda7820;
+}
+
+.electricity-teaser .electricity-states__item--moderate .electricity-states__price {
+    background: radial-gradient(ellipse at center, #f8b6a7 0%, #ed8d79 70%, #cc6d5d 100%);
+    box-shadow: 0 0 24px 2px #ed8d7920;
+}
+
+.electricity-teaser .electricity-states__item--unlit .electricity-states__price {
+    color: var(--white);
+    background: #080d1b;
+    box-shadow: inset 0 0 0 1px #586174;
+}
+
+.electricity-teaser .electricity-note {
+    color: #bfc9dc;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.electricity-teaser .electricity-photo-band {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-block: clamp(32px, 5vw, 64px);
+    background: var(--color-background);
+    box-shadow: 0 0 0 100vmax var(--color-background);
+    clip-path: inset(0 -100vmax);
+}
+
+.electricity-teaser .electricity-prototype-gallery {
+    width: min(var(--content-max-width), calc(100vw - 96px));
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.electricity-teaser .electricity-photo {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.electricity-teaser .electricity-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.electricity-teaser .electricity-prototype-gallery img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 64%;
+}
+
+.electricity-teaser .electricity-photo .case-study__note {
+    margin-top: 8px;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #d9dfec;
+}
+
+.electricity-teaser .electricity-test {
+    max-width: var(--content-max-width);
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+}
+
+.electricity-teaser .electricity-test__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.electricity-teaser .electricity-highlights--testing {
+    gap: 14px;
+}
+
+.electricity-teaser .electricity-next__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.electricity-teaser .electricity-next__grid li {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    padding: 22px;
+    border-radius: 16px;
+    background: #0b173d;
+    transition: background-color 160ms ease;
+}
+
+.electricity-teaser .electricity-next__grid li:hover {
+    background: #11224c;
+}
+
+.electricity-teaser .electricity-next__grid svg {
+    width: 28px;
+    height: 28px;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+}
+
+.electricity-teaser .electricity-next__grid p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #d9dfec;
+}
+
+.electricity-teaser .electricity-ending {
+    width: 100%;
+    max-width: 78ch;
+    margin-inline: auto;
+    box-sizing: border-box;
+    padding-top: 28px;
+    border-top: 1px solid #ffffff24;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.electricity-teaser .electricity-ending p {
+    color: #d9dfec;
+    font-size: 16px;
+}
+
+.electricity-teaser .electricity-back {
+    color: var(--color-accent);
+    font-size: 14px;
+    line-height: 1.6;
+    text-underline-offset: 4px;
+}
+
+.electricity-teaser .electricity-back span {
+    margin-left: 8px;
+}
+
+.electricity-teaser a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+    .electricity-teaser .electricity-prototype-gallery {
+        width: min(var(--content-max-width), calc(100vw - 32px));
+    }
+
+    .electricity-teaser .electricity-next__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .electricity-teaser .electricity-idea {
+        gap: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    .electricity-teaser .electricity-photo-band {
+        gap: 48px;
+    }
+
+    .electricity-teaser .case-study__wrap {
+        gap: 48px;
+    }
+
+    .electricity-teaser .electricity-idea,
+    .electricity-teaser .electricity-test {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .electricity-teaser .electricity-idea > .electricity-highlights,
+    .electricity-teaser .electricity-states,
+    .electricity-teaser .electricity-prototype-gallery {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .electricity-teaser .electricity-prototype-gallery,
+    .electricity-teaser .electricity-test__photo {
+        width: 100%;
+        max-width: 440px;
+        margin-inline: auto;
+    }
+
+    .electricity-teaser .electricity-prototype-gallery img {
+        aspect-ratio: 1742 / 1499;
+    }
+
+    .electricity-teaser .electricity-ending {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 400px) {
+    .electricity-teaser .electricity-next__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .electricity-teaser .electricity-next__grid li {
+        transition: none;
+    }
+}

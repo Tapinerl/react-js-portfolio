@@ -1,17 +1,8 @@
-import CaseStudyHeader from "./CaseStudyHeader";
+import CaseStudyHero from "./CaseStudyHero";
 import CaseStudyImage from "./CaseStudyImage";
 import CaseStudyEvolution from "./CaseStudyEvolution";
 import "./CaseStudyBudgit.css";
 import "./CaseStudyDashboardMMT.css";
-
-const overviewMeta = [
-    "Role: UX/UI Designer & Junior Developer",
-    "Project: University software engineering group project",
-    "Platform: Desktop web application",
-    "Year: 2025",
-    "Team: 7 members",
-    "Technologies: PHP, CakePHP, JavaScript, HTML, CSS, MariaDB, Docker",
-];
 
 const dashboardIterations = [
     {
@@ -38,13 +29,14 @@ export default function CaseStudyDashboardMMT({ project }) {
     return (
         <section className="case-study case-study--centered case-study--budgit case-study--dashboard-mmt budgit-content">
             <div className="case-study__wrap">
-                <CaseStudyHeader project={{ ...project, title: "Dashboard – MMT" }} metadata={overviewMeta} />
+                <CaseStudyHero project={project} />
 
                 <section className="case-study__section case-study__section--overview">
                     <div className="case-study__section-title"><h2>01. Overview</h2></div>
                     <div className="case-study__copy-stack">
                         <p>The Metrics Monitoring Tool (MMT) is a web-based tool developed as part of Pekka Mäkiaho's doctoral research project. It brings software project metrics into a shared dashboard, helping teams monitor progress, working hours, participation and upcoming events.</p>
                         <p>I worked in a seven-person Agile team as a UX/UI Designer and Junior Developer, combining interface design with hands-on implementation. My designs helped establish a shared direction for the dashboard, while my development work contributed to several of its functional components.</p>
+                        <p>Technologies: PHP, CakePHP, JavaScript, HTML, CSS, MariaDB and Docker.</p>
                     </div>
                 </section>
 
@@ -123,6 +115,7 @@ export default function CaseStudyDashboardMMT({ project }) {
                                     alt="Student event design mockup showing a calendar, upcoming event details, completed events and available feedback, without event management controls."
                                     caption="Design artifact: student events mockup"
                                     className="mmt-role-comparison__image"
+                                    sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1200px) calc((100vw - 144px) / 2), 496px"
                                 />
                             </div>
                             <div className="mmt-role-comparison__view">
@@ -133,6 +126,7 @@ export default function CaseStudyDashboardMMT({ project }) {
                                     alt="Coach and administrator event design mockups showing upcoming and completed events, feedback options and an add-event form; edit and remove views are marked as planned."
                                     caption="Design artifact: coach and admin events mockup"
                                     className="mmt-role-comparison__image"
+                                    sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1200px) calc((100vw - 144px) / 2), 496px"
                                 />
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
 import Footer from "./Footer";
+import ResponsiveImage from "../../components/ResponsiveImage";
 
 export default function AboutPage() {
   const aboutPageRef = useRef(null);
@@ -120,7 +121,7 @@ export default function AboutPage() {
           data-case-reveal
           style={{ "--reveal-delay": "0.14s" }}
         >
-          <img src="/img/profile-pic.png" alt="Elias taking a mirror selfie" />
+          <ResponsiveImage src="/img/profile-pic.png" alt="Elias taking a mirror selfie" loading="eager" sizes="(max-width: 900px) calc(100vw - 40px), 500px" />
         </figure>
       </section>
 

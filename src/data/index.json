@@ -179,6 +179,24 @@
             "description": "Free parking spots for everyone in Helsinki.",
             "link": "view concept",
             "tags": ["UX/UI", "Programming", "WIP"]
+        },
+        {
+            "id": "7",
+            "src": "/img/lamp-cardboard-front.jpeg",
+            "caseStudySrc": "/img/lamp-cardboard-front.jpeg",
+            "title": "Electricity Price Indicator",
+            "description": "An ambient smart lamp concept that uses cognitive psychology to make electricity-price information easier to understand.",
+            "link": "view case study",
+            "tags": [
+                "Physical Interaction Design",
+                "UX",
+                "IoT",
+                "WIP"
+            ],
+            "caseStudyType": "electricity-price-indicator",
+            "year": "2026 – Ongoing",
+            "status": "Work in Progress",
+            "visuals": "Cardboard prototype · Work in Progress"
         }
     ]
 }

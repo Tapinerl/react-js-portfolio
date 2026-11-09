@@ -1,4 +1,6 @@
-import Beams from "../../components/ui/Beams";
+import { lazy, Suspense } from "react";
+
+const Beams = lazy(() => import("../../components/ui/Beams"));
 
 export default function HeroSection() {
     const scrollToContact = () => {
@@ -11,6 +13,7 @@ export default function HeroSection() {
     return (
         <section id="heroSection" className="hero--section" data-home-section>
             <div className="hero--beams" aria-hidden="true">
+                <Suspense fallback={null}>
                 <Beams
                     beamWidth={1.32}
                     beamHeight={21}
@@ -25,6 +28,7 @@ export default function HeroSection() {
                     cameraZ={26}
                     cameraFov={42}
                 />
+                </Suspense>
             </div>
             <div className="hero--section--content--box">
                 <div className="hero--section--content">

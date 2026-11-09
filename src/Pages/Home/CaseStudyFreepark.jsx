@@ -1,15 +1,9 @@
 import { useRef } from "react";
-import CaseStudyHeader from "./CaseStudyHeader";
+import CaseStudyHero from "./CaseStudyHero";
 import "./CaseStudyBudgit.css";
 import "./CaseStudyFreepark.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
-
-const overviewMeta = [
-    "Role: UX/UI Designer and Developer",
-    "Project: Personal project",
-    "Platform: Mobile",
-    "Year: 2026",
-];
+import ResponsiveImage from "../../components/ResponsiveImage";
 
 export default function CaseStudyFreepark({ project }) {
     const caseStudyRef = useRef(null);
@@ -21,7 +15,7 @@ export default function CaseStudyFreepark({ project }) {
             ref={caseStudyRef}
         >
             <div className="case-study__wrap">
-                <CaseStudyHeader project={project} metadata={overviewMeta} />
+                <CaseStudyHero project={project} />
 
                 <section className="case-study__section case-study__section--overview">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
@@ -50,10 +44,10 @@ export default function CaseStudyFreepark({ project }) {
                         This page will expand once the design and development phases are documented.
                     </p>
                     <figure className="case-study__freepark-snapshot scroll-reveal" data-case-reveal>
-                        <img src="/img/freepark-wip.jpg" alt="FreePark Helsinki work in progress screens" />
+                        <ResponsiveImage src="/img/freepark-wip.jpg" alt="FreePark Helsinki work in progress screens" />
                     </figure>
                     <figure className="case-study__freepark-snapshot scroll-reveal" data-case-reveal>
-                        <img src="/img/freepark-wip-dark.jpg" alt="FreePark Helsinki dark mode work in progress screens" />
+                        <ResponsiveImage src="/img/freepark-wip-dark.jpg" alt="FreePark Helsinki dark mode work in progress screens" />
                     </figure>
                 </section>
             </div>

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
-import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo } from "react";
+import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo, useState } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import "./Beams.css";
 
 function extendMaterial(BaseMaterial, cfg) {
@@ -44,11 +44,68 @@ function extendMaterial(BaseMaterial, cfg) {
     });
 }
 
-const CanvasWrapper = ({ children }) => (
-    <Canvas dpr={[1, 2]} frameloop="always" className="beams-container">
-        {children}
-    </Canvas>
-);
+function SceneRenderer() {
+    const { gl, scene, camera, invalidate } = useThree();
+    const ready = useRef(false);
+
+    useEffect(() => {
+        let cancelled = false;
+        ready.current = false;
+        // Keep the physical shader, but let KHR_parallel_shader_compile prepare it
+        // without the first visible frame synchronously waiting on the GPU driver.
+        const finish = () => {
+            if (!cancelled) {
+                ready.current = true;
+                invalidate();
+            }
+        };
+        gl.compileAsync(scene, camera).then(finish, finish);
+        return () => { cancelled = true; };
+    }, [gl, scene, camera, invalidate]);
+
+    // Positive priority takes over R3F's default render until compilation is ready.
+    useFrame(() => {
+        if (ready.current) gl.render(scene, camera);
+    }, 1);
+    return null;
+}
+
+function CanvasWrapper({ children }) {
+    const container = useRef(null);
+    const [inView, setInView] = useState(true);
+    const [visible, setVisible] = useState(() => !document.hidden);
+    const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+    useEffect(() => {
+        const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const onMotion = () => setReducedMotion(motion.matches);
+        const onVisibility = () => setVisible(!document.hidden);
+        const observer = "IntersectionObserver" in window
+            ? new IntersectionObserver(([entry]) => setInView(entry.isIntersecting))
+            : null;
+        observer?.observe(container.current);
+        motion.addEventListener("change", onMotion);
+        document.addEventListener("visibilitychange", onVisibility);
+        return () => {
+            observer?.disconnect();
+            motion.removeEventListener("change", onMotion);
+            document.removeEventListener("visibilitychange", onVisibility);
+        };
+    }, []);
+
+    return (
+        <div ref={container} className="beams-container">
+            <Canvas
+                dpr={[1, 2]}
+                frameloop={inView && visible && !reducedMotion ? "always" : "demand"}
+                onCreated={({ gl }) => { gl.debug.checkShaderErrors = import.meta.env.DEV; }}
+            >
+                {children}
+                <SceneRenderer />
+            </Canvas>
+        </div>
+    );
+}
 
 const hexToNormalizedRGB = (hex) => {
     const clean = hex.replace("#", "");
@@ -205,6 +262,7 @@ export default function Beams({
             }),
         [beamColor, speed, noiseIntensity, scale]
     );
+    useEffect(() => () => beamMaterial.dispose(), [beamMaterial]);
 
     return (
         <CanvasWrapper>
@@ -282,10 +340,11 @@ const MergedPlanes = forwardRef(({ material, width, count, height, spacing }, re
         () => createStackedPlanesBufferGeometry(count, width, height, spacing, 100),
         [count, width, height, spacing]
     );
+    useEffect(() => () => geometry.dispose(), [geometry]);
 
     useFrame((_, delta) => {
         if (mesh.current?.material?.uniforms?.time) {
-            mesh.current.material.uniforms.time.value += 0.1 * delta;
+            mesh.current.material.uniforms.time.value += 0.1 * (delta < 1 ? delta : 0);
         }
     });
 

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import CaseStudyHeader from "./CaseStudyHeader";
+import CaseStudyHero from "./CaseStudyHero";
 import CaseStudyImage from "./CaseStudyImage";
 import "./CaseStudyBudgit.css";
 import useCaseStudyScrollReveal from "../../hooks/useCaseStudyScrollReveal";
@@ -13,13 +13,6 @@ const getPersonaRoleLine = (persona = {}) => {
     return [roleMain, roleDetail].filter(Boolean).map((item) => `[${item}]`).join(" ");
 };
 
-const overviewMeta = [
-    "Role: UX/UI Designer",
-    "Project: University group project",
-    "Platform: Mobile",
-    "Year: 2024",
-];
-
 export default function CaseStudyBudgit({ project }) {
     const caseStudyRef = useRef(null);
     const personaLine = getPersonaRoleLine(project?.persona);
@@ -28,7 +21,7 @@ export default function CaseStudyBudgit({ project }) {
     return (
         <section className="case-study case-study--centered case-study--budgit budgit-content" ref={caseStudyRef}>
             <div className="case-study__wrap">
-                <CaseStudyHeader project={project} metadata={overviewMeta} />
+                <CaseStudyHero project={project} />
 
                 <section className="case-study__section case-study__section--overview">
                     <div className="case-study__section-title scroll-reveal" data-case-reveal>
