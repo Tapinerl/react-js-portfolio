@@ -1,3 +1,3 @@
-export const getTagToneClass = () => {
-    return "tag-tone--gray";
+export const getTagToneClass = (tag) => {
+    return tag.trim().toUpperCase() === "WIP" ? "tag-tone--green" : "tag-tone--gray";
 };

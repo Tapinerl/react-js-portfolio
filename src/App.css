@@ -1093,6 +1093,7 @@ h3 {
 }
 .about-page__portrait img {
     width: 100%;
+    height: auto;
     aspect-ratio: 4 / 5;
     display: block;
     object-fit: cover;
@@ -1545,7 +1546,7 @@ h3 {
     --tag-tone-color: #ffffff;
 }
 .portfolio--tag.tag-tone--green {
-    --tag-tone-color: #ffffff;
+    --tag-tone-color: var(--color-accent);
 }
 .portfolio--tag.tag-tone--blue {
     --tag-tone-color: #ffffff;

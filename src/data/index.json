@@ -34,7 +34,7 @@
             "title": "budgIT",
             
             "link": "view case study",
-            "tags": ["UX/UI", "Case Study"],
+            "tags": ["UX/UI", "Mobile"],
             "role": "UX/UI Designer",
             "team": "Course team of 3 members",
             "timeline": "Jan – March 2024",
@@ -115,7 +115,7 @@
             "title": "AllTogether",
             "description": "Fitness, nutrition, sleep and recovery in one clear wellbeing interface.",
             "link": "view case study",
-            "tags": ["UX/UI", "Case Study"],
+            "tags": ["UX/UI", "Mobile", "Desktop"],
             "caseStudyType": "alltogether",
             "role": "UX/UI Designer",
             "team": "University group project",
@@ -170,7 +170,7 @@
             "title": "Dashboard - MMT",
             "description": "Metrics Monitoring Tool web dashboard for a client",
             "link": "view case study",
-            "tags": ["UI", "Programming"]
+            "tags": ["UX/UI", "PROGRAMMING", "Web application"]
         },
         {
             "id": "5",
@@ -178,7 +178,7 @@
             "title": "FreePark Helsinki",
             "description": "Free parking spots for everyone in Helsinki.",
             "link": "view concept",
-            "tags": ["UX/UI", "Programming", "WIP"]
+            "tags": ["UX/UI", "PROGRAMMING", "Mobile", "WIP"]
         },
         {
             "id": "7",
@@ -188,9 +188,8 @@
             "description": "An ambient smart lamp concept that uses cognitive psychology to make electricity-price information easier to understand.",
             "link": "view case study",
             "tags": [
-                "Physical Interaction Design",
-                "UX",
-                "IoT",
+                "UX/UI",
+                "IOT",
                 "WIP"
             ],
             "caseStudyType": "electricity-price-indicator",
