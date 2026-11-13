@@ -45,8 +45,8 @@ export default function HeroSection() {
                             data-animate-on-scroll
                             style={{ "--reveal-delay": "0.12s" }}
                         >
-                            <span>UX-focused IT graduate combining human-centred design with</span>
-                            <span>technical problem-solving.</span>
+                            <span>Combining AI, software engineering and human understanding to</span>
+                            <span>build smarter digital products that solve real problems.</span>
                         </p>
                         <div
                             className="hero--actions scroll-reveal"

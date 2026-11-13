@@ -96,23 +96,16 @@ export default function AboutPage() {
           style={{ "--reveal-delay": "0.08s" }}
         >
           <p>
-            I'm Elias, a technology and design graduate from Finland,
-            currently exploring where UX, product development, data,
-            and software development intersect. I have a Bachelor of Science
-            (Tech) in Information Technology and am
-            continuing my studies in the Master’s programme in Human-Technology
-            Interaction.
+            Hi, I'm Elias! I'm a <strong>Human–Technology Interaction (HTI) Master's student at Tampere University</strong>, with a Bachelor's degree in Information Technology where I majored in software engineering.
           </p>
           <p>
-            I’m naturally curious and enjoy understanding how both people
-            and technology work. I like combining user research, design,
-            and development to create digital experiences that feel clear,
-            accessible, and genuinely useful.
+            I'm curious about how people and technology work together, and especially interested in where <strong>UX, software development, data and AI</strong> meet. I enjoy understanding not just how something should look and feel, but also how it works behind the scenes and how it can be improved through research and data-driven decisions.
           </p>
           <p>
-            Outside of design and technology, I spend my time cycling,
-            going to the gym, building PCs, exploring AI, and of course
-            hanging out with our Corgi, Into!
+            I love learning new technologies, experimenting with ideas and working with people from different backgrounds. Whether I'm designing an interface, writing code or exploring a new tool, I enjoy the process of figuring things out and turning ideas into something useful.
+          </p>
+          <p>
+            Outside of technology, you'll probably find me cycling, at the gym, tinkering with PCs or spending time with our Corgi, Into!
           </p>
         </div>
         </div>

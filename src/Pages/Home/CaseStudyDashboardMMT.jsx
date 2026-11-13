@@ -25,6 +25,29 @@ const dashboardIterations = [
     }
 ];
 
+const learningHighlights = [
+    { title: "Technical Skills", text: "Learning PHP, CakePHP, MVC, Docker and working within an existing codebase.", path: "m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16" },
+    { title: "Teamwork", text: "Collaborating in Agile sprints and learning from different perspectives.", path: "M15 20v-2a6 6 0 0 0-12 0v2M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6m7-6a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v2" },
+    { title: "Client Communication", text: "Asking questions, clarifying requirements and adapting when plans changed.", path: "M14 3H3v12h3v4l4-4h4V3Zm3 5h4v12h-3v2l-4-4h-4" },
+    { title: "Design to Development", text: "Understanding how designs become actual working features.", path: "M3 3h6v6H3V3Zm12 12h6v6h-6v-6ZM9 6h6a3 3 0 0 1 3 3v6M6 9v9h9" },
+];
+
+function ProjectLearnings() {
+    return (
+        <div className="mmt-learnings" aria-labelledby="mmt-learnings-title">
+            <h4 id="mmt-learnings-title">What This Project Taught Me</h4>
+            <dl className="mmt-learnings__grid">
+                {learningHighlights.map(({ title, text, path }) => (
+                    <div key={title}>
+                        <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d={path} /></svg>{title}</dt>
+                        <dd>{text}</dd>
+                    </div>
+                ))}
+            </dl>
+        </div>
+    );
+}
+
 export default function CaseStudyDashboardMMT({ project }) {
     return (
         <section className="case-study case-study--centered case-study--budgit case-study--dashboard-mmt budgit-content">
@@ -33,142 +56,128 @@ export default function CaseStudyDashboardMMT({ project }) {
 
                 <section className="case-study__section case-study__section--overview">
                     <div className="case-study__section-title"><h2>01. Overview</h2></div>
-                    <div className="case-study__copy-stack">
-                        <p>The Metrics Monitoring Tool (MMT) is a web-based tool developed as part of Pekka Mäkiaho's doctoral research project. It brings software project metrics into a shared dashboard, helping teams monitor progress, working hours, participation and upcoming events.</p>
-                        <p>I worked in a seven-person Agile team as a UX/UI Designer and Junior Developer, combining interface design with hands-on implementation. My designs helped establish a shared direction for the dashboard, while my development work contributed to several of its functional components.</p>
-                        <p>Technologies: PHP, CakePHP, JavaScript, HTML, CSS, MariaDB and Docker.</p>
-                    </div>
-                </section>
-
-                <section className="case-study__section case-study__section--problem">
-                    <div className="case-study__section-title"><h2>02. Problem</h2></div>
-                    <div className="case-study__copy-stack">
-                        <p>Software projects generate information across multiple areas, including working hours, tasks, meetings and team participation. When this information is spread across different views or systems, understanding the overall project status can become time-consuming.</p>
-                        <p>The client needed a dashboard that would bring relevant metrics together and make project progress easier to monitor, without overwhelming users with unnecessary information.</p>
-                        <p>Since MMT was already an established application, the new dashboard also had to fit within its existing visual design and technical structure. This limited how much we could change the interface and required us to balance usability improvements with consistency.</p>
-                    </div>
-                    <p className="case-study__insight-callout"><strong>Design challenge:</strong> How might we present complex project information in one clear dashboard while supporting different user roles and project management needs?</p>
-                </section>
-
-                <section className="case-study__section">
-                    <div className="case-study__section-title"><h2>03. Research &amp; Direction</h2></div>
-                    <div className="case-study__copy-stack">
-                        <p>We worked with the client to understand the project's requirements and translate them into practical dashboard features. As a junior developer and UX/UI designer, I helped visualize these requirements through early interface designs, giving the team a clearer direction for development.</p>
-                        <p>One challenge was that client feedback was not always immediately available. We documented open questions, explored possible solutions and refined our designs through subsequent discussions.</p>
-                    </div>
                     <div className="budgit-content__subsection">
-                        <h3>Key Design Priorities</h3>
-                        <dl className="mmt-priorities">
-                            <div>
-                                <dt>
-                                    <svg className="mmt-priorities__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3" /><path d="M3 9h18M9 9v11M13 13h4M13 16h2" /></svg>
-                                    <span>Clear overview</span>
-                                </dt>
-                                <dd>Present important project metrics in a way that can be understood at a glance.</dd>
-                            </div>
-                            <div>
-                                <dt>
-                                    <svg className="mmt-priorities__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3" /><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2" /></svg>
-                                    <span>Different user roles</span>
-                                </dt>
-                                <dd>Support students, coaches and administrators with relevant functionality and permissions.</dd>
-                            </div>
-                            <div>
-                                <dt>
-                                    <svg className="mmt-priorities__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 17h16" /><circle cx="9" cy="7" r="3" /><circle cx="15" cy="17" r="3" /></svg>
-                                    <span>Designing Within Constraints</span>
-                                </dt>
-                                <dd>Create usable dashboard components that follow MMT's existing visual language and work within its technical limitations.</dd>
-                            </div>
-                        </dl>
+                        <h3>My first experience building software for a real client</h3>
+                        <p>MMT (Metrics Monitoring Tool) is a web application developed as part of Pekka Mäkiaho's doctoral research project. It helps software teams track project progress, working hours, participation and upcoming events through a shared dashboard.</p>
+                        <p>I joined a seven-person team as a UX/UI Designer and Junior Developer. My work included designing dashboard interfaces, planning event functionality and implementing several features.</p>
+                        <p>What made this project especially interesting was getting to experience both sides of software development: <strong>designing how something should work and then figuring out how to build it.</strong></p>
+                        <div className="mmt-tools">
+                            <ul className="mmt-tech-stack" aria-label="Technologies and tools">
+                                {[
+                                    ["Figma", ["figma"]],
+                                    ["PHP", ["php"]],
+                                    ["CakePHP", ["cakephp"]],
+                                    ["JavaScript", ["javascript"]],
+                                    ["HTML/CSS", ["html5", "css"]],
+                                    ["MariaDB", ["mariadb"]],
+                                    ["Docker", ["docker"]],
+                                    ["GitLab", ["gitlab"]],
+                                    ["Cursor", ["cursor"]],
+                                ].map(([name, icons]) => (
+                                    <li key={name}>
+                                        <span className="mmt-tech-stack__logos" aria-hidden="true">
+                                            {icons.map(icon => <img key={icon} src={`/img/tech/${icon}.svg`} alt="" width="20" height="20" />)}
+                                        </span>
+                                        {name}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title"><h2>04. Design Process</h2></div>
+                    <div className="case-study__section-title"><h2>02. The Challenge</h2></div>
                     <div className="budgit-content__subsection">
-                        <h3>Developing the Dashboard</h3>
-                        <p>We began with an early dashboard wireframe to explore how project information could be organized. Since MMT was an existing application, the design needed to follow its established visual style and interface patterns.</p>
-                        <p>I then developed a more detailed mockup that helped communicate the proposed structure to the client and establish the direction for the first MVP. As development progressed, I refined the dashboard layout and its widgets while balancing usability, visual consistency and technical feasibility.</p>
-                        <CaseStudyEvolution stages={dashboardIterations} label="MMT dashboard design evolution" enlarge imageCaption="Design artifact: dashboard concept, not a production screenshot" />
-                        <p>These iterations helped turn the client's requirements into a clearer development direction and gave the team a shared visual reference for building the dashboard.</p>
+                        <h3>Improving something that already exists</h3>
+                        <p>Our client wanted a clearer way to follow project metrics without having to jump between different views.</p>
+                        <p>But we weren't starting from scratch. MMT already had an established design and technical structure, so we needed to build on what was there.</p>
+                        <p>This challenged me to think beyond what looked good in a mockup and consider what was realistic to implement, consistent with the application and useful for its users.</p>
+                    </div>
+                </section>
+
+                <section className="case-study__section">
+                    <div className="case-study__section-title"><h2>03. Working Together</h2></div>
+                    <div className="budgit-content__subsection">
+                        <h3>Learning from people with different perspectives</h3>
+                        <p>One of my biggest takeaways was how much communication matters in software development. We worked in <strong>two-week Agile sprints</strong>, using GitLab and Kanban to organize tasks and collaborate.</p>
+                        <p>Our team had people with different backgrounds and experiences. I really enjoyed discussing ideas, hearing different approaches and figuring things out together.</p>
+                        <p>We also worked closely with the client to understand requirements and discuss our designs. Sometimes feedback was delayed or plans needed to change, which taught me to ask questions, document uncertainties and keep communication open.</p>
+                        <p>I learned that things rarely go exactly as planned, and that's just part of working on a real software project.</p>
+                    </div>
+                </section>
+
+                <section className="case-study__section">
+                    <div className="case-study__section-title"><h2>04. The Design Process</h2></div>
+                    <div className="budgit-content__subsection">
+                        <h3>Designing the Dashboard</h3>
+                        <p>I started with an early wireframe exploring how different project metrics could fit together in one view.</p>
+                        <p>From there, I created a more detailed mockup that helped our team and the client agree on a direction for the first MVP.</p>
+                        <p>I learned that mockups aren't just about how something looks. They're also a great way to communicate ideas and make sure everyone understands what we're building.</p>
+                        <div className="mmt-dashboard-showcase">
+                            <h4 className="mmt-step">Dashboard Design &mdash; Three Iterations</h4>
+                            <CaseStudyEvolution stages={dashboardIterations} label="MMT dashboard design evolution" enlarge imageCaption="Design artifact: dashboard concept, not a production screenshot" />
+                            <p className="mmt-caption"><em>From early wireframes to a more detailed dashboard concept.</em></p>
+                        </div>
                     </div>
                     <div className="budgit-content__subsection">
                         <h3>Designing the Events Functionality</h3>
-                        <p>One of my main contributions was designing and developing the calendar and events functionality. I first mapped out how different users would interact with events, including viewing upcoming and completed events, accessing feedback and managing events based on their permissions.</p>
-                        <p>I then created separate interface mockups for students and users with additional permissions, such as coaches and administrators. These designs helped communicate the intended behavior and supported the creation of development tasks in our GitLab Kanban workflow.</p>
-                        <p>Although the final implementation differed visually from the mockups, the client approved the proposed functionality, and its core behavior was retained.</p>
-                        <p className="mmt-step"><strong>Step 1 &mdash; Event Workflows</strong></p>
-                        <CaseStudyImage
-                            image={{ src: "/img/mmt-events-architecture.png" }}
-                            className="case-study__structure-image mmt-events-architecture"
-                            alt="MMT event workflows: students view upcoming and completed events and read feedback; coaches and administrators can also manage events and submit feedback."
-                            caption="Mapping event interactions and permissions for students, coaches and administrators."
-                        />
-                        <p className="mmt-step"><strong>Step 2 &mdash; Role-Based Interface Design</strong></p>
+                        <p>One of my main responsibilities was designing the calendar and events functionality.</p>
+                        <p>I started by mapping how students, coaches and administrators would interact with events, then created interface mockups for their different roles and permissions.</p>
+                        <h4 className="mmt-step">Understanding the User Flows</h4>
+                        <CaseStudyImage image={{ src: "/img/mmt-events-architecture.png" }} className="case-study__structure-image mmt-events-architecture" alt="MMT event workflows: students view upcoming and completed events and read feedback; coaches and administrators can also manage events and submit feedback." caption="Mapping how different users view, manage and interact with events." />
+                        <h4 className="mmt-step">Designing for Different Roles</h4>
                         <div className="mmt-role-comparison">
                             <div className="mmt-role-comparison__view">
-                                <h4 className="mmt-role-comparison__title">Student View</h4>
-                                <p className="mmt-role-comparison__description">Students can view upcoming and completed events, access event details and read available feedback.</p>
-                                <CaseStudyImage
-                                    image={{ src: "/img/mmt-events-student.png" }}
-                                    alt="Student event design mockup showing a calendar, upcoming event details, completed events and available feedback, without event management controls."
-                                    caption="Design artifact: student events mockup"
-                                    className="mmt-role-comparison__image"
-                                    sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1200px) calc((100vw - 144px) / 2), 496px"
-                                />
+                                <h5 className="mmt-role-comparison__title">Student View</h5>
+                                <CaseStudyImage image={{ src: "/img/mmt-events-student.png" }} alt="Student events design mockup with a calendar, upcoming event details, completed events and available feedback." className="mmt-role-comparison__image" sizes="(max-width: 700px) calc(100vw - 64px), (max-width: 900px) calc((100vw - 88px) / 2), 500px" />
                             </div>
                             <div className="mmt-role-comparison__view">
-                                <h4 className="mmt-role-comparison__title">Coach / Admin View</h4>
-                                <p className="mmt-role-comparison__description">Coaches and administrators have additional options for managing events and providing feedback.</p>
-                                <CaseStudyImage
-                                    image={{ src: "/img/mmt-events-admin.png" }}
-                                    alt="Coach and administrator event design mockups showing upcoming and completed events, feedback options and an add-event form; edit and remove views are marked as planned."
-                                    caption="Design artifact: coach and admin events mockup"
-                                    className="mmt-role-comparison__image"
-                                    sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1200px) calc((100vw - 144px) / 2), 496px"
-                                />
+                                <h5 className="mmt-role-comparison__title">Coach / Admin View</h5>
+                                <CaseStudyImage image={{ src: "/img/mmt-events-admin.png" }} alt="Coach and administrator events design mockups with upcoming and completed events, feedback options and an add-event form; edit and remove views are marked as planned." className="mmt-role-comparison__image" sizes="(max-width: 700px) calc(100vw - 64px), (max-width: 900px) calc((100vw - 88px) / 2), 500px" />
                             </div>
                         </div>
-                        <p className="mmt-step"><strong>Step 3 &mdash; From Design to Implementation</strong></p>
-                        <p>The event designs also supported development planning. I collaborated with the project manager to translate interface requirements into GitLab Kanban tasks, helping connect the proposed interactions with the team's implementation work.</p>
-                        <p>Alongside this design work, I implemented the calendar, event-related functionality and contributed to other dashboard widgets, including working-hours and participation visualizations.</p>
+                        <p className="mmt-caption"><em>The same application needed to support different roles and permissions.</em></p>
                     </div>
                 </section>
 
                 <section className="case-study__section">
-                    <div className="case-study__section-title"><h2>05. Final Solution &amp; Reflection</h2></div>
+                    <div className="case-study__section-title"><h2>05. From Design to Code</h2></div>
                     <div className="budgit-content__subsection">
-                        <h3>Delivered Functionality</h3>
-                        <p>The project resulted in a functional metrics monitoring dashboard that brings together different aspects of software project management.</p>
-                        <p>My development contributions included the calendar, event-related functionality, working-hours visualization and participation-related widgets. Alongside implementation, my interface designs helped the team align on the dashboard structure and translate requirements into development tasks.</p>
+                        <p>I worked with our project manager to turn the event designs into GitLab development tasks. The final implementation looked a little different from my mockups, but the client-approved functionality remained.</p>
+                        <p>On the development side, I got more comfortable with <strong>PHP, CakePHP, MVC and Docker</strong>, while also exploring <strong>Cursor IDE</strong>. I implemented calendar and event-related functionality and contributed to the working-hours and participation widgets.</p>
+                        <p>One of my favorite parts was seeing my designs become working features and learning how everything connects behind the scenes.</p>
+                    </div>
+                </section>
+
+                <section className="case-study__section">
+                    <div className="case-study__section-title"><h2>06. What We Delivered</h2></div>
+                    <div className="case-study__copy-stack">
+                        <p>Our team delivered a working dashboard that brings project metrics and event information together in one place.</p>
+                        <p>I contributed to both the interface design and implementation, particularly the calendar, events, working-hours and participation features.</p>
                     </div>
                     <div className="budgit-content__subsection">
-                        <h3>Project Outcomes</h3>
-                        <p>Although we did not have time to conduct formal usability testing, the project received encouraging feedback both during development and after delivery.</p>
                         <dl className="mmt-outcomes">
+                            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M8 3h8v6a4 4 0 0 1-8 0V3ZM8 5H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 2v5m-4 3h8m-7 0v-3h6v3" /></svg><span>Shared 2nd Place</span></dt><dd>Our team finished joint second in the audience vote at the university project gala.</dd></div>
                             <div>
-                                <dt>Shared Second Place</dt>
-                                <dd>Our team achieved a shared second-place ranking in the audience vote at the final university project gala.</dd>
-                            </div>
-                            <div>
-                                <dt>Positive Client Feedback</dt>
-                                <dd>
-                                    <figure className="mmt-client-feedback">
-                                        <blockquote><p>“The MMT has been used successfully this autumn, for example, the dashboard works nicely!”</p></blockquote>
-                                        <figcaption>Client feedback received after project delivery</figcaption>
-                                    </figure>
-                                </dd>
+                                <dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M21 11a8 8 0 0 1-8 8H7l-4 3V11a9 9 0 0 1 18 0Z" /><path d="m8 11 3 3 5-5" /></svg><span>Positive Client Feedback</span></dt>
+                                <dd><figure className="mmt-client-feedback"><blockquote><p>“The MMT has been used successfully this autumn, for example, the dashboard works nicely!”</p></blockquote><figcaption>Client feedback received after delivery.</figcaption></figure></dd>
                             </div>
                         </dl>
                     </div>
+                </section>
+
+                <section className="case-study__section">
+                    <div className="case-study__section-title"><h2>07. What I Took Away</h2></div>
                     <div className="budgit-content__subsection">
-                        <h3>Reflection</h3>
-                        <p>Working on MMT taught me how UX design and software development support each other in a real client project. Creating early mockups helped clarify requirements and gave the team a common understanding of what we were building.</p>
-                        <p>One of the biggest challenges was designing within an existing application. I had to follow established visual patterns while finding ways to make the dashboard clear and useful. Balancing these constraints with technical requirements, changing priorities and client feedback strengthened my ability to make practical design decisions.</p>
-                        <p>The project also highlighted the importance of communication and clear task definitions in Agile development. If I were to continue the project, I would prioritize usability testing with actual users to evaluate how easily they interpret the dashboard metrics and navigate its features.</p>
+                        <h3>More than just learning new technologies</h3>
+                        <p>This project gave me a lot more confidence in working as part of a software development team.</p>
+                        <ProjectLearnings />
+                        <p>I also realized how much I enjoy being involved in both design and development. I like understanding how people use technology, but I also want to understand how it's built.</p>
+                        <blockquote className="mmt-takeaway"><p>“Good software doesn't come from one person having all the answers. It comes from people sharing ideas, learning from each other and figuring things out together.”</p></blockquote>
+                        <p>That's the kind of environment I'd love to keep learning in.</p>
+                        <a className="case-study__external-link" href="https://metricsmonitoring.rd.tuni.fi/projects/about" target="_blank" rel="noopener noreferrer">Visit the MMT project <span className="mmt-link-context">(opens in a new tab)</span></a>
                     </div>
-                    <a className="case-study__external-link" href="https://metricsmonitoring.rd.tuni.fi/projects/about" target="_blank" rel="noopener noreferrer">Visit the MMT project page <span className="mmt-link-context">(project website, opens in a new tab)</span></a>
                 </section>
             </div>
         </section>

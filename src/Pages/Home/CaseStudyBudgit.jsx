@@ -19,7 +19,7 @@ export default function CaseStudyBudgit({ project }) {
     useCaseStudyScrollReveal(caseStudyRef);
 
     return (
-        <section className="case-study case-study--centered case-study--budgit budgit-content" ref={caseStudyRef}>
+        <section className="case-study case-study--centered case-study--budgit case-study--budgit-project budgit-content" ref={caseStudyRef}>
             <div className="case-study__wrap">
                 <CaseStudyHero project={project} />
 
@@ -142,6 +142,7 @@ export default function CaseStudyBudgit({ project }) {
                         <CaseStudyImage
                             image={project.structureToVisualImage}
                             alt="Low-fidelity budgIT wireframes exploring screen hierarchy and financial information grouping, with Finnish labels."
+                            className="case-study__structure-image budgit-project__wireframes"
                             caption="Low-fidelity wireframes translated the information architecture into screen layouts."
                         />
                         <p className="budgit-content__copy">{project.uxDecision}</p>
@@ -161,32 +162,19 @@ export default function CaseStudyBudgit({ project }) {
                         image={project.outcomeImage}
                         alt="Final budgIT budgeting interface mockup, with Finnish labels."
                         className="case-study__outcome-media"
-                        caption="Final budgIT mockup"
+                        caption="Final budgIT interface concept."
                     />
-                    <p className="budgit-content__copy">
-                        We designed budgIT as a lightweight financial hub for students. The concept combines
-                        budgeting, expense tracking, savings goals, student loans, and discounts in one experience.
-                    </p>
-                    <ul className="case-study__research-list budgit-content__copy">
-                        <li><strong>Financial overview:</strong> monthly budgets, expenses, and remaining funds make the financial situation easier to understand at a glance.</li>
-                        <li><strong>Planning tools:</strong> budgeting and savings goals support planning around irregular income and expenses.</li>
-                        <li><strong>Student-focused support:</strong> basic financial learning, student loans, and discounts address needs beyond basic bank transaction tracking.</li>
-                    </ul>
+                    <p className="budgit-content__copy">Our final concept brought budgeting, expense tracking, savings goals and student-focused financial tools into one place.</p>
+                    <p className="budgit-content__copy">We wanted budgIT to feel approachable, especially for students who might find traditional financial apps complicated or overwhelming.</p>
                     <div className="budgit-content__subsection">
-                        <h3>Peer Feedback</h3>
-                        <p className="budgit-content__copy">
-                            The final result was an interactive prototype that adapts to different screen sizes
-                            and usage situations. Peer feedback highlighted its clarity, usability, and visual structure.
-                        </p>
+                        <h3>Feedback &amp; What I Learned</h3>
+                        <p className="budgit-content__copy">The final result was an interactive prototype, and the peer feedback we received was encouraging, particularly around its clarity and visual structure.</p>
+                        <p className="budgit-content__copy">One of my biggest takeaways was learning how to <strong>turn research findings into actual design decisions</strong>. I also learned how important content hierarchy is when presenting financial information. Even useful features can become overwhelming if everything competes for attention.</p>
+                        <p className="budgit-content__copy">Working with my teammates also showed me how discussing different ideas and iterating together can lead to a better outcome.</p>
                     </div>
                     <div className="budgit-content__subsection">
-                        <h3>Reflection</h3>
-                        {project.impactLearnings?.length ? (
-                            <ul className="case-study__list budgit-content__copy">
-                                {project.impactLearnings.map((item) => <li key={item}>{item}</li>)}
-                            </ul>
-                        ) : null}
-                        <p className="budgit-content__copy">{project.reflection}</p>
+                        <h3>What I'd Explore Next</h3>
+                        <p className="budgit-content__copy">If I continued this project, I'd want to develop a working prototype, test it with actual students and explore how real financial data could be integrated.</p>
                     </div>
                 </section>
             </div>

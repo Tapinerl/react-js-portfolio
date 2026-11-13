@@ -9,9 +9,6 @@ export default function ContactMe() {
                     <span>Contact</span>
                     <span>Me</span>
                 </h2>
-                <p className="text-lg">
-                    Feel free to reach out to me through any of these channels. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-                </p>
             </div>
             <div
                 className="contact--section--container scroll-reveal"

@@ -11,6 +11,41 @@
     gap: 18px;
 }
 
+.case-study--alltogether .alltogether-design-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-block: 12px;
+    padding-block: clamp(24px, 3vw, 40px);
+    background: var(--color-background);
+    box-shadow: 0 0 0 100vmax var(--color-background);
+    clip-path: inset(0 -100vmax);
+}
+
+.case-study--alltogether .alltogether-design-showcase .case-study-evolution__status {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+}
+
+.case-study--alltogether .alltogether-design-showcase .case-study-evolution__status p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (min-width: 1100px) {
+    .case-study--alltogether .alltogether-design-showcase {
+        box-sizing: border-box;
+        width: min(1040px, calc(100vw - 160px));
+        align-self: center;
+        padding-inline: 32px;
+        border-radius: 24px;
+        box-shadow: none;
+        clip-path: none;
+    }
+}
+
 .case-study--alltogether .alltogether-priorities {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -20,8 +55,26 @@
 }
 
 .case-study--alltogether .alltogether-priorities dt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-weight: 700;
     margin-bottom: 8px;
+}
+
+.case-study--alltogether .alltogether-priorities > div {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    background: var(--color-background);
+}
+
+.case-study--alltogether .alltogether-priorities dt svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--color-accent);
 }
 
 .case-study--alltogether .alltogether-priorities dd {
@@ -29,19 +82,16 @@
 }
 
 .case-study--alltogether .alltogether-mobile-gallery {
-    width: min(var(--content-max-width), calc(100vw - 96px));
+    width: min(880px, calc(100vw - 96px));
     align-self: center;
     margin-block: 16px;
-    padding-block: clamp(32px, 5vw, 64px);
-    background: var(--color-background);
-    box-shadow: 0 0 0 100vmax var(--color-background);
-    clip-path: inset(0 -100vmax);
+    padding-block: 8px;
 }
 
 .case-study--alltogether .alltogether-mobile-gallery__group {
     position: relative;
     isolation: isolate;
-    padding-block: clamp(16px, 2vw, 24px);
+    padding-block: 16px;
     display: grid;
     grid-template-columns: subgrid;
     grid-column: span var(--screen-count);
@@ -52,7 +102,7 @@
 .case-study--alltogether .alltogether-mobile-gallery__group::before {
     content: "";
     position: absolute;
-    inset: 0 calc(-1 * clamp(6px, 1.6vw, 24px));
+    inset: 0 -10px;
     z-index: -1;
     border-radius: 8px;
     background: #0b173d;
@@ -61,10 +111,10 @@
 
 .case-study--alltogether .alltogether-mobile-gallery__label {
     grid-column: 1 / -1;
-    margin-bottom: clamp(10px, 1.5vw, 20px);
-    font-size: clamp(12px, 1.4vw, 16px);
+    margin-bottom: 12px;
+    font-size: 14px;
     overflow-wrap: anywhere;
-    min-height: 4em;
+    min-height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,9 +129,11 @@
 }
 
 .case-study--alltogether .alltogether-mobile-gallery__image {
+    box-sizing: border-box;
     width: 100%;
     min-width: 0;
     margin: 0;
+    padding-inline: clamp(4px, 0.6vw, 8px);
 }
 
 .case-study--alltogether .alltogether-mobile-gallery__image img {
@@ -98,7 +150,7 @@
 
 @media (max-width: 900px) {
     .case-study--alltogether .alltogether-mobile-gallery {
-        width: min(var(--content-max-width), calc(100vw - 32px));
+        width: min(880px, calc(100vw - 32px));
     }
 }
 
@@ -117,19 +169,46 @@
     text-align: center;
 }
 
-.case-study--alltogether .case-study__outcome-media.alltogether-desktop-image {
+.case-study--alltogether .alltogether-desktop-exploration {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 32px;
+    width: min(880px, calc(100vw - 96px));
+    align-self: center;
+}
+
+.case-study--alltogether .alltogether-desktop-image {
     width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.case-study--alltogether .alltogether-desktop-image .case-study__note {
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .case-study--alltogether .alltogether-desktop-exploration {
+        width: calc(100vw - 32px);
+    }
+}
+
+@media (max-width: 800px) {
+    .case-study--alltogether .alltogether-desktop-exploration {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 
 .case-study--alltogether .alltogether-mobile-gallery__scroll {
-    padding: 6px clamp(8px, 1.8vw, 26px) 16px;
+    padding: 6px 12px 12px;
     min-width: 0;
 }
 
 .case-study--alltogether .alltogether-mobile-gallery__row {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(16px, 4.5vw, 64px);
+    gap: 24px;
     min-width: 0;
 }

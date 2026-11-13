@@ -840,6 +840,16 @@
     display: block;
 }
 
+.case-study--budgit-project.budgit-content .budgit-content__image-hint {
+    display: none;
+}
+
+.case-study--budgit-project .budgit-project__wireframes img,
+.case-study--budgit-project .case-study__outcome-media img {
+    width: 90%;
+    margin-inline: auto;
+}
+
 .budgit-content .budgit-content__image-hint {
     display: block;
     padding-block: 12px;

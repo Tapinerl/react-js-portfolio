@@ -84,9 +84,9 @@ export default function CaseStudyAllTogether({ project }) {
                         <h3>Product Vision</h3>
                         <CaseStudyImage enlarge={false} image={{ src: "/img/alto-visiooni1.png" }} alt="AllTogether product vision board outlining the target group, needs, product and business goals." caption="AllTogether product vision board" className="alltogether-vision-image" />
                         <dl className="alltogether-priorities">
-                            <div><dt>Clarity</dt><dd>Prioritize essential daily information.</dd></div>
-                            <div><dt>Convenience</dt><dd>Reduce repetitive data entry through proposed device and service integrations.</dd></div>
-                            <div><dt>Accessibility</dt><dd>Make health data easy to interpret and navigate.</dd></div>
+                            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" /><circle cx="12" cy="12" r="3" /></svg><span>Clarity</span></dt><dd>Prioritize essential daily information.</dd></div>
+                            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6" /></svg><span>Convenience</span></dt><dd>Reduce repetitive data entry through proposed device and service integrations.</dd></div>
+                            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="7" r="1" /><path d="M7 10h10m-5 0v4m0 0-3 4m3-4 3 4" /></svg><span>Accessibility</span></dt><dd>Make health data easy to interpret and navigate.</dd></div>
                         </dl>
                     </div>
                 </section>
@@ -101,8 +101,10 @@ export default function CaseStudyAllTogether({ project }) {
                     <div className="budgit-content__subsection">
                         <h3>Developing the Home Screen</h3>
                         <p>We developed the home dashboard through several iterations, starting with an early wireframe and gradually refining the layout, information hierarchy and visual design. As the central view of the app, the dashboard established patterns that were later applied to the other mobile screens.</p>
-                        <CaseStudyEvolution stages={homeScreenIterations} label="AllTogether home screen design evolution" imageSizes="320px" />
-                        <p>Through these iterations, we refined the dashboard into a clearer and more structured interface while establishing a visual direction for the rest of the app.</p>
+                        <div className="alltogether-design-showcase">
+                            <CaseStudyEvolution stages={homeScreenIterations} label="AllTogether home screen design evolution" imageSizes="320px" />
+                            <p>Through these iterations, we refined the dashboard into a clearer and more structured interface while establishing a visual direction for the rest of the app.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -136,10 +138,12 @@ export default function CaseStudyAllTogether({ project }) {
                             </div>
                         </div>
                     </div>
-                    <div className="budgit-content__subsection">
-                        <h3>Desktop Exploration</h3>
-                        <p>The desktop design adapts the mobile home dashboard to a larger screen, allowing users to view more information simultaneously. The concept retains the core navigation while bringing activity, nutrition, workouts and other daily metrics into a unified dashboard.</p>
-                        <CaseStudyImage enlarge={false} image={{ src: "/img/alltogether-final-desktop.png" }} alt="AllTogether desktop home dashboard exploration, adapting the mobile daily overview to a larger screen." caption="Desktop exploration: home dashboard" className="case-study__outcome-media alltogether-desktop-image" />
+                    <div className="alltogether-desktop-exploration">
+                        <CaseStudyImage enlarge={false} image={{ src: "/img/alltogether-final-desktop.png" }} alt="AllTogether desktop home dashboard exploration, adapting the mobile daily overview to a larger screen." caption="Desktop exploration: home dashboard" className="alltogether-desktop-image" sizes="(max-width: 800px) calc(100vw - 32px), 600px" />
+                        <div className="budgit-content__subsection">
+                            <h3>Desktop Exploration</h3>
+                            <p>The desktop design adapts the mobile home dashboard to a larger screen, allowing users to view more information simultaneously. The concept retains the core navigation while bringing activity, nutrition, workouts and other daily metrics into a unified dashboard.</p>
+                        </div>
                     </div>
                     <div className="budgit-content__subsection">
                         <h3>Reflection</h3>
